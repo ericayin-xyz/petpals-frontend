@@ -23,10 +23,6 @@ export default function AppDrawer() {
 
     const { drawerOpen, setDrawerOpen } = useNavContext()
     const linkStyle = { textDecoration: 'none', color: Colors.black }
-    const handleItemClick = (event) => {
-        drawerOpen(false);
-        event.preventDefault();
-    };
 
     return (
         <div id="top">
@@ -52,7 +48,7 @@ export default function AppDrawer() {
 
             <Drawer open={drawerOpen} anchor="bottom" style={linkStyle}>
                 <List>
-                    <HashLink to='#top' style={linkStyle} onClick={handleItemClick}>
+                    <HashLink to='#top' style={linkStyle}>
                         <ListItemButton sx={{ padding: '20px 0px 30px 50px' }}>
                             <DoorbellIcon sx={{ marginRight: '30px', fontSize: '2.6rem' }} />
                             <Typography variant="h6">Home</Typography>
@@ -60,7 +56,7 @@ export default function AppDrawer() {
                     </HashLink>
                     <MiddleDivider />
 
-                    <Link to='/petparent' style={linkStyle} onClick={handleItemClick}>
+                    <Link to='/petparent' style={linkStyle}>
                         <ListItemButton sx={{ padding: '30px 0px 30px 50px' }}>
                             <PetsIcon sx={{ marginRight: '30px', fontSize: '2.6rem' }} />
                             <Typography variant="h6">Pet Parent</Typography>
@@ -68,7 +64,7 @@ export default function AppDrawer() {
                     </Link>
                     <MiddleDivider />
 
-                    <Link to='/petsitter' style={linkStyle} onClick={handleItemClick}>
+                    <Link to='/petsitter' style={linkStyle}>
                         <ListItemButton sx={{ padding: '30px 0px 30px 50px' }}>
                             <AssignmentIndIcon sx={{ marginRight: '30px', fontSize: '2.6rem' }} />
                             <Typography variant="h6">Pet Sitter</Typography>
