@@ -10,6 +10,9 @@ import Typography from '@mui/material/Typography';
 import PetsIcon from '@mui/icons-material/Pets';
 import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
+
+
 
 const MiddleDivider = styled((props) => (
     <Divider variant="middle" {...props} />
@@ -20,12 +23,13 @@ export default function AppDrawer() {
 
     const { drawerOpen, setDrawerOpen } = useNavContext()
     const linkStyle = { textDecoration: 'none', color: Colors.black }
-    const handleItemClick = () => {
+    const handleItemClick = (event) => {
         drawerOpen(false);
+        event.preventDefault();
     };
 
     return (
-        <>
+        <div id="top">
             {drawerOpen && (
                 <DrawerCloseButton onClick={() => setDrawerOpen(false)}>
                     <CloseIcon
@@ -48,12 +52,12 @@ export default function AppDrawer() {
 
             <Drawer open={drawerOpen} anchor="bottom" style={linkStyle}>
                 <List>
-                    <Link to='/' style={linkStyle} onClick={handleItemClick}>
+                    <HashLink to='#top' style={linkStyle} onClick={handleItemClick}>
                         <ListItemButton sx={{ padding: '20px 0px 30px 50px' }}>
                             <DoorbellIcon sx={{ marginRight: '30px', fontSize: '2.6rem' }} />
                             <Typography variant="h6">Home</Typography>
                         </ListItemButton>
-                    </Link>
+                    </HashLink>
                     <MiddleDivider />
 
                     <Link to='/petparent' style={linkStyle} onClick={handleItemClick}>
@@ -73,7 +77,7 @@ export default function AppDrawer() {
 
                 </List>
             </Drawer>
-        </>
+        </div>
 
     )
 }
