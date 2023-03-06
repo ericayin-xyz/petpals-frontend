@@ -6,12 +6,6 @@ import styled from 'styled-components';
 import useApi from "../utils/useApi"
 
 
-const GridBox = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin: '10px 10px';
-`
-
 export default function CardList(props) {
     const [cardsWithoutReview] = useApi('/cards')
     const cards = cardsWithoutReview.map((card) => {

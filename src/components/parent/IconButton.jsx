@@ -1,10 +1,8 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
 import KeyboardArrowRightRoundedIcon from '@mui/icons-material/KeyboardArrowRightRounded';
 import { styled } from '@mui/material/styles';
 import { Colors } from '../styled/Theme';
-import { lighten } from 'polished';
 
 const StyledButton = styled(Button)({
     backgroundColor: Colors.primary,

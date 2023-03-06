@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import review from './Review'
 
 const GridBox = styled.div`
     display: grid;

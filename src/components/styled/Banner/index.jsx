@@ -1,6 +1,5 @@
 import { styled } from "@mui/material/styles";
-import { Box, Typography, Container } from "@mui/material";
-import theme, { Colors } from '../Theme';
+import { Box, Typography } from "@mui/material";
 
 export const BannerContainer = styled(Box)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
@@ -27,7 +26,6 @@ export const BannerContent = styled(Box)(() => ({
     height: '100%',
     padding: '30px',
 }))
-
 
 export const BannerDescription = styled(Typography)(({ theme }) => ({
     lineHeight: 1.8,
