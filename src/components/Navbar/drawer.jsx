@@ -48,7 +48,7 @@ export default function AppDrawer() {
             <Drawer open={drawerOpen} anchor="bottom">
                 <List>
                     <Link to='/' style={linkStyle}>
-                        <ListItemButton sx={{ padding: '20px 0px 30px 50px' }}>
+                        <ListItemButton sx={{ padding: '20px 0px 30px 50px' }} style={linkStyle} onClick={handleItemClick}>
                             <DoorbellIcon sx={{ marginRight: '30px', fontSize: '2.6rem' }} />
                             <Typography variant="h6">Home</Typography>
                         </ListItemButton>
@@ -56,15 +56,15 @@ export default function AppDrawer() {
                     <MiddleDivider />
 
                     <Link to='/petparent' style={linkStyle}>
-                        <ListItemButton sx={{ padding: '30px 0px 30px 50px' }}>
+                        <ListItemButton sx={{ padding: '30px 0px 30px 50px' }} style={linkStyle} onClick={handleItemClick}>
                             <PetsIcon sx={{ marginRight: '30px', fontSize: '2.6rem' }} />
                             <Typography variant="h6">Pet Parent</Typography>
                         </ListItemButton>
                     </Link>
                     <MiddleDivider />
 
-                    <Link to='/petsitter' style={linkStyle} onClick={handleItemClick}>
-                        <ListItemButton sx={{ padding: '30px 0px 30px 50px' }}>
+                    <Link to='/petsitter'>
+                        <ListItemButton sx={{ padding: '30px 0px 30px 50px' }} style={linkStyle} onClick={handleItemClick}>
                             <AssignmentIndIcon sx={{ marginRight: '30px', fontSize: '2.6rem' }} />
                             <Typography variant="h6">Pet Sitter</Typography>
                         </ListItemButton>
