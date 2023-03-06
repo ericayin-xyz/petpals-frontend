@@ -60,9 +60,9 @@ export const NavList = styled(List)({
 
 
 export const DrawerCloseButton = styled(IconButton)(() => ({
-    position: 'absolute',
-    bottom: 370,
-    right: 15,
+    position: 'fixed',
+    top: '51vh',
+    right: 18,
     zIndex: 1999,
 }))
 

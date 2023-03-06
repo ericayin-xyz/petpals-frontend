@@ -35,7 +35,6 @@ export default function AppDrawer() {
                             color: Colors.black,
                             borderRadius: '50%',
                             padding: '1rem',
-                            marginBottom: '1.5rem',
                             boxShadow: '0px 5px 10px rgba(0, 0, 0, 0.3)',
                             transition: 'transform 0.3s ease-in-out',
                             '&:hover': {
