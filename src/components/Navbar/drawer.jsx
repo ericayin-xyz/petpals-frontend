@@ -35,6 +35,7 @@ export default function AppDrawer() {
                             color: Colors.black,
                             borderRadius: '50%',
                             padding: '1rem',
+                            marginBottom: '1.5rem',
                             boxShadow: '0px 5px 10px rgba(0, 0, 0, 0.3)',
                             transition: 'transform 0.3s ease-in-out',
                             '&:hover': {
@@ -45,9 +46,9 @@ export default function AppDrawer() {
                 </DrawerCloseButton>
             )}
 
-            <Drawer open={drawerOpen} anchor="bottom" style={linkStyle} onClick={handleItemClick}>
+            <Drawer open={drawerOpen} anchor="bottom" style={linkStyle}>
                 <List>
-                    <Link to='/' style={linkStyle}>
+                    <Link to='/' style={linkStyle} onClick={handleItemClick}>
                         <ListItemButton sx={{ padding: '20px 0px 30px 50px' }}>
                             <DoorbellIcon sx={{ marginRight: '30px', fontSize: '2.6rem' }} />
                             <Typography variant="h6">Home</Typography>
@@ -55,7 +56,7 @@ export default function AppDrawer() {
                     </Link>
                     <MiddleDivider />
 
-                    <Link to='/petparent' style={linkStyle}>
+                    <Link to='/petparent' style={linkStyle} onClick={handleItemClick}>
                         <ListItemButton sx={{ padding: '30px 0px 30px 50px' }}>
                             <PetsIcon sx={{ marginRight: '30px', fontSize: '2.6rem' }} />
                             <Typography variant="h6">Pet Parent</Typography>
@@ -63,7 +64,7 @@ export default function AppDrawer() {
                     </Link>
                     <MiddleDivider />
 
-                    <Link to='/petsitter'>
+                    <Link to='/petsitter' style={linkStyle} onClick={handleItemClick}>
                         <ListItemButton sx={{ padding: '30px 0px 30px 50px' }}>
                             <AssignmentIndIcon sx={{ marginRight: '30px', fontSize: '2.6rem' }} />
                             <Typography variant="h6">Pet Sitter</Typography>
