@@ -1,9 +1,7 @@
-import { Divider, Slide } from "@mui/material";
+import { Slide } from "@mui/material";
 import { useEffect, useState } from "react"
 import { AdContainer } from "../styled/StyledContainer"
-import { Bodytext } from '../styled/Font';
 import styled from 'styled-components';
-import { border } from "polished";
 
 
 const LineB = styled.div`
@@ -38,6 +36,7 @@ export default function Intro() {
         setTimeout(() => {
             setshowMessage(false)
         })
+        // eslint-disable-next-line 
     }, 3000);
 
     useEffect(() => {

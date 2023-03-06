@@ -1,5 +1,4 @@
 import { createContext, useState, useContext } from "react";
-import { Link } from 'react-router-dom';
 
 export const NavContext= createContext();
 export const useNavContext = () => useContext(NavContext);

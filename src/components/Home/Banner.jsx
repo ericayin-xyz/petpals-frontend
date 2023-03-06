@@ -1,10 +1,6 @@
-import { useMediaQuery } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
-import { BannerContainer, BannerContent, BannerDescription, BannerImage, BannerTitle } from "../styled/Banner"
+import { BannerContainer, BannerContent, BannerDescription, BannerImage } from "../styled/Banner"
 
 export default function Banner() {
-    const theme = useTheme();
-    const matches = useMediaQuery(theme.breakpoints.down('md'));
 
     return (
         <BannerContainer>

@@ -2,7 +2,6 @@ import { BannerContainer } from '../styled/Banner';
 import { ContentContainer } from '../styled/StyledContainer';
 import Grid from '@mui/material/Unstable_Grid2';
 import Card from './Card';
-import styled from 'styled-components';
 import useApi from "../utils/useApi"
 
 
