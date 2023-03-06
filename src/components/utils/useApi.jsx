@@ -21,7 +21,7 @@ const useApi = (url) => {
         //     .catch((err) => {
         //         console.log(err)
         //     })
-    }, [])
+    }, [url])
     return [data]
 }
 
