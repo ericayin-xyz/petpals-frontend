@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import axios from 'axios';
 
-axios.defaults.baseURL = "https://petpals-backend-production-8859.up.railway.app" 
+axios.defaults.baseURL = "https://petpals-backend-production.up.railway.app" 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
