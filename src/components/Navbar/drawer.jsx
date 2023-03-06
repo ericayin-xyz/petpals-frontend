@@ -47,7 +47,7 @@ export default function AppDrawer() {
 
             <Drawer open={drawerOpen} anchor="bottom">
                 <List>
-                    <Link to='/' style={linkStyle} onClick={handleItemClick}>
+                    <Link to='/' style={linkStyle}>
                         <ListItemButton sx={{ padding: '20px 0px 30px 50px' }}>
                             <DoorbellIcon sx={{ marginRight: '30px', fontSize: '2.6rem' }} />
                             <Typography variant="h6">Home</Typography>
@@ -55,7 +55,7 @@ export default function AppDrawer() {
                     </Link>
                     <MiddleDivider />
 
-                    <Link to='/petparent' style={linkStyle} onClick={handleItemClick}>
+                    <Link to='/petparent' style={linkStyle}>
                         <ListItemButton sx={{ padding: '30px 0px 30px 50px' }}>
                             <PetsIcon sx={{ marginRight: '30px', fontSize: '2.6rem' }} />
                             <Typography variant="h6">Pet Parent</Typography>
