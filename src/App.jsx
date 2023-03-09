@@ -14,11 +14,23 @@ import globalReducer from './components/utils/globalReducer';
 import { NavProvider } from './components/Navbar/NavContext';
 import Footer from './components/Home/Footer';
 import CardList from './components/parent/CardList';
+import ClickedCard from './components/parent/ClickedCard';
+
 
 function App() {
 
-
   const [store, dispatch] = useReducer(globalReducer)
+
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path='/' element={<Nav />} errorElement={<NotFound />}>
+        <Route path='/' exact element={<Mainpage />} />
+        <Route path='/petsitter' exact element={<PetSitter />} />
+        <Route path='/petparent' exact element={<PetParent />} />
+        <Route path='/petparent/sitters' exact element={<CardList />} />
+          <Route path='/petparent/sitters/sitter/:sitterId' exact element={<ClickedCard />} />
+      </Route>)
+  )
 
   return (
     <div className='App'>
@@ -31,16 +43,6 @@ function App() {
   );
 }
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path='/' element={<Nav />} errorElement={<NotFound />}>
-      <Route path='/' exact element={<Mainpage />} />
-      <Route path='/petsitter' exact element={<PetSitter />} />
-      <Route path='/petparent' exact element={<PetParent />} />
-      <Route path='/petparent/sitters' exact element={<CardList />} />
-        {/* <Route path='/petparent/sitters/:sitterId' exact element={<Review />} /> */}
-    </Route>)
-)
 
 function Nav() {
   return (

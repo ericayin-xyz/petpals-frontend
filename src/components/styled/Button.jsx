@@ -74,10 +74,10 @@ export const StyledLinkButton = ({to, children}) => {
 
 export const CardButton = styled(Button)({
     textTransform: 'none',
-    fontSize: 15,
+    fontSize: 13,
     width: '100%',
     fontWeight: 'lighter',
-    marginTop: '10px',
+    marginTop: '12px',
     padding: '6px 20px',
     borderRadius: '5px',
     backgroundColor: Colors.primary,

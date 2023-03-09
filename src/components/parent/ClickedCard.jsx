@@ -1,10 +1,16 @@
 import styled from 'styled-components';
+import { useState, useEffect } from "react";
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
+import Card from './Card';
+import Review from './Review';
 
-const GridBox = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding: 10px;
-`
+
+// const GridBox = styled.div`
+//     display: grid;
+//     grid-template-columns: 1fr 1fr 1fr;
+//     padding: 10px;
+// `
 const DetailWapper = styled.div`
     display: flex;
     flex-direction: column;
@@ -12,9 +18,22 @@ const DetailWapper = styled.div`
 `
 
 export default function ClickedCard(props) {
-    // cost [ListItem, setItem] = useState(null) & delete the props
-    const { cardId } = props
-    const card = props.card
+    const [card, setCard] = useState(null)
+    const { cardId } = useParams()
+    // const card = props.card
+
+    useEffect(() => {
+        axios.get(`sitters/${cardId}`)
+        .then((res) => res.data)
+        .then((json) => {
+            setCard({
+                ...json,
+            })
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+    }, [cardId])
 
     if (!card) {
         return null;
@@ -22,16 +41,10 @@ export default function ClickedCard(props) {
     return (
         <div id='clickedcard'>
             <DetailWapper>
-                <h1>Clicked Card</h1>
-                {/* {
-                    cards.map((card) => {
-                        return (
-                            <CardDetail key={card.id} detail={card}/>
-                        )
-                    })
-                } */}
+                <h1>Card Details</h1>
+                <Card cardInfo={card}/>
             </DetailWapper>
-            {/* <Review /> */}
+            <Review />
         </div>
     )
 }

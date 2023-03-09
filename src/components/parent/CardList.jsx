@@ -6,9 +6,10 @@ import useApi from "../utils/useApi"
 
 
 export default function CardList(props) {
-    const [cardsWithoutReview] = useApi('/cards')
-    const cards = cardsWithoutReview.map((card) => {
+    const [cardsWithoutReviewAndImage] = useApi('/cards')
+    const cards = cardsWithoutReviewAndImage.map((card) => {
         card.point = 5
+        card.image = "https://avataaars.io/?avatarStyle=Circle&topType=LongHairCurvy&accessoriesType=Prescription02&hairColor=Blonde&facialHairType=Blank&clotheType=BlazerSweater&eyeType=Happy&eyebrowType=DefaultNatural&mouthType=Smile&skinColor=Light"
         return card
     })
 
