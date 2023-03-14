@@ -87,3 +87,37 @@ export const CardButton = styled(Button)({
         boxShadow: '1px 2px 6px rgba(0, 0, 1, 0.3);',
     },
 });
+
+export const ReviewButton = styled(Button)({
+    textTransform: 'none',
+    fontSize: 13,
+    fontWeight: 'lighter',
+    marginTop: '12px',
+    padding: '3px 8px',
+    borderRadius: '5px',
+    border:' 1px solid black',
+    // backgroundColor: Colors.body_bg,
+    color: Colors.black,
+    '&:hover': {
+        backgroundColor: lighten(0.03, Colors.primary),
+        boxShadow: '0px 1px 3px rgba(0, 0, 6, 0.5);',
+        // border:' 0px solid black',
+    },
+});
+
+export const ReviewPostButton = styled(Button)({
+    textTransform: 'none',
+    fontSize: 13,
+    fontWeight: 'lighter',
+    width: '100%',
+    marginTop: '12px',
+    padding: '3px 8px',
+    borderRadius: '5px',
+    border:' 1px solid black',
+    // backgroundColor: Colors.body_bg,
+    color: Colors.black,
+    '&:hover': {
+        backgroundColor: lighten(0.03, Colors.primary),
+        boxShadow: '0px 1px 3px rgba(0, 0, 6, 0.5);',
+    },
+});

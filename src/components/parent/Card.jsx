@@ -1,5 +1,5 @@
 import CardRating from './Rating';
-import { CardWrapper, CardText } from '../styled/Card'
+import { CardWrapper, CardText, CardTitle } from '../styled/Card'
 import { useNavigate } from "react-router-dom"
 import React, { useState } from "react";
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
@@ -25,8 +25,9 @@ export default function Card(props) {
     const navigate = useNavigate()
 
     function handleAddReview(e) {
-        // e.stopPropagation()
-        navigate(`sitter/${card._id}`)
+        e.stopPropagation()
+        // navigate(`${card._id}`)
+        handleCardClick(props.setCard(card))
     }
     
     return (
@@ -36,7 +37,7 @@ export default function Card(props) {
             src={card.image} 
             alt={'sitter-card'} />
 
-                <CardText>{card.name}</CardText>
+                <CardTitle>{card.name}</CardTitle>
                 <CardText>{card.experience}</CardText>
                 <CardText>{card.city}</CardText>
                 {showDetails && (
@@ -53,7 +54,7 @@ export default function Card(props) {
                         <Divider />
                     </Stack>
                 )}
-                <CardText><h5>{card.description}</h5></CardText>
+                <CardText style={{fontSize: '13px'}}>{card.description}</CardText>
                 <CardText><CardRating value={card.point} /></CardText>
                 <CardButton onClick={handleAddReview}>Review</CardButton>
 

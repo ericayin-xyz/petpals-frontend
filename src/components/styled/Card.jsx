@@ -51,13 +51,31 @@ export const CardText = styled(Box)(({ theme }) => ({
     textAlign: 'center',
 }))
 
-export const CardActionWapper = styled(Box)(({ isfav, theme }) => ({
-    [theme.breakpoints.up('md')]: {
-        position: 'absolute',
-        // display: show ? 'visible' : 'none',
-        right: 0,
-        top: '20%',
-    }
+export const CardTitle = styled(Box)(({ theme }) => ({
+    padding: 4,
+    display: 'flex',
+    flexDirection: 'column',
+    textAlign: 'center',
+    fontWeight: 'bolder',
+    fontSize: '23px'
 }))
 
 
+export const CardReviewWrapper = styled(Box)(({ theme }) => ({
+    padding: '30px 20px',
+    marginTop: '30px',
+    display: 'flex',
+    width: '500px',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    borderRadius: '30px',
+    transition: '0.3s',
+    cursor: 'pointer',
+    minHeight: '350px',
+    // backgroundColor: Colors.secondary,
+
+    [theme.breakpoints.up('md')]: {
+        position: 'relative',
+        maxWidth: '400px',
+    }
+}))

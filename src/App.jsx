@@ -14,8 +14,7 @@ import globalReducer from './components/utils/globalReducer';
 import { NavProvider } from './components/Navbar/NavContext';
 import Footer from './components/Home/Footer';
 import CardList from './components/parent/CardList';
-import ClickedCard from './components/parent/ClickedCard';
-
+import Sitters from './pages/Sitters';
 
 function App() {
 
@@ -27,8 +26,8 @@ function App() {
         <Route path='/' exact element={<Mainpage />} />
         <Route path='/petsitter' exact element={<PetSitter />} />
         <Route path='/petparent' exact element={<PetParent />} />
-        <Route path='/petparent/sitters' exact element={<CardList />} />
-          <Route path='/petparent/sitters/sitter/:sitterId' exact element={<ClickedCard />} />
+        <Route path='/petparent/sitters' exact element={<Sitters />} />
+          <Route path='/petparent/sitters/:sitterId' exact element={<Sitters />} />
       </Route>)
   )
 
