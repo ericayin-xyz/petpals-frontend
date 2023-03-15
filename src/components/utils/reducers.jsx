@@ -7,14 +7,22 @@ export default function reviewReducer(state, action) {
             }
         }
 
+        case "setRating": {
+            return {
+                ...state,
+                rating: action.data
+            }
+        }
+
         case "addReview": {
             return {
                 ...state,
                 reviews: [
                     ...state.reviews,
-                    { id: state.reviews.length + 1, description: state.review },
+                    { id: state.reviews.length + 1, description: state.review, rating: state.rating },
                 ],
                 review: "",
+                rating: "",
             }
         }
 

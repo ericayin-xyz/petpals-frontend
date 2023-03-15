@@ -4,19 +4,23 @@ import { Box, Typography } from "@mui/material";
 export const BannerContainer = styled(Box)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
         flexDirection: 'row',
+        height: '100%',
     },
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    height: '100%',
+    
     marginTop: '100px',
     // backgroundColor: Colors.dk_primary,
 
 }))
 
-export const BannerContent = styled(Box)(() => ({
+export const BannerContent = styled(Box)(({ theme }) => ({
+    [theme.breakpoints.up('md')]: {
+        paddingRight: '40px',
+    },
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -24,34 +28,31 @@ export const BannerContent = styled(Box)(() => ({
     maxWidth: 780,
     width: '100%',
     height: '100%',
-    padding: '30px',
 }))
 
 export const BannerDescription = styled(Typography)(({ theme }) => ({
-    lineHeight: 1.8,
-    letterSpacing: 1.4,
-    marginBottom: '3em',
+    [theme.breakpoints.up('md')]: {
+        lineHeight: 1.8,
+        letterSpacing: 1.4,
+        marginBottom: '8em',
+        marginLeft: '3rem',
+    },
+    lineHeight: 1.3,
+    letterSpacing: 1,
+    marginBottom: '6em',
     fontSize: '25px',
     width: '90%',
-    marginLeft: '3rem',
     position: 'relative',
     flexDirection: 'column',
-    padding: '0px, 50px, 0px, 0px',
-    [theme.breakpoints.down('sm')]: {
-        lineHeight: 1.15,
-        letterSpacing: 1.15,
-        marginBottom: '1.5em',
-        padding: '0px, 50px, 0px, 0px',
-    },
+    
 }))
 
 export const BannerImage = styled('img')(({ src, theme }) => ({
+    [theme.breakpoints.up('md')]: {
+        width: '45rem',
+        maxWidth: '55%',
+    },
     src: `url(${src})`,
-    width: '50%',
-
-
-    [theme.breakpoints.down('sm')]: {
-        // width: '220px',
-        // height: '300px',
-    }
+    width: '45rem',
+    maxWidth: '90%',
 }))

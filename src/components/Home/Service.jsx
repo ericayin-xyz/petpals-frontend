@@ -4,7 +4,7 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 import AirportShuttleIcon from '@mui/icons-material/AirportShuttle';
 import ParkIcon from '@mui/icons-material/Park';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
-import { Bodytext } from '../styled/Font'
+import { ServiceText, Bodytext } from '../styled/Font'
 import Intro from './SlidingAd'
 
 const message = [
@@ -23,56 +23,56 @@ export default function Service() {
 
     return (
         <StyledContainer>
-            <Bodytext>
-                <h1>Why us ?</h1>
-            </Bodytext>
             <Intro />
+            <Bodytext variant='h1' style={{marginTop: 100}}>
+                Why us ?
+            </Bodytext>
 
             <ContentContainer>
                 {/* 1 */}
                 <ServiceBox>
                     <IconBox><PinDropIcon sx={{ fontSize: 60 }} /></IconBox>
-                    <Bodytext textAlign={{ sm: 'center', md: 'left' }}>
-                        <h4>{Title[0]}</h4>
+                    <ServiceText textAlign={{ sm: 'center', md: 'left' }}>
+                        <h5>{Title[0]}</h5>
                         <h6>{message[0]}</h6>
-                    </Bodytext>
+                    </ServiceText>
                 </ServiceBox>
 
 
                 {/* 2 */}
                 <ServiceBox>
                     <IconBox><LightModeIcon sx={{ fontSize: 60 }} /></IconBox>
-                    <Bodytext textAlign={{ sm: 'center', md: 'left' }}>
-                        <h4>{Title[1]}</h4>
+                    <ServiceText textAlign={{ sm: 'center', md: 'left' }}>
+                        <h5>{Title[1]}</h5>
                         <h6>{message[1]}</h6>
-                    </Bodytext>
+                    </ServiceText>
                 </ServiceBox>
 
                 {/* 3 */}
                 <ServiceBox>
                     <IconBox><Brightness4Icon sx={{ fontSize: 60 }} /></IconBox>
-                    <Bodytext textAlign={{ sm: 'center', md: 'left' }}>
+                    <ServiceText textAlign={{ sm: 'center', md: 'left' }}>
                         <h4>{Title[2]}</h4>
                         <h6>{message[2]}</h6>
-                    </Bodytext>
+                    </ServiceText>
                 </ServiceBox>
 
                 {/* 4 */}
                 <ServiceBox>
                     <IconBox><ParkIcon sx={{ fontSize: 60 }} /></IconBox>
-                    <Bodytext textAlign={{ sm: 'center', md: 'left' }}>
+                    <ServiceText textAlign={{ sm: 'center', md: 'left' }}>
                         <h4>{Title[3]}</h4>
                         <h6>{message[3]}</h6>
-                    </Bodytext>
+                    </ServiceText>
                 </ServiceBox>
 
                 {/* 5 */}
                 <ServiceBox>
                     <IconBox><AirportShuttleIcon sx={{ fontSize: 60 }} /></IconBox>
-                    <Bodytext textAlign={{ sm: 'center', md: 'left' }}>
+                    <ServiceText textAlign={{ sm: 'center', md: 'left' }}>
                         <h4>{Title[4]}</h4>
                         <h6>{message[4]}</h6>
-                    </Bodytext>
+                    </ServiceText>
                 </ServiceBox>
 
             </ContentContainer>

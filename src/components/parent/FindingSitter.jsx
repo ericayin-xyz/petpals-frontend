@@ -39,8 +39,8 @@ export default function FindingSitter() {
     return (
         <BannerContainer sx={{ bgcolor: Colors.body_bg }}>
             <ContentContainer sx={{ margin: '50px 0px' }}>
-                <Bodytext>
-                    <h1>Customize Your Own Service</h1>
+                <Bodytext variant='h1'>
+                    Customize Your Own Service
                 </Bodytext>
 
                 <OptionBox sx={{marginBottom: '70px'}}>

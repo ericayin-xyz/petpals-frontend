@@ -3,16 +3,25 @@ import { Colors } from "./Theme";
 
 export const Bodytext = styled(Typography)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
+        fontSize: '4rem',
+    },
+    fontSize: '3rem',
+    textAlign: 'center',
+    lineHeight: '4rem',
+}))
+
+export const ServiceText = styled(Typography)(({ theme }) => ({
+    [theme.breakpoints.up('md')]: {
         fontSize: '1.5rem',
     },
     fontSize: '1.8rem',
     textAlign: 'center',
-    // lineHeight: '2rem',
+    lineHeight: '2rem',
 }))
 
 export const Footertext = styled(Typography)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
-        fontSize: '1rem',
+        fontSize: '0.8rem',
     },
     fontSize: '0.9rem',
     textAlign: 'center',

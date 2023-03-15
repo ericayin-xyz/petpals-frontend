@@ -7,8 +7,8 @@ export default function ButtonGroup() {
 
     return (
         <ButtonGroupContainer>
-            <Bodytext>
-                <h1>What would you like to do?</h1>
+            <Bodytext variant='h1'>
+                What would you like to do?
             </Bodytext>
             <Stack
                 direction={{ xs: 'column', md: 'row' }}

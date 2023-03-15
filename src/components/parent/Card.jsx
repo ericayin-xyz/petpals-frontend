@@ -1,12 +1,12 @@
-import CardRating from './Rating';
 import { CardWrapper, CardText, CardTitle } from '../styled/Card'
-import { useNavigate } from "react-router-dom"
 import React, { useState } from "react";
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 import Stack from '@mui/material/Stack';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import Divider from '@mui/material/Divider';
 import { CardButton } from '../styled/Button';
+import Rating from '@mui/material/Rating';
+import { HashLink } from 'react-router-hash-link';
 
 export default function Card(props) {
     const [showDetails, setShowDetails] = useState(false);
@@ -22,11 +22,13 @@ export default function Card(props) {
     };
 
     const card = props.cardInfo
-    const navigate = useNavigate()
+    const linkStyle = { 
+        textDecoration: 'none',
+        width: '100%'
+    }
 
     function handleAddReview(e) {
         e.stopPropagation()
-        // navigate(`${card._id}`)
         handleCardClick(props.setCard(card))
     }
     
@@ -55,8 +57,10 @@ export default function Card(props) {
                     </Stack>
                 )}
                 <CardText style={{fontSize: '13px'}}>{card.description}</CardText>
-                <CardText><CardRating value={card.point} /></CardText>
-                <CardButton onClick={handleAddReview}>Review</CardButton>
+                <CardText><Rating name="half-rating-read" defaultValue={5} precision={0.5} readOnly /></CardText>
+                <HashLink to='#reviews' style={linkStyle}>
+                    <CardButton onClick={handleAddReview}>Reviews</CardButton>
+                </HashLink>
 
         </CardWrapper>
     )

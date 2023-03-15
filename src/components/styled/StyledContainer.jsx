@@ -3,19 +3,18 @@ import { Colors } from './Theme'
 
 export const StyledContainer = styled(Box)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
-        padding: '60px 0px 0px 0px',
         maxwidth: '1400px',
     },
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: '70px',
+    // marginTop: '30px',
     // background: Colors.dk_primary,
 }))
 
 export const ButtonGroupContainer = styled(Box)({
-    padding: '60px 0px 90px 0px',
+    padding: '80px 0px 90px 0px',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -29,7 +28,7 @@ export const AdContainer = styled(Box)(({ theme }) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: '70px',
+    // marginTop: '70px',
     // background: Colors.dk_primary,
 }))
 

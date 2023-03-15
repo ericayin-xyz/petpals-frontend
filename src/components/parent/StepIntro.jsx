@@ -38,40 +38,40 @@ function StepIntro() {
     return (
         <BannerContainer >
             <ContentContainer>
-            <Bodytext>
-                <h1>Meet Local Sitters</h1>
-            </Bodytext>
-            <OptionBox>
-                <Grid container spacing={3}>
-                    <Grid item xs={12} md={6}>
-                        <Item>
-                            <Filter1SharpIcon fontSize='large' />
-                            <StepTitle>Search</StepTitle>
-                            <Icontext><h5>{message[0]}</h5></Icontext>
-                        </Item>
-                    </Grid>
+                <Bodytext variant='h1'>
+                    Meet Local Sitters
+                </Bodytext>
+                <OptionBox>
+                    <Grid container spacing={3}>
+                        <Grid item xs={12} md={6}>
+                            <Item>
+                                <Filter1SharpIcon fontSize='large' />
+                                <StepTitle>Search</StepTitle>
+                                <Icontext><h5>{message[0]}</h5></Icontext>
+                            </Item>
+                        </Grid>
 
-                    <Grid item xs={12} md={6}>
-                        <Item>
-                            <Filter2SharpIcon fontSize='large' />
-                            <StepTitle>Meet</StepTitle>
-                            <Icontext><h5>{message[1]}</h5></Icontext>
-                        </Item>
-                    </Grid>
+                        <Grid item xs={12} md={6}>
+                            <Item>
+                                <Filter2SharpIcon fontSize='large' />
+                                <StepTitle>Meet</StepTitle>
+                                <Icontext><h5>{message[1]}</h5></Icontext>
+                            </Item>
+                        </Grid>
 
-                    <Grid item xs={12} md={6}>
-                        <Item><Filter3SharpIcon fontSize='large' />
-                            <StepTitle>Book</StepTitle>
-                            <Icontext><h5>{message[2]}</h5></Icontext>
-                        </Item>
+                        <Grid item xs={12} md={6}>
+                            <Item><Filter3SharpIcon fontSize='large' />
+                                <StepTitle>Book</StepTitle>
+                                <Icontext><h5>{message[2]}</h5></Icontext>
+                            </Item>
+                        </Grid>
+                        <Grid item xs={12} md={6}>
+                            <Item><Filter4SharpIcon fontSize='large' />
+                                <StepTitle>Relax</StepTitle>
+                                <Icontext><h5>{message[3]}</h5></Icontext></Item>
+                        </Grid>
                     </Grid>
-                    <Grid item xs={12} md={6}>
-                        <Item><Filter4SharpIcon fontSize='large' />
-                            <StepTitle>Relax</StepTitle>
-                            <Icontext><h5>{message[3]}</h5></Icontext></Item>
-                    </Grid>
-                </Grid>
-            </OptionBox>
+                </OptionBox>
             </ContentContainer>
         </BannerContainer>
     )

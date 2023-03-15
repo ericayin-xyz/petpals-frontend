@@ -13,7 +13,6 @@ import { GlobalContext } from './components/utils/globalStateContext';
 import globalReducer from './components/utils/globalReducer';
 import { NavProvider } from './components/Navbar/NavContext';
 import Footer from './components/Home/Footer';
-import CardList from './components/parent/CardList';
 import Sitters from './pages/Sitters';
 
 function App() {

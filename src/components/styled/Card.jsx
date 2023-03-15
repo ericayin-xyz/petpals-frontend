@@ -2,9 +2,8 @@ import { Box, styled, } from '@mui/system'
 import { IconButton, Button } from '@mui/material';
 import theme, { Colors } from './Theme';
 
-
 export const CardWrapper = styled(Box)(({ theme }) => ({
-    padding: '28px 35px 32px 35px',
+    padding: '15px 35px 25px 35px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -16,7 +15,7 @@ export const CardWrapper = styled(Box)(({ theme }) => ({
     minHeight: '500px',
     backgroundColor: Colors.secondary,
     ' &:hover': {
-        boxShadow: '0px 0px 10px 1px rgba(4, 5, 5, 0.3)'
+        boxShadow: '0px 0px 10px 1px rgba(4, 5, 5, 0.4)'
     },
 
     [theme.breakpoints.up('md')]: {
@@ -44,11 +43,24 @@ export const AddToCard = styled(Button)(() => ({
 
 }))
 
-export const CardText = styled(Box)(({ theme }) => ({
+export const CardText = styled(Box)({
     padding: 4,
     display: 'flex',
     flexDirection: 'column',
     textAlign: 'center',
+})
+
+export const CardDescription = styled(Box)(({ theme }) => ({
+    padding: 4,
+    display: 'flex',
+    flexDirection: 'column',
+    textAlign: 'center',
+    fontSize: '14px',
+    marginTop: '15px',
+    lineHeight: 1.5,
+    [theme.breakpoints.up('md')]: {
+        textAlign: 'left',
+    }
 }))
 
 export const CardTitle = styled(Box)(({ theme }) => ({
@@ -57,25 +69,26 @@ export const CardTitle = styled(Box)(({ theme }) => ({
     flexDirection: 'column',
     textAlign: 'center',
     fontWeight: 'bolder',
-    fontSize: '23px'
+    fontSize: '23px',
+    marginBottom: '0.5rem',
 }))
 
 
 export const CardReviewWrapper = styled(Box)(({ theme }) => ({
     padding: '30px 20px',
-    marginTop: '30px',
+    marginTop: '15px',
     display: 'flex',
-    width: '500px',
     flexDirection: 'column',
-    alignItems: 'flex-start',
+    alignItems: 'center',
     borderRadius: '30px',
     transition: '0.3s',
-    cursor: 'pointer',
     minHeight: '350px',
-    // backgroundColor: Colors.secondary,
+    textAlign: 'left',
+    // backgroundColor: Colors.dk_primary,
 
     [theme.breakpoints.up('md')]: {
         position: 'relative',
         maxWidth: '400px',
+        alignItems: 'flex-start',
     }
 }))

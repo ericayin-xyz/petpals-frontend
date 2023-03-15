@@ -65,19 +65,17 @@ function AddCard() {
     return (
         <ContentContainer>
             <div id='addCard'>
-                <Bodytext>
-                    <h1>Post a job</h1>
+                <Bodytext variant="h1">
+                    Post a job
                 </Bodytext>
                 <form
                     style={{ display: 'flex', marginTop: '80px', flexDirection: 'column', alignItems: 'center' }}
                     onSubmit={handleSubmit}
                 >
                     <InputWrapper>
-                        <label htmlFor="first_name">First Name:</label>
+                        <label htmlFor="first_name">Name:</label>
                         <TextField id="first_name" variant="filled" type='text' name='first_name' value={card.first_name} onChange={handleOnChange} />
 
-                        <label htmlFor="last_name">Last Name:</label>
-                        <TextField id="last_name" variant="filled" type='text' name='last_name' value={card.last_name} onChange={handleOnChange} />
 
                         <label htmlFor="email">Email:</label>
                         <TextField id="email" variant="filled" type='email' name='email' value={card.email} onChange={handleOnChange}
@@ -86,8 +84,14 @@ function AddCard() {
                                     <InputAdornment position="end"> @ </InputAdornment>),
                             }} />
 
-                        <label htmlFor="phone">Phone:</label>
+                        <label htmlFor="phone">Mobile Number:</label>
                         <TextField id="phone" variant="filled" type='number' name='phone' value={card.phone} onChange={handleOnChange} />
+
+                        <label htmlFor="experience">Experience:</label>
+                        <TextField id="experience" variant="filled" type='number' name='experience' value={card.experience} onChange={handleOnChange} />
+
+                        <label htmlFor="city">City:</label>
+                        <TextField id="city" variant="filled" type='number' name='city' value={card.city} onChange={handleOnChange} />
 
                         <label htmlFor="description">Description:</label>
                         <TextField id="description" variant="filled" type='text' name='description' value={card.description} onChange={handleOnChange} multiline rows={3} />
@@ -101,7 +105,7 @@ function AddCard() {
                             backgroundColor: Colors.white,
                             width: '100%',
                             marginTop: '20px',
-                        }} id='submiBtn' onClick={handleSubmit}>Add Card</LinkedButton>
+                        }} id='submiBtn' onClick={handleSubmit}>Send</LinkedButton>
 
                         <h4 style={{ marginTop: '30px', color: 'red'}}>{errorMessage}{successMessage}
                         </h4>

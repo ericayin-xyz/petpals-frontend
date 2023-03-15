@@ -1,21 +1,32 @@
-import styled from 'styled-components';
-import { useState, useEffect } from "react";
-import axios from 'axios';
-import { useParams } from 'react-router-dom';
-import Card from './Card';
+import { useEffect } from "react";
 import Review from './Review';
 import Stack from '@mui/material/Stack';
-import { CardReviewWrapper, CardText, CardTitle } from '../styled/Card'
-
-const ReviewWapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: write;
-`
+import { CardReviewWrapper, CardText, CardTitle, CardDescription } from '../styled/Card'
+import { ContentContainer } from '../../components/styled/StyledContainer';
+import { Colors } from '../../components/styled/Theme'
 
 export default function ClickedCard(props) {
     const card = props.card
+
+    useEffect(() => {
+        const handleHashChange = () => {
+            const targetElement = document.querySelector(window.location.hash);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        };
+
+        window.addEventListener('hashchange', handleHashChange);
+        return () => {
+            window.removeEventListener('hashchange', handleHashChange);
+        };
+    }, []);
+
+    // const [value, setValue] = useState(2);
+
+    // function newRating(value) {
+    //     setValue(value)
+    // }
     // const [card, setCard] = useState(null)
     // const { cardId } = useParams()
 
@@ -37,28 +48,23 @@ export default function ClickedCard(props) {
         return null;
     }
     return (
-        <div id='Reviews'>
-            <ReviewWapper direction="row" spacing={2}>
-                <h1>Reviews</h1>
-                <Stack direction="row" spacing={8}>
-                    <CardReviewWrapper>
-                        <img style={{ height: 180, marginBottom: '20px' }}
-                            src={card.image}
-                            alt={'sitter-photo'} />
+        <ContentContainer id='reviews' style={{ backgroundColor: Colors.secondary, marginTop: 50, paddingBottom: 60 }}>
+            
+            <Stack direction={{ xs: 'column', md: 'row' }} spacing={{ xs: 4, md: 8 }} style={{maxWidth: '1000px'}}>
+                <CardReviewWrapper>
+                    <img style={{ height: 150, marginBottom: '30px' }}
+                        src={card.image}
+                        alt={'sitter'} />
 
-                        <CardTitle>{card.name}</CardTitle>
-                        <CardText>Experience: {card.experience}</CardText>
-                        <CardText>City: {card.city}</CardText>
-                        <CardText>M: {card.phone}</CardText>
-                        <CardText>E: {card.email}</CardText>
-                        <CardText style={{ fontSize: '14px', marginTop: '15px', textAlign: 'left' }}>{card.description}</CardText>
-
-
-                    </CardReviewWrapper>
-                    <Review />
-
-                </Stack>
-            </ReviewWapper>
-        </div>
+                    <CardTitle>{card.name}</CardTitle>
+                    <CardText>E: {card.email}</CardText>
+                    <CardText>M: {card.phone}</CardText>
+                    <CardText>Experience: {card.experience}</CardText>
+                    <CardText>City: {card.city}</CardText>
+                    <CardDescription>{card.description}</CardDescription>
+                </CardReviewWrapper>
+                <Review />
+            </Stack>
+        </ContentContainer>
     )
 }

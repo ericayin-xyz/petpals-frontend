@@ -4,7 +4,7 @@ import { Bodytext } from '../styled/Font';
 import { Colors } from '../styled/Theme'
 import { styled, Stack } from '@mui/material';
 import { BannerContainer } from '../styled/Banner';
-
+import { OptionBox } from '../styled/StyledContainer';
 import Grid from '@mui/material/Grid';
 import { Icontext, StepTitle } from '../styled/Font'
 import Filter1SharpIcon from '@mui/icons-material/Filter1Sharp';
@@ -35,16 +35,10 @@ function Intro() {
     return (
         <BannerContainer>
             <ContentContainer>
-                <Bodytext>
-                    <h1>Get started in 3 easy steps</h1>
+                <Bodytext variant="h1">
+                    Get started in 3 easy steps
                 </Bodytext>
-                <div style={{ 
-                    display: 'flex', 
-                    flexDirection: 'column', 
-                    alignItems: 'center', 
-                    maxWidth: '1300px',
-                    marginTop: '110px',
-                    }}>
+                <OptionBox>
                     <Grid container spacing={3}>
                         <Grid item xs={12} md={4}>
                             <Item>
@@ -69,7 +63,7 @@ function Intro() {
                             </Item>
                         </Grid>
                     </Grid>
-                </div>
+                </OptionBox>
             </ContentContainer>
         </BannerContainer>
     )
