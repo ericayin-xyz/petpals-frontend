@@ -7,7 +7,6 @@ export const Bodytext = styled(Typography)(({ theme }) => ({
     },
     fontSize: '3rem',
     textAlign: 'center',
-    lineHeight: '4rem',
 }))
 
 export const ServiceText = styled(Typography)(({ theme }) => ({

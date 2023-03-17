@@ -1,4 +1,3 @@
-import { BannerContainer } from '../styled/Banner';
 import { Bodytext } from '../styled/Font';
 import { ContentContainer } from '../styled/StyledContainer';
 import { Colors } from '../styled/Theme'
@@ -28,7 +27,6 @@ const Item = styled(Container)(({ theme }) => ({
     justifyContent: 'center',
     alignItems: 'center',
     color: Colors.black,
-    // background: Colors.primary,
     borderRadius: 20,
     height: 110,
     border: `1px solid ${Colors.black}`,
@@ -37,8 +35,7 @@ const Item = styled(Container)(({ theme }) => ({
 export default function FindingSitter() {
 
     return (
-        <BannerContainer sx={{ bgcolor: Colors.body_bg }}>
-            <ContentContainer sx={{ margin: '50px 0px' }}>
+            <ContentContainer sx={{ bgcolor: Colors.secondary }}>
                 <Bodytext variant='h1'>
                     Customize Your Own Service
                 </Bodytext>
@@ -84,9 +81,8 @@ export default function FindingSitter() {
 
                 <StyledLinkButton
                 to={'/petparent/sitters'}>
-                    Search
+                    SEARCH
                 </StyledLinkButton>
             </ContentContainer>
-        </BannerContainer>
     )
 }

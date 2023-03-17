@@ -23,17 +23,17 @@ const BootstrapButton = styled(Button)({
 
 export const LinkedButton = styled(Button)({
     textTransform: 'none',
-    fontSize: 15,
-    fontWeight: 'lighter',
-    padding: '9px 10px',
+    fontSize: 13,
+    // fontWeight: 'lighter',
+    letterSpacing: 1,
+    padding: '8px 10px',
     borderRadius: '5px',
-    backgroundColor: Colors.primary,
-    color: Colors.black,
-    width: '12rem',
+    backgroundColor: Colors.button_bg,
+    color: Colors.white,
+    width: '14rem',
     '&:hover': {
-        // backgroundColor: Colors.black,
-        backgroundColor: lighten(0.04, Colors.primary),
-        boxShadow: '1px 2px 6px rgba(0, 0, 1, 0.3);',
+        backgroundColor: lighten(0.05, Colors.button_bg),
+        boxShadow: '1px 2px 6px rgba(0, 0, 1, 0.4);',
     },
     '&:disabled': {
         backgroundColor: 'transparent',
@@ -75,15 +75,16 @@ export const StyledLinkButton = ({to, children}) => {
 export const CardButton = styled(Button)({
     textTransform: 'none',
     fontSize: 13,
-    width: '100%',
+    letterSpacing: 1,
     fontWeight: 'lighter',
+    width: '100%',
     marginTop: '12px',
     padding: '6px 20px',
     borderRadius: '5px',
-    backgroundColor: Colors.primary,
-    color: Colors.black,
+    backgroundColor: Colors.button_bg,
+    color: Colors.white,
     '&:hover': {
-        backgroundColor: lighten(0.04, Colors.primary),
+        backgroundColor: lighten(0.04, Colors.button_bg),
         boxShadow: '1px 2px 6px rgba(0, 0, 1, 0.3);',
     },
 });
@@ -96,11 +97,11 @@ export const ReviewButton = styled(Button)({
     padding: '3px 8px',
     borderRadius: '5px',
     border:' 1px solid black',
-    // backgroundColor: Colors.body_bg,
     color: Colors.black,
     '&:hover': {
-        backgroundColor: lighten(0.03, Colors.primary),
+        backgroundColor: Colors.button_bg,
+        color: Colors.white,
         boxShadow: '0px 1px 3px rgba(0, 0, 6, 0.5);',
-        // border:' 0px solid black',
+        border:' 0px solid black',
     },
 });

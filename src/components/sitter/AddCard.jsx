@@ -66,7 +66,7 @@ function AddCard() {
         <ContentContainer>
             <div id='addCard'>
                 <Bodytext variant="h1">
-                    Post a job
+                    Post a Job
                 </Bodytext>
                 <form
                     style={{ display: 'flex', marginTop: '80px', flexDirection: 'column', alignItems: 'center' }}
@@ -102,10 +102,9 @@ function AddCard() {
 
                         <LinkedButton 
                         style={{
-                            backgroundColor: Colors.white,
                             width: '100%',
                             marginTop: '20px',
-                        }} id='submiBtn' onClick={handleSubmit}>Send</LinkedButton>
+                        }} id='submiBtn' onClick={handleSubmit}>SEND</LinkedButton>
 
                         <h4 style={{ marginTop: '30px', color: 'red'}}>{errorMessage}{successMessage}
                         </h4>

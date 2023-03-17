@@ -3,6 +3,7 @@ import CardList from '../components/parent/CardList';
 import ClickedCard from '../components/parent/ClickedCard';
 import { useLocation } from 'react-router-dom';
 
+
 const Sitters = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -24,7 +25,6 @@ const Sitters = () => {
     }
 
     return (
-
         <div id="Sitters">
             <CardList setCard={setCard} />
             <ClickedCard card={clickedCard} ref={sectionRef} />

@@ -3,7 +3,7 @@ import { ContentContainer } from '../styled/StyledContainer';
 import Grid from '@mui/material/Unstable_Grid2';
 import Card from './Card';
 import useApi from "../utils/useApi"
-
+import { Colors } from '../../components/styled/Theme'
 
 export default function CardList(props) {
     const [cardsWithoutReviewAndImage] = useApi('/cards')
@@ -13,9 +13,8 @@ export default function CardList(props) {
     })
 
     return (
-        <BannerContainer >
+        <BannerContainer style={{ backgroundColor: Colors.primary}} >
             <ContentContainer maxWidth={'1200px'} sx={{ flexGrow: 1, minHeight: '90vh', padding: '20px 40px' }}>
-
                 <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                     {
                         cards.map((card) => {

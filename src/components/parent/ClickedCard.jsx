@@ -22,33 +22,11 @@ export default function ClickedCard(props) {
         };
     }, []);
 
-    // const [value, setValue] = useState(2);
-
-    // function newRating(value) {
-    //     setValue(value)
-    // }
-    // const [card, setCard] = useState(null)
-    // const { cardId } = useParams()
-
-    // useEffect(() => {
-    //     axios.get(`sitters/${cardId}`)
-    //     .then((res) => res.data)
-    //     .then((json) => {
-    //         setCard({
-    //             ...json,
-    //         })
-    //     })
-    //     .catch((err) => {
-    //         console.log(err)
-    //     })
-    // }, [cardId])
-
-
     if (!card) {
         return null;
     }
     return (
-        <ContentContainer id='reviews' style={{ backgroundColor: Colors.secondary, marginTop: 50, paddingBottom: 60 }}>
+        <ContentContainer id='reviews' style={{ backgroundColor: Colors.secondary }}>
             
             <Stack direction={{ xs: 'column', md: 'row' }} spacing={{ xs: 4, md: 8 }} style={{maxWidth: '1000px'}}>
                 <CardReviewWrapper>

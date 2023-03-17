@@ -3,7 +3,7 @@ import { BannerContainer, BannerContent, BannerDescription, BannerImage } from "
 
 export default function Banner() {
     return (
-        <BannerContainer>
+        <BannerContainer sx={{paddingTop: 10}}>
             <BannerImage src="./images/cat.jpeg" />
             <BannerContent>
                 <BannerDescription>

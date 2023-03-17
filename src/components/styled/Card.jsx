@@ -38,7 +38,7 @@ export const AddToCard = styled(Button)(() => ({
         width: '300px',
         padding: '10px 5px',
     },
-    background: Colors.secondary,
+    background: Colors.primary,
     opacity: 0.9,
 
 }))

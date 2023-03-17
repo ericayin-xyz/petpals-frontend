@@ -1,4 +1,4 @@
-import { ContentContainer, StyledContainer, ServiceBox, IconBox } from '../styled/StyledContainer'
+import { ServiceContainer, StyledContainer, ServiceBox, IconBox } from '../styled/StyledContainer'
 import PinDropIcon from '@mui/icons-material/PinDrop';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import AirportShuttleIcon from '@mui/icons-material/AirportShuttle';
@@ -24,14 +24,14 @@ export default function Service() {
     return (
         <StyledContainer>
             <Intro />
-            <Bodytext variant='h1' style={{marginTop: 100}}>
-                Why us ?
+            <Bodytext variant='h1' style={{marginTop: 90, marginBottom: 50}}>
+                Why Us ?
             </Bodytext>
 
-            <ContentContainer>
+            <ServiceContainer>
                 {/* 1 */}
                 <ServiceBox>
-                    <IconBox><PinDropIcon sx={{ fontSize: 60 }} /></IconBox>
+                    <IconBox><PinDropIcon sx={{ fontSize: 50 }} /></IconBox>
                     <ServiceText textAlign={{ sm: 'center', md: 'left' }}>
                         <h5>{Title[0]}</h5>
                         <h6>{message[0]}</h6>
@@ -41,7 +41,7 @@ export default function Service() {
 
                 {/* 2 */}
                 <ServiceBox>
-                    <IconBox><LightModeIcon sx={{ fontSize: 60 }} /></IconBox>
+                    <IconBox><LightModeIcon sx={{ fontSize: 50 }} /></IconBox>
                     <ServiceText textAlign={{ sm: 'center', md: 'left' }}>
                         <h5>{Title[1]}</h5>
                         <h6>{message[1]}</h6>
@@ -50,7 +50,7 @@ export default function Service() {
 
                 {/* 3 */}
                 <ServiceBox>
-                    <IconBox><Brightness4Icon sx={{ fontSize: 60 }} /></IconBox>
+                    <IconBox><Brightness4Icon sx={{ fontSize: 50 }} /></IconBox>
                     <ServiceText textAlign={{ sm: 'center', md: 'left' }}>
                         <h4>{Title[2]}</h4>
                         <h6>{message[2]}</h6>
@@ -59,7 +59,7 @@ export default function Service() {
 
                 {/* 4 */}
                 <ServiceBox>
-                    <IconBox><ParkIcon sx={{ fontSize: 60 }} /></IconBox>
+                    <IconBox><ParkIcon sx={{ fontSize: 50 }} /></IconBox>
                     <ServiceText textAlign={{ sm: 'center', md: 'left' }}>
                         <h4>{Title[3]}</h4>
                         <h6>{message[3]}</h6>
@@ -68,14 +68,14 @@ export default function Service() {
 
                 {/* 5 */}
                 <ServiceBox>
-                    <IconBox><AirportShuttleIcon sx={{ fontSize: 60 }} /></IconBox>
+                    <IconBox><AirportShuttleIcon sx={{ fontSize: 50 }} /></IconBox>
                     <ServiceText textAlign={{ sm: 'center', md: 'left' }}>
                         <h4>{Title[4]}</h4>
                         <h6>{message[4]}</h6>
                     </ServiceText>
                 </ServiceBox>
 
-            </ContentContainer>
+            </ServiceContainer>
         </StyledContainer >
 
     )

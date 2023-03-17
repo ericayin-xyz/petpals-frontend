@@ -5,8 +5,8 @@ import Stack from '@mui/material/Stack';
 import { ReviewButton } from '../styled/Button'
 import Rating from '@mui/material/Rating';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import { CardButton } from '../styled/Button';
+import { Bodytext } from '../styled/Font';
 
 const initialReviews = [
     {
@@ -105,11 +105,9 @@ function Review() {
 
     }
 
-
-
     return (
-        <Stack spacing={3} style={{ marginTop: 60 }} id="reviews">
-            <Typography variant="h3" align='left'>Reviews</Typography>
+        <Stack spacing={3} id="reviews">
+            <Bodytext variant="h1">REVIEWS</Bodytext>
             {reviews.map((review) => {
                 return (
                     <Stack key={review.id} spacing={0.6}>  

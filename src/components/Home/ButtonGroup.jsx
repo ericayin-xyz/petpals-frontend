@@ -8,7 +8,7 @@ export default function ButtonGroup() {
     return (
         <ButtonGroupContainer>
             <Bodytext variant='h1'>
-                What would you like to do?
+                What Would You Like To Do?
             </Bodytext>
             <Stack
                 direction={{ xs: 'column', md: 'row' }}
@@ -19,10 +19,10 @@ export default function ButtonGroup() {
                 adjustPosition={'center'}
             >
                 <StyledLinkButton to='/petparent'>
-                {'Find a Pet Sitter'}
+                {'FIND A PET SITTER'}
                 </StyledLinkButton>
                 <StyledLinkButton to='/petsitter'>
-                {'Become a Pet Sitter'}
+                {'BECOME A PET SITTER'}
                 </StyledLinkButton>
             </Stack>
         </ButtonGroupContainer>

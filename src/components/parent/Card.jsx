@@ -59,7 +59,7 @@ export default function Card(props) {
                 <CardText style={{fontSize: '13px'}}>{card.description}</CardText>
                 <CardText><Rating name="half-rating-read" defaultValue={5} precision={0.5} readOnly /></CardText>
                 <HashLink to='#reviews' style={linkStyle}>
-                    <CardButton onClick={handleAddReview}>Reviews</CardButton>
+                    <CardButton onClick={handleAddReview}>REVIEWS</CardButton>
                 </HashLink>
 
         </CardWrapper>

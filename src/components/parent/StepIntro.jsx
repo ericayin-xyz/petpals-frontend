@@ -36,7 +36,7 @@ const message = [
 
 function StepIntro() {
     return (
-        <BannerContainer >
+        <BannerContainer>
             <ContentContainer>
                 <Bodytext variant='h1'>
                     Meet Local Sitters

@@ -61,7 +61,7 @@ export const NavList = styled(List)({
 
 export const DrawerCloseButton = styled(IconButton)(() => ({
     position: 'fixed',
-    top: '51vh',
+    bottom: '42vh',
     right: 18,
     zIndex: 1999,
 }))
@@ -72,6 +72,15 @@ export const StyledLink = ({to, children}) => {
         <Link
             to={to}
             style= {{ textDecoration: 'none', color: Colors.black, fontSize: '1.2rem', padding:'2rem' }}
+        > {children}</Link>
+    )
+}
+
+export const StyledDrawerLink = ({to, children}) => {
+    return (
+        <Link
+            to={to}
+            style= {{ textDecoration: 'none', color: Colors.black, fontSize: '1.2rem' }}
         > {children}</Link>
     )
 }

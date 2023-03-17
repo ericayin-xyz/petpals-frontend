@@ -10,7 +10,7 @@ export const StyledContainer = styled(Box)(({ theme }) => ({
     justifyContent: 'center',
     alignItems: 'center',
     // marginTop: '30px',
-    // background: Colors.dk_primary,
+    background: Colors.secondary,
 }))
 
 export const ButtonGroupContainer = styled(Box)({
@@ -20,7 +20,7 @@ export const ButtonGroupContainer = styled(Box)({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    background: Colors.secondary,
+    background: Colors.primary,
 })
 
 export const AdContainer = styled(Box)(({ theme }) => ({
@@ -29,19 +29,29 @@ export const AdContainer = styled(Box)(({ theme }) => ({
     justifyContent: 'center',
     alignItems: 'center',
     // marginTop: '70px',
-    // background: Colors.dk_primary,
+    background: Colors.primary,
 }))
 
 export const ContentContainer = styled(Box)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
-        padding: '50px 35px',
+        padding: '120px 35px',
     },
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     padding: '7% 6%',
+    paddingBottom: '80px',
 }))
+
+export const ServiceContainer = styled(Box)({
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    // padding: '7% 6%',
+    marginBottom: '100px',
+})
 
 export const ServiceBox = styled(Container)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {

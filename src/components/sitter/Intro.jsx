@@ -36,7 +36,7 @@ function Intro() {
         <BannerContainer>
             <ContentContainer>
                 <Bodytext variant="h1">
-                    Get started in 3 easy steps
+                    Get Started In 3 Easy Steps
                 </Bodytext>
                 <OptionBox>
                     <Grid container spacing={3}>
