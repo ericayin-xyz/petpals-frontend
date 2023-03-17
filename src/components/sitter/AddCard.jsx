@@ -6,7 +6,6 @@ import { LinkedButton } from "../styled/Button";
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import { TextField, InputAdornment } from '@mui/material';
 import { Bodytext } from '../styled/Font';
-import { Colors } from '../styled/Theme'
 
 
 const InputWrapper = styled.div`
