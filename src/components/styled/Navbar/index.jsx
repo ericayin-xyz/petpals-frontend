@@ -49,7 +49,7 @@ export const NavbarHeader = styled(Typography)(({theme}) => ({
     fontSize: '2.7em',
     flexGrow: 2,
     fontFamily: "Montez",
-    color: Colors.black,
+    color: Colors.blue,
 }))
 
 export const NavList = styled(List)({
@@ -71,7 +71,7 @@ export const StyledLink = ({to, children}) => {
     return (
         <Link
             to={to}
-            style= {{ textDecoration: 'none', color: Colors.black, fontSize: '1.2rem', padding:'2rem' }}
+            style= {{ textDecoration: 'none', color: Colors.blue, fontSize: '1.2rem', padding:'2rem' }}
         > {children}</Link>
     )
 }
@@ -80,7 +80,7 @@ export const StyledDrawerLink = ({to, children}) => {
     return (
         <Link
             to={to}
-            style= {{ textDecoration: 'none', color: Colors.black, fontSize: '1.2rem' }}
+            style= {{ textDecoration: 'none', color: Colors.blue, fontSize: '1.2rem' }}
         > {children}</Link>
     )
 }

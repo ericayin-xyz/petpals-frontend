@@ -6,7 +6,7 @@ import { Colors } from '../styled/Theme';
 
 const StyledButton = styled(Button)({
     backgroundColor: Colors.primary,
-    color: Colors.black,
+    color: Colors.blue,
     textTransform: 'none',
     fontSize: 16,
     width: '25rem',

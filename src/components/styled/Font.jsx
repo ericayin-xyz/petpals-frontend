@@ -35,7 +35,7 @@ export const IconTitle = styled(Typography)(({ theme }) => ({
     marginLeft: '1rem',
     fontSize: '1.2rem',
     fontWeight: 'lighter',
-    color: Colors.black
+    color: Colors.blue
 }))
 
 export const StepTitle = styled(Typography)(({ theme }) => ({
@@ -45,7 +45,7 @@ export const StepTitle = styled(Typography)(({ theme }) => ({
     marginTop: '.5rem',
     fontSize: '1.2rem',
     fontWeight: 'bold',
-    color: Colors.black
+    color: Colors.blue
 }))
 
 export const Icontext = styled(Typography)(({ theme }) => ({
@@ -57,7 +57,7 @@ export const Icontext = styled(Typography)(({ theme }) => ({
     fontSize: '1rem',
     fontWeight: 'lighter',
     textAlign: 'center',
-    color: Colors.black
+    color: Colors.blue
 }))
 
  

@@ -29,19 +29,19 @@ export const AdContainer = styled(Box)(({ theme }) => ({
     justifyContent: 'center',
     alignItems: 'center',
     // marginTop: '70px',
-    background: Colors.primary,
 }))
 
 export const ContentContainer = styled(Box)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
-        padding: '120px 35px',
+        padding: '120px 35px 70px 35px',
     },
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: '7% 6%',
+    padding: '6% 6%',
     paddingBottom: '80px',
+    background: Colors.primary,
 }))
 
 export const ServiceContainer = styled(Box)({
@@ -68,7 +68,7 @@ export const ServiceBox = styled(Container)(({ theme }) => ({
     padding: '35px 20px',
     borderRadius: '30px',
     Width: '100px',
-    border: `1px solid ${Colors.black}`,
+    border: `1px solid ${Colors.blue}`,
     // boxShadow: '1px 2px 10px rgba(0, 0, 0, 0.2);',
 }))
 

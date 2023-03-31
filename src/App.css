@@ -7,6 +7,30 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-/* body {
+body {
     background-color: #f4f1de;
-} */
+    color: #252ED9;
+}
+
+.file-input {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.file-input-label {
+    display: block;
+    font-weight: bold;
+    font-size: 13px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.file-input-control {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+

@@ -26,11 +26,13 @@ const Item = styled(Container)(({ theme }) => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    color: Colors.black,
+    color: Colors.blue,
     borderRadius: 20,
     height: 110,
-    border: `1px solid ${Colors.black}`,
+    border: `1px solid ${Colors.blue}`,
 }));
+
+
 
 export default function FindingSitter() {
 
@@ -39,7 +41,6 @@ export default function FindingSitter() {
                 <Bodytext variant='h1'>
                     Customize Your Own Service
                 </Bodytext>
-
                 <OptionBox sx={{marginBottom: '70px'}}>
                     <Grid container spacing={2.2}>
                         <Grid xs={6} md={4}>

@@ -25,8 +25,8 @@ const Item = styled(Stack)(({ theme }) => ({
     alignItems: 'center',
     justifyContent: 'center',
     direction: 'column',
-    color: Colors.black,
-    border: `1px solid ${Colors.black}`,
+    color: Colors.blue,
+    border: `1px solid ${Colors.blue}`,
     borderRadius: 30,
 }));
 

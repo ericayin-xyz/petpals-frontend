@@ -15,6 +15,12 @@ const InputWrapper = styled.div`
     gap: 9px;
     margin-bottom: 20px;
 `
+const Line = styled.div`
+    height: 1px;
+    width: 100vw;
+    background-color: blue;
+    margin-bottom: 130px;
+`;
 
 function AddCard() {
 
@@ -44,7 +50,7 @@ function AddCard() {
             setErrorMessage(null)
             setSuccessMessage("Form Submitted")
             axios
-            // .get(`/cards/${cardId}`)
+                // .get(`/cards/${cardId}`)
                 .post("petsitters/cards", card)
                 .then((res) => res.data)
                 .then((json) => (console.log(json)))
@@ -63,6 +69,7 @@ function AddCard() {
 
     return (
         <ContentContainer>
+            <Line />
             <div id='addCard'>
                 <Bodytext variant="h1">
                     Post a Job
@@ -95,18 +102,29 @@ function AddCard() {
                         <label htmlFor="description">Description:</label>
                         <TextField id="description" variant="filled" type='text' name='description' value={card.description} onChange={handleOnChange} multiline rows={3} />
 
-                        <AccountCircle sx={{ color: 'action.active', mr: 1, mt: 2 }} />
-                        <input id="photo" type='file' name='photo' accept='.png .jpg .jpeg' />
+                        <div className="file-input">
+                            <AccountCircle sx={{ mr: 2 }} />
+                            <label htmlFor="photo" className="file-input-label">
+                                Add photo
+                            </label>
+                            <input
+                                id="photo"
+                                type="file"
+                                name="photo"
+                                accept=".png,.jpg,.jpeg"
+                                className="file-input-control"
+                            />
+                        </div>
                     </InputWrapper>
 
-                        <LinkedButton 
+                    <LinkedButton
                         style={{
                             width: '100%',
                             marginTop: '20px',
                         }} id='submiBtn' onClick={handleSubmit}>SEND</LinkedButton>
 
-                        <h4 style={{ marginTop: '30px', color: 'red'}}>{errorMessage}{successMessage}
-                        </h4>
+                    <h4 style={{ marginTop: '30px', color: 'red' }}>{errorMessage}{successMessage}
+                    </h4>
 
                 </form>
             </div>

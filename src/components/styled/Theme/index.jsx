@@ -1,14 +1,14 @@
 import { createTheme } from '@mui/material/styles';
 
 export const Colors = {
-    primary: '#edede9',
-    secondary: '#ffffff',
+    primary: '#F1F7FF',
+    secondary: '#F1F7FF',
     white: '#fffcf2',
-    black: '#000814',
+    blue: '#252ED9',
     background: '#edede9',
     danger: "#e3d5ca",
     success: "#d62828",
-    button_bg: '#a5a58d',
+    button_bg: '#252ED9',
 }
 
 const theme = createTheme({
@@ -27,7 +27,7 @@ const theme = createTheme({
         MuiDivider: {
             styleOverrides: {
                 root: {
-                    colors: Colors.black,
+                    colors: Colors.blue,
                     margin: '10px',
                     fontWeight: 'bolder'
                 }
