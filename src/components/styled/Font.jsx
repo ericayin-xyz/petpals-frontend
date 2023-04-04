@@ -7,11 +7,13 @@ export const Bodytext = styled(Typography)(({ theme }) => ({
     },
     fontSize: '3rem',
     textAlign: 'center',
+    color: Colors.blue,
 }))
 
 export const ServiceText = styled(Typography)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
         fontSize: '1.5rem',
+        paddingLeft: '2rem',
     },
     fontSize: '1.8rem',
     textAlign: 'center',

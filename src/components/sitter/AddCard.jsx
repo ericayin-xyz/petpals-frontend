@@ -1,26 +1,19 @@
 import styled from "styled-components"
 import React, { useState } from "react";
 import axios from "axios";
-import { ContentContainer } from '../styled/StyledContainer';
+import { AddCardContainer } from '../styled/StyledContainer';
 import { LinkedButton } from "../styled/Button";
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import { TextField, InputAdornment } from '@mui/material';
 import { Bodytext } from '../styled/Font';
 
-
 const InputWrapper = styled.div`
     display: grid;
-    grid-template-column: 1fr 1fr;
+    // grid-template-column: 1fr 1fr;
     width: 500px;
-    gap: 9px;
+    gap: 10px;
     margin-bottom: 20px;
 `
-const Line = styled.div`
-    height: 1px;
-    width: 100vw;
-    background-color: blue;
-    margin-bottom: 130px;
-`;
 
 function AddCard() {
 
@@ -68,31 +61,26 @@ function AddCard() {
     }
 
     return (
-        <ContentContainer>
-            <Line />
-            <div id='addCard'>
+        <AddCardContainer>
                 <Bodytext variant="h1">
                     Post a Job
                 </Bodytext>
                 <form
-                    style={{ display: 'flex', marginTop: '80px', flexDirection: 'column', alignItems: 'center' }}
+                    style={{ display: 'flex', marginTop: '50px', flexDirection: 'column', alignItems: 'center'}}
                     onSubmit={handleSubmit}
                 >
-                    <InputWrapper>
-                        <label htmlFor="first_name">Name:</label>
-                        <TextField id="first_name" variant="filled" type='text' name='first_name' value={card.first_name} onChange={handleOnChange} />
+                    <InputWrapper style={{ padding: '0px 8%' }}>
+                            <label htmlFor="first_name">Name:</label>
+                            <TextField id="first_name" variant="filled" type='text' name='name' value={card.name} onChange={handleOnChange} />
 
-
-                        <label htmlFor="email">Email:</label>
-                        <TextField id="email" variant="filled" type='email' name='email' value={card.email} onChange={handleOnChange}
-                            InputProps={{
-                                endAdornment: (
-                                    <InputAdornment position="end"> @ </InputAdornment>),
-                            }} />
-
-                        <label htmlFor="phone">Mobile Number:</label>
-                        <TextField id="phone" variant="filled" type='number' name='phone' value={card.phone} onChange={handleOnChange} />
-
+                            <label htmlFor="email">Email:</label>
+                            <TextField id="email" variant="filled" type='email' name='email' value={card.email} onChange={handleOnChange}
+                                InputProps={{
+                                    endAdornment: (
+                                        <InputAdornment position="end"> @ </InputAdornment>),
+                                }} />
+                            <label htmlFor="phone">Mobile Number:</label>
+                            <TextField id="phone" variant="filled" type='number' name='phone' value={card.phone} onChange={handleOnChange} />
                         <label htmlFor="experience">Experience:</label>
                         <TextField id="experience" variant="filled" type='number' name='experience' value={card.experience} onChange={handleOnChange} />
 
@@ -115,20 +103,17 @@ function AddCard() {
                                 className="file-input-control"
                             />
                         </div>
+                        <LinkedButton
+                            style={{
+                                width: '100%',
+                                marginTop: '20px',
+                            }} id='submiBtn' onClick={handleSubmit}>SEND</LinkedButton>
+
+                        <h4 style={{ marginTop: '30px', color: 'red' }}>{errorMessage}{successMessage}
+                        </h4>
                     </InputWrapper>
-
-                    <LinkedButton
-                        style={{
-                            width: '100%',
-                            marginTop: '20px',
-                        }} id='submiBtn' onClick={handleSubmit}>SEND</LinkedButton>
-
-                    <h4 style={{ marginTop: '30px', color: 'red' }}>{errorMessage}{successMessage}
-                    </h4>
-
                 </form>
-            </div>
-        </ContentContainer>
+        </AddCardContainer>
     )
 }
 

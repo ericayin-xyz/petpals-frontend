@@ -1,35 +1,29 @@
-import { Bodytext } from '../styled/Font';
-import { ContentContainer } from '../styled/StyledContainer';
-import { Colors } from '../styled/Theme'
-import MapsHomeWorkIcon from '@mui/icons-material/MapsHomeWork';
-import { IconTitle } from '../styled/Font'
-import BlindIcon from '@mui/icons-material/Blind';
-import LightModeIcon from '@mui/icons-material/LightMode';
-import NightsStayIcon from '@mui/icons-material/NightsStay';
-import LocalTaxiIcon from '@mui/icons-material/LocalTaxi';
-import { OptionBox } from '../styled/StyledContainer';
+// import { Bodytext } from '../styled/Font';
+// import { ButtonGroupContainer } from '../styled/StyledContainer';
+// import Grid from '@mui/material/Unstable_Grid2';
+// import MapsHomeWorkIcon from '@mui/icons-material/MapsHomeWork';
+// import { IconTitle } from '../styled/Font'
+// import BlindIcon from '@mui/icons-material/Blind';
+// import LightModeIcon from '@mui/icons-material/LightMode';
+// import NightsStayIcon from '@mui/icons-material/NightsStay';
+// import LocalTaxiIcon from '@mui/icons-material/LocalTaxi';
+// import { OptionBox } from '../styled/StyledContainer';
 import { StyledLinkButton } from '../styled/Button';
 import { styled } from '@mui/material/styles';
 import Container from '@mui/material/Container';
-import Grid from '@mui/material/Unstable_Grid2';
+import { Colors } from '../styled/Theme'
 
 
 const Item = styled(Container)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
-        display: 'flex',
-        justifyContent: 'center',
-        justifyItems: 'center',
-        alignItems: 'center',
-        height: 160,
+        marginBottom: 100,
+        marginTop: 10,
     },
-    padding: theme.spacing(3),
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     color: Colors.blue,
-    borderRadius: 20,
-    height: 110,
-    border: `1px solid ${Colors.blue}`,
+    marginBottom: 60,
 }));
 
 
@@ -37,11 +31,10 @@ const Item = styled(Container)(({ theme }) => ({
 export default function FindingSitter() {
 
     return (
-            <ContentContainer sx={{ bgcolor: Colors.secondary }}>
-                <Bodytext variant='h1'>
-                    Customize Your Own Service
-                </Bodytext>
-                <OptionBox sx={{marginBottom: '70px'}}>
+            <Item sx={{
+                bgcolor:Colors.white,
+            }}>
+                {/* <OptionBox sx={{marginBottom: '70px'}}>
                     <Grid container spacing={2.2}>
                         <Grid xs={6} md={4}>
                             <Item>
@@ -78,12 +71,11 @@ export default function FindingSitter() {
                             </Item>
                         </Grid>
                     </Grid>
-                </OptionBox>
-
+                </OptionBox> */}
                 <StyledLinkButton
-                to={'/petparent/sitters'}>
-                    SEARCH
+                    to={'/petparent/sitters'}> 
+                    FIND YOUR SITTER
                 </StyledLinkButton>
-            </ContentContainer>
+            </Item>
     )
 }

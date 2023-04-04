@@ -27,18 +27,32 @@ export const LinkedButton = styled(Button)({
     letterSpacing: 1,
     padding: '8px 10px',
     borderRadius: '8px',
-    backgroundColor: Colors.button_bg,
-    color: Colors.primary,
+    backgroundColor: Colors.blue,
+    color: Colors.white,
     width: '14rem',
     '&:hover': {
-        backgroundColor: Colors.primary,
-        border:' 1px solid blue',
+        backgroundColor: Colors.white,
+        border:'1px solid blue',
         color: Colors.blue,
         boxShadow: '1px 2px 5px rgba(0, 0, 1, 0.2);',
     },
-    '&:disabled': {
-        backgroundColor: 'transparent',
-    }
+});
+
+export const LinkedButtonOnHomePage = styled(Button)({
+    textTransform: 'none',
+    fontSize: 13,
+    letterSpacing: 1,
+    padding: '8px 10px',
+    borderRadius: '8px',
+    backgroundColor: Colors.white,
+    color: Colors.blue,
+    width: '14rem',
+    '&:hover': {
+        backgroundColor: Colors.blue,
+        border:'1px solid white',
+        color: Colors.white,
+        boxShadow: '1px 2px 5px rgba(0, 0, 1, 0.2);',
+    },
 });
 
 
@@ -62,6 +76,15 @@ export const SelectionButton = styled(Button)(({ props }) => ({
     background: 'lightblue',
 }))
 
+
+export const StyledLinkButtonOnHomePage = ({to, children}) => {
+    return (
+        <Link
+            to={to}
+            style= {{ textDecoration: 'none' }}
+        ><LinkedButtonOnHomePage>{children}</LinkedButtonOnHomePage> </Link>
+    )
+}
 
 export const StyledLinkButton = ({to, children}) => {
     return (

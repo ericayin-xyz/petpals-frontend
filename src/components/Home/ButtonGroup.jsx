@@ -1,13 +1,14 @@
 import { ButtonGroupContainer } from '../styled/StyledContainer'
 import Stack from '@mui/material/Stack';
 import { Bodytext } from '../styled/Font';
-import { StyledLinkButton } from '../styled/Button';
+import { StyledLinkButtonOnHomePage } from '../styled/Button';
+import { Colors } from "../styled/Theme";
 
 export default function ButtonGroup() {
 
     return (
         <ButtonGroupContainer>
-            <Bodytext variant='h1'>
+            <Bodytext variant='h1' sx={{color: Colors.white}}>
                 What Would You Like To Do?
             </Bodytext>
             <Stack
@@ -18,12 +19,12 @@ export default function ButtonGroup() {
                 display={'flex'}
                 adjustPosition={'center'}
             >
-                <StyledLinkButton to='/petparent'>
+                <StyledLinkButtonOnHomePage to='/petparent'>
                 {'FIND A PET SITTER'}
-                </StyledLinkButton>
-                <StyledLinkButton to='/petsitter'>
+                </StyledLinkButtonOnHomePage>
+                <StyledLinkButtonOnHomePage to='/petsitter'>
                 {'BECOME A PET SITTER'}
-                </StyledLinkButton>
+                </StyledLinkButtonOnHomePage>
             </Stack>
         </ButtonGroupContainer>
     )

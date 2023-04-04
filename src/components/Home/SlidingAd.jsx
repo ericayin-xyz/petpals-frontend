@@ -60,7 +60,7 @@ export default function Intro() {
                 <Slide
                     direction={showMessage ? "left" : "right"} in={showMessage} timeout={{ enter: 500, exit: 300, border: "1px solid blue"}}
                 >
-                    <h1>
+                    <h1 style={{textAlign: 'center'}}>
                         {messages[messagesIndex]}
                     </h1>
                 </Slide>

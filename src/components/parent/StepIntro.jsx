@@ -18,9 +18,10 @@ import Filter4SharpIcon from '@mui/icons-material/Filter4Sharp';
 const Item = styled(Stack)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
         height: 270,
+        padding: '40px 50px',
 
     },
-    padding: '40px 50px',
+    padding: '30px 40px',
     spacing: 3,
     alignItems: 'center',
     justifyContent: 'center',

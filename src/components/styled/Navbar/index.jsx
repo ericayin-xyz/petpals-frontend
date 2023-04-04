@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 export const NavbarContainer = styled(Box)(() => ({
     display: 'flex',
     height: '75px',
-    // backgroundColor: Colors.white,
+    backgroundColor: Colors.white,
     justifyContent: 'center',
     boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1);',
     alignItems: 'center',

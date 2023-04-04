@@ -20,7 +20,7 @@ export const ButtonGroupContainer = styled(Box)({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    background: Colors.primary,
+    background: Colors.blue,
 })
 
 export const AdContainer = styled(Box)(({ theme }) => ({
@@ -39,9 +39,20 @@ export const ContentContainer = styled(Box)(({ theme }) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: '6% 6%',
-    paddingBottom: '80px',
+    padding: '5% 6%',
+    paddingBottom: '50px',
     background: Colors.primary,
+}))
+
+export const AddCardContainer = styled(Box)(({ theme }) => ({
+    [theme.breakpoints.up('md')]: {
+        padding: '70px 0px 20px 0px',
+    },
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: '8% 5% 0 5%',
 }))
 
 export const ServiceContainer = styled(Box)({
@@ -49,14 +60,14 @@ export const ServiceContainer = styled(Box)({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    // padding: '7% 6%',
+    padding: '0 5%',
     marginBottom: '100px',
 })
 
 export const ServiceBox = styled(Container)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
         flexDirection: 'row',
-        padding: '35px 50px',
+        padding: '20px 50px',
         margin: '20px',
         maxWidth: '900px',
     },
@@ -65,10 +76,9 @@ export const ServiceBox = styled(Container)(({ theme }) => ({
     alignItems: 'center',
     justifyContent: 'center',
     margin: '15px',
-    padding: '35px 20px',
-    borderRadius: '30px',
+    padding: '30px 20px',
+    // borderRadius: '30px',
     Width: '100px',
-    border: `1px solid ${Colors.blue}`,
     // boxShadow: '1px 2px 10px rgba(0, 0, 0, 0.2);',
 }))
 
@@ -83,10 +93,10 @@ export const IconBox = styled(Box)({
 export const OptionBox = styled(Box)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
         marginTop: 80, 
+        maxWidth: '1000px' 
     },
     flexGrow: 1, 
-    marginTop: 45, 
-    maxWidth: '1000px' 
+    marginTop: 60, 
 }))
 
 export const CardBox = styled(Box)(({ theme }) => ({

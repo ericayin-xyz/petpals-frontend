@@ -15,8 +15,8 @@ export default function NotFound() {
                     alignContent: 'center',
                     paddingBottom:'7rem',
                 }}>
-                        <Typography fontSize={'13rem'} >404</Typography>
-                        <Typography fontSize={'1.6rem'}>Ooops, Page Not Found</Typography>
+                        <Typography fontSize={'11rem'} >404</Typography>
+                        <Typography fontSize={'1.3rem'} fontWeight={'light'}>Ooops...  Page Not Found</Typography>
                     </Stack>
 
             </Container>
