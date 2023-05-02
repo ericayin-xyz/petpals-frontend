@@ -6,14 +6,14 @@ import styled from 'styled-components';
 const LineB = styled.div`
     height: 1px;
     width: 100vw;
-    background-color: blue;
+    background-color: black;
     margin-top: 50px;
 `;
 
 const LineT = styled.div`
     height: 1px;
     width: 100vw;
-    background-color: blue;
+    background-color: black;
     margin-bottom: 50px;
 `;
 
@@ -58,7 +58,7 @@ export default function Intro() {
         <AdContainer>
                 <LineT />
                 <Slide
-                    direction={showMessage ? "left" : "right"} in={showMessage} timeout={{ enter: 500, exit: 300, border: "1px solid blue"}}
+                    direction={showMessage ? "left" : "right"} in={showMessage} timeout={{ enter: 500, exit: 300, border: "1px solid black"}}
                 >
                     <h1 style={{textAlign: 'center'}}>
                         {messages[messagesIndex]}

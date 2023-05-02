@@ -22,8 +22,8 @@ const Item = styled(Stack)(({ theme }) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    color: Colors.blue,
-    border: `1px solid ${Colors.blue}`,
+    color: Colors.black,
+    border: `1px solid ${Colors.black}`,
     borderRadius: 30,
 }));
 

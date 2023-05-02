@@ -7,7 +7,7 @@ export const Bodytext = styled(Typography)(({ theme }) => ({
     },
     fontSize: '3rem',
     textAlign: 'center',
-    color: Colors.blue,
+    color: Colors.black,
 }))
 
 export const ServiceText = styled(Typography)(({ theme }) => ({
@@ -47,19 +47,17 @@ export const StepTitle = styled(Typography)(({ theme }) => ({
     marginTop: '.5rem',
     fontSize: '1.2rem',
     fontWeight: 'bold',
-    color: Colors.blue
+    color: Colors.black
 }))
 
 export const Icontext = styled(Typography)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
-        fontSize: '1.2rem',
-        marginLeft: '1.5rem',
+        fontSize: '0.9rem',
+        // marginLeft: '1.5rem',
     },
-    marginTop: '1.1rem',
+    marginTop: '1.2rem',
     fontSize: '1rem',
     fontWeight: 'lighter',
     textAlign: 'center',
-    color: Colors.blue
+    color: Colors.background
 }))
-
- 

@@ -1,10 +1,12 @@
 import { createTheme } from '@mui/material/styles';
 
 export const Colors = {
-    primary: '#F1F7FF',
-    white: '#F1F7FF',
-    blue: '#252ED9',
-    background: '#edede9',
+    primary: '#FED736',
+    yellow: '#FED736',
+    white: '#F3F0ED',
+    black: '#26201E',
+    blue: '#D0C9C0',
+    background: '#332824',
     danger: "#e3d5ca",
     success: "#d62828",
     button_bg: '#252ED9',

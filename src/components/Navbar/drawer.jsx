@@ -27,7 +27,7 @@ export default function AppDrawer() {
                         sx={{
                             fontSize: '4.5rem',
                             backgroundColor: lighten(0.08, Colors.primary),
-                            color: Colors.blue,
+                            color: Colors.black,
                             borderRadius: '50%',
                             padding: '1rem',
                             boxShadow: '0px 3px 8px rgba(0, 0, 0, 0.3)',

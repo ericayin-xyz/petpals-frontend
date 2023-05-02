@@ -20,7 +20,7 @@ export const ButtonGroupContainer = styled(Box)({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    background: Colors.blue,
+    background: Colors.black,
 })
 
 export const AdContainer = styled(Box)(({ theme }) => ({
@@ -28,31 +28,31 @@ export const AdContainer = styled(Box)(({ theme }) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    // marginTop: '70px',
+    backgroundColor: Colors.yellow,
 }))
 
 export const ContentContainer = styled(Box)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
-        padding: '120px 35px 70px 35px',
+        padding: '100px 35px 70px 35px',
     },
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: '5% 6%',
+    padding: '7% 6%',
     paddingBottom: '50px',
     background: Colors.primary,
 }))
 
 export const AddCardContainer = styled(Box)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
-        padding: '70px 0px 20px 0px',
+        padding: '70px 0px 0px 0px',
     },
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: '8% 5% 0 5%',
+    padding: '90px 0 0 0',
 }))
 
 export const ServiceContainer = styled(Box)({
@@ -97,6 +97,7 @@ export const OptionBox = styled(Box)(({ theme }) => ({
     },
     flexGrow: 1, 
     marginTop: 60, 
+    marginBottom: 25
 }))
 
 export const CardBox = styled(Box)(({ theme }) => ({

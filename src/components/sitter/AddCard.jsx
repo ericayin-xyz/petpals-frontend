@@ -9,14 +9,17 @@ import { Bodytext } from '../styled/Font';
 
 const InputWrapper = styled.div`
     display: grid;
-    // grid-template-column: 1fr 1fr;
-    width: 500px;
+    width: 100%;
+    max-width: 800px;
     gap: 10px;
     margin-bottom: 20px;
+    
+    @media screen and (max-width: 800px) {
+        width: 90vw;
+    }
 `
 
 function AddCard() {
-
     const [card, setCard] = useState({
         first_name: '',
         last_name: '',
@@ -33,8 +36,8 @@ function AddCard() {
         console.log('Submited')
         // console.log(card)
         //Validation
-        if (!card.first_name) {
-            setErrorMessage("Please enter your first name.");
+        if (!card.name) {
+            setErrorMessage("Please enter your name.");
             setSuccessMessage(null)
         } else if (!card.email) {
             setErrorMessage("Please enter your email.");
@@ -66,12 +69,12 @@ function AddCard() {
                     Post a Job
                 </Bodytext>
                 <form
-                    style={{ display: 'flex', marginTop: '50px', flexDirection: 'column', alignItems: 'center'}}
+                    style={{ display: 'flex', marginTop: '50px', flexDirection: 'column', alignItems: 'center', width: '70%',}}
                     onSubmit={handleSubmit}
                 >
                     <InputWrapper style={{ padding: '0px 8%' }}>
-                            <label htmlFor="first_name">Name:</label>
-                            <TextField id="first_name" variant="filled" type='text' name='name' value={card.name} onChange={handleOnChange} />
+                            <label htmlFor="name">Name:</label>
+                            <TextField id="name" variant="filled" type='text' name='name' value={card.name} onChange={handleOnChange} />
 
                             <label htmlFor="email">Email:</label>
                             <TextField id="email" variant="filled" type='email' name='email' value={card.email} onChange={handleOnChange}
@@ -106,10 +109,10 @@ function AddCard() {
                         <LinkedButton
                             style={{
                                 width: '100%',
-                                marginTop: '20px',
+                                marginTop: '10px',
                             }} id='submiBtn' onClick={handleSubmit}>SEND</LinkedButton>
 
-                        <h4 style={{ marginTop: '30px', color: 'red' }}>{errorMessage}{successMessage}
+                        <h4 style={{ margin: '10px 0px', color: 'red', textAlign: 'center'}}>{errorMessage}{successMessage}
                         </h4>
                     </InputWrapper>
                 </form>

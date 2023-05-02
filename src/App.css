@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
 
 * {
     margin: 0;
@@ -8,8 +10,8 @@
 }
 
 body {
-    background-color: #F1F7FF;
-    color: #252ED9;
+    background-color: #F4F0ED;
+    color: #26201E;
 }
 
 .file-input {
@@ -33,4 +35,3 @@ body {
     opacity: 0;
     cursor: pointer;
 }
-

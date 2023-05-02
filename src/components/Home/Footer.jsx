@@ -12,10 +12,13 @@ export default function Footer() {
                     justifyContent: "center",
                     alignItems: "center",
                     display: "flex",
-                    borderTop: `1px solid ${Colors.white}`,
-                    position: 'static',
+                    // borderTop: `.9px solid ${Colors.white}`,
+                    position: 'sticky',
+                    bottom: 0,
                     zIndex: 99,
-                    bgcolor: Colors.white,
+                    // bgcolor: Colors.black,
+                    mt: 'auto',
+                    color: Colors.black,
                 }}
             >
                 <Footertext>@ 2023 PetPals</Footertext>

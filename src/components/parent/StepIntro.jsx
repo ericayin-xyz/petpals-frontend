@@ -26,8 +26,8 @@ const Item = styled(Stack)(({ theme }) => ({
     alignItems: 'center',
     justifyContent: 'center',
     direction: 'column',
-    color: Colors.blue,
-    border: `1px solid ${Colors.blue}`,
+    color: Colors.black,
+    border: `1px solid ${Colors.black}`,
     borderRadius: 30,
 }));
 
@@ -48,7 +48,7 @@ function StepIntro() {
                             <Item>
                                 <Filter1SharpIcon fontSize='large' />
                                 <StepTitle>Search</StepTitle>
-                                <Icontext><h5>{message[0]}</h5></Icontext>
+                                <Icontext>{message[0]}</Icontext>
                             </Item>
                         </Grid>
 
@@ -56,20 +56,20 @@ function StepIntro() {
                             <Item>
                                 <Filter2SharpIcon fontSize='large' />
                                 <StepTitle>Meet</StepTitle>
-                                <Icontext><h5>{message[1]}</h5></Icontext>
+                                <Icontext>{message[1]}</Icontext>
                             </Item>
                         </Grid>
 
                         <Grid item xs={12} md={6}>
                             <Item><Filter3SharpIcon fontSize='large' />
                                 <StepTitle>Book</StepTitle>
-                                <Icontext><h5>{message[2]}</h5></Icontext>
+                                <Icontext>{message[2]}</Icontext>
                             </Item>
                         </Grid>
                         <Grid item xs={12} md={6}>
                             <Item><Filter4SharpIcon fontSize='large' />
                                 <StepTitle>Relax</StepTitle>
-                                <Icontext><h5>{message[3]}</h5></Icontext></Item>
+                                <Icontext>{message[3]}</Icontext></Item>
                         </Grid>
                     </Grid>
                 </OptionBox>

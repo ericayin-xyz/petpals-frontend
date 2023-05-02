@@ -14,7 +14,9 @@ const PetParent = () => {
     }, [])
 
     return (
-        <Paper id="Petparent">
+        <Paper id="Petparent" sx={{
+            minHeight: '100vh'
+        }}>
             <StepIntro />
             <FindingSitter />
         </Paper>
