@@ -16,7 +16,10 @@ export default function FindingSitter() {
     return (
             <Item>
                 <StyledLinkButton
-                    to={'/petparent/sitters'}> 
+                    to={'/petparent/sitters'}
+                    style={{
+                        width: '70vw'}}
+                > 
                     FIND YOUR SITTER
                 </StyledLinkButton>
             </Item>

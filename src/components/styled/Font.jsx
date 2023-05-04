@@ -12,10 +12,10 @@ export const Bodytext = styled(Typography)(({ theme }) => ({
 
 export const ServiceText = styled(Typography)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
-        fontSize: '1.5rem',
+        fontSize: '1.4rem',
         paddingLeft: '2rem',
     },
-    fontSize: '1.8rem',
+    fontSize: '1.6rem',
     textAlign: 'center',
     lineHeight: '2rem',
 }))

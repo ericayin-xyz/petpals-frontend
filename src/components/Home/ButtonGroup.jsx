@@ -12,9 +12,9 @@ export default function ButtonGroup() {
                 What Would You Like To Do?
             </Bodytext>
             <Stack
-                direction={{ xs: 'column', md: 'row' }}
-                spacing={{ xs: 3, sm: 4, md: 6}}
-                marginTop={'60px'}
+                direction={{ xs: 'column', md: 'column' }}
+                spacing={{ xs: 3, md: 4}}
+                marginTop={'75px'}
                 alignItems={'center'}
                 display={'flex'}
                 adjustPosition={'center'}

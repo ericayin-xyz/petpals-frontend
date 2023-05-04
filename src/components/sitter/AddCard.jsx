@@ -21,8 +21,7 @@ const InputWrapper = styled.div`
 
 function AddCard() {
     const [card, setCard] = useState({
-        first_name: '',
-        last_name: '',
+        name: '',
         description: '',
         email: '',
         phone: '',
@@ -54,10 +53,10 @@ function AddCard() {
     }
 
     const handleOnChange = (event) => {
-        setCard((preCard) => {
+        setCard((prevCard) => {
             console.log(event.target.value)
             return {
-                ...preCard,
+                ...prevCard,
                 [event.target.name]: event.target.value
             }
         })
@@ -110,7 +109,7 @@ function AddCard() {
                             style={{
                                 width: '100%',
                                 marginTop: '10px',
-                            }} id='submiBtn' onClick={handleSubmit}>SEND</LinkedButton>
+                            }} id='submitBtn' onClick={handleSubmit}>SEND</LinkedButton>
 
                         <h4 style={{ margin: '10px 0px', color: 'red', textAlign: 'center'}}>{errorMessage}{successMessage}
                         </h4>
