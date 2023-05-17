@@ -1,6 +1,6 @@
 import AddCard from '../components/sitter/AddCard';
 import Intro from '../components/sitter/Intro'
-// import Login from '../components/sitter/Login'
+import Login from '../components/utils/login'
 import React, { useEffect } from "react";
 
 const PetSitter = () => {
@@ -12,7 +12,7 @@ const PetSitter = () => {
         <div id='petsitter'>
             <Intro />
             <AddCard />
-            {/* <Login /> */}
+            <Login />
         </div>
     )
 }

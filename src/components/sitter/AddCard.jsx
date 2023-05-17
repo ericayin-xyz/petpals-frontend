@@ -33,7 +33,8 @@ function AddCard() {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log('Submited')
-        // console.log(card)
+        console.log(card)
+        
         //Validation
         if (!card.name) {
             setErrorMessage("Please enter your name.");
@@ -46,7 +47,8 @@ function AddCard() {
             setSuccessMessage("Form Submitted")
             axios
                 // .get(`/cards/${cardId}`)
-                .post("petsitters/cards", card)
+                // .post("/petparent/sitters", card)
+                .post("https://fakestoreapi.com/products", card)
                 .then((res) => res.data)
                 .then((json) => (console.log(json)))
         }
@@ -54,7 +56,7 @@ function AddCard() {
 
     const handleOnChange = (event) => {
         setCard((prevCard) => {
-            console.log(event.target.value)
+            // console.log(event.target.value)
             return {
                 ...prevCard,
                 [event.target.name]: event.target.value
@@ -87,7 +89,7 @@ function AddCard() {
                         <TextField id="experience" variant="filled" type='number' name='experience' value={card.experience} onChange={handleOnChange} />
 
                         <label htmlFor="city">City:</label>
-                        <TextField id="city" variant="filled" type='number' name='city' value={card.city} onChange={handleOnChange} />
+                        <TextField id="city" variant="filled" type='text' name='city' value={card.city} onChange={handleOnChange} />
 
                         <label htmlFor="description">Description:</label>
                         <TextField id="description" variant="filled" type='text' name='description' value={card.description} onChange={handleOnChange} multiline rows={3} />
