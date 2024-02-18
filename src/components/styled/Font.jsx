@@ -3,10 +3,9 @@ import { Colors } from "./Theme";
 
 export const Bodytext = styled(Typography)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
-        fontSize: '4rem',
+        fontSize: '3rem',
     },
-    fontSize: '3rem',
-    textAlign: 'center',
+    fontSize: '2.5rem',
     color: Colors.black,
 }))
 
@@ -46,7 +45,6 @@ export const StepTitle = styled(Typography)(({ theme }) => ({
     },
     marginTop: '.5rem',
     fontSize: '1.2rem',
-    fontWeight: 'bold',
     color: Colors.black
 }))
 
@@ -61,3 +59,5 @@ export const Icontext = styled(Typography)(({ theme }) => ({
     textAlign: 'center',
     color: Colors.background
 }))
+
+

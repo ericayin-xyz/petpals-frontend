@@ -1,12 +1,12 @@
-import { useReducer, useState } from "react"
+import { useReducer } from "react"
 import reviewReducer from "../utils/reducers"
 import StarIcon from '@mui/icons-material/Star';
 import Stack from '@mui/material/Stack';
 import { ReviewButton } from '../styled/Button'
 import Rating from '@mui/material/Rating';
 import Box from '@mui/material/Box';
-import { CardButton } from '../styled/Button';
 import { Bodytext } from '../styled/Font';
+import { LinkedButton } from '../styled/Button';
 
 const initialReviews = [
     {
@@ -21,57 +21,42 @@ const initialReviews = [
     },
 ]
 
-const labels = {
-    0.5: 'Poor',
-    1: 'Poor',
-    1.5: 'Poor',
-    2: 'Poor',
-    2.5: 'Poor',
-    3: 'Poor+',
-    3.5: 'Great',
-    4: 'Great+',
-    4.5: 'Excellent',
-    5: 'Excellent+',
-};
-
 function Review() {
 
     const initialState = {
         reviews: initialReviews,
         review: "",
-        rating: "",
+        value: 5,
+        hover: -1,
         showEditBox: false,
+        showButton: true,
         editReviewId: null,
         editReviewDesc: "",
+        editRatingDesc: 5
     }
 
-    const [store, dispatch] = useReducer(reviewReducer, initialState)
+    const [store, dispatch] = useReducer(reviewReducer, initialState,)
 
-    const { reviews, review, showEditBox, editReviewDesc } = store
-
-    const [value, setValue] = useState(5);
-    const [hover, setHover] = useState(-1);
+    const { reviews, review, value, showEditBox, showButton, editReviewDesc, editRatingDesc } = store
 
     const handleOnChange = (e) => {
         dispatch({
-            type: 'setReview',
+            type: "setReview",
             data: e.target.value
         })
     }
 
     const handleRatingChange = (e, newValue) => {
-        setValue(newValue);
         dispatch({
-            type: 'setRating',
-            data: e.target.value
+            type: 'setValue',
+            payload: newValue
         })
     }
 
-
-    const addReview = (e) => {
+    const addReview =(e) => {
         e.preventDefault()
         dispatch({
-            type: 'addReview'
+            type: "addReview",
         })
     }
 
@@ -89,13 +74,18 @@ function Review() {
         })
     }
 
-
     const handleEditReview = (e) => {
         dispatch({
             type: 'setEditReview',
             data: e.target.value
         })
-        // setEditReviewDesc(e.target.value)
+    }
+
+    const handleEditRating =(e, newValue) => {
+        dispatch({
+            type: 'setEditRating',
+            payload: newValue
+        })
     }
 
     const handleEdit = () => {
@@ -106,36 +96,43 @@ function Review() {
     }
 
     return (
-        <Stack spacing={3} id="reviews">
-            <Bodytext variant="h1">REVIEWS</Bodytext>
+        <Stack id="reviews" spacing={1} style={{ marginLeft: 30 }}>
+            <Bodytext variant="h1" style={{ marginBottom: 30 }}>Reviews</Bodytext>
             {reviews.map((review) => {
                 return (
-                    <Stack key={review.id} spacing={0.6}>  
+                    <Stack key={review.id} spacing={0.5} style={{ marginBottom: 15 }} >
                         <div>{review.description}</div>
                         <Rating name="read-only" value={review.rating} precision={0.5} emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />} readOnly />
-                        <div>
+                        {showButton && (
+                            <div>
                             <ReviewButton onClick={() => editReview(review.id)} style={{ marginRight: '10px' }}>Edit</ReviewButton>
                             <ReviewButton onClick={() => deleteReview(review.id)}>Delete</ReviewButton>
-                        </div>
+                            </div>
+                        )}
                     </Stack>
                 )
             })}
             {showEditBox && (
-                <div>
-                    <textarea
-                        value={editReviewDesc}
-                        onChange={handleEditReview}
-                    />
-                    <div>
-                        <ReviewButton onClick={handleEdit}>Save Edit</ReviewButton>
-                    </div>
-                </div>
+                            <Stack>
+                                <textarea style={{ padding: 7, marginTop: '15px'}}
+                                    value={editReviewDesc}
+                                    onChange={handleEditReview}
+                                />
+                                <Rating 
+                                    name="editable-rating" precision={0.5} 
+                                    emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />} 
+                                    value={editRatingDesc}
+                                    onChange={handleEditRating} 
+                                />
+                                <div>
+                                    <ReviewButton onClick={handleEdit}>Save Edit</ReviewButton>
+                                </div>
+                            </Stack>
             )}
-
             <form>
                 <Stack spacing={1} style={{ marginTop: 30 }}>
-                    <div>Add a Review :</div>
-                    <textarea value={review} onChange={handleOnChange} />
+                    <div>Write a Review :</div>
+                    <textarea style={{ padding: 7 }} value={review} onChange={handleOnChange} />
                     <Box
                         sx={{
                             width: 200,
@@ -144,31 +141,19 @@ function Review() {
                         }}
                     >
                         <Rating
-                            name="controlled-rating"
+                            name="rating"
                             value={value}
-                            defaultValue={5}
                             precision={0.5}
                             onChange={handleRatingChange}
-                            onChangeActive={(event, newHover) => {
-                                setHover(newHover);
-                            }}
                             emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
                         />
-                        <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
                     </Box>
-                    <div style={{ marginTop: '30px' }}>
-                        <CardButton onClick={addReview}>Post Review</CardButton>
+                    <div>
+                        <LinkedButton style={{ marginTop: 10 }} onClick={addReview}>POST REVIEW</LinkedButton>
                     </div>
                 </Stack>
             </form>
         </Stack>
-
-
-
-
-
-
-        // onClick={() => editReview(review.id)}
     )
 }
 

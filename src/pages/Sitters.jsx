@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import CardList from '../components/parent/CardList';
 import ClickedCard from '../components/parent/ClickedCard';
 import { useLocation } from 'react-router-dom';
+import Login from '../components/sitter/Login';
 
 
 const Sitters = () => {
@@ -28,6 +29,7 @@ const Sitters = () => {
         <div id="Sitters">
             <CardList setCard={setCard} />
             <ClickedCard card={clickedCard} ref={sectionRef} />
+            <Login />
         </div>
     )
 }

@@ -5,6 +5,7 @@ import { LinkedButton } from "../styled/Button";
 import { TextField } from '@mui/material';
 import { Bodytext } from '../styled/Font';
 import axios from "axios";
+import { ContentContainer } from '../../components/styled/StyledContainer';
 
 const InputWrapper = styled.div`
     display: grid;
@@ -72,7 +73,7 @@ function Login() {
                     setErrorMessage((prevErrorMessage) => {
                         return {
                             ...prevErrorMessage,
-                            aipError: "Username or Password is incorrect"
+                            aipError: "Username / Password is incorrect"
                         }
                     })
                 })
@@ -92,9 +93,9 @@ function Login() {
     return (
         <>
             {userFetched ? (
-                <Bodytext variant="h1">
-                    Login Successful
-                </Bodytext>
+                <ContentContainer>
+                    <Bodytext variant="h1"> Login Successful </Bodytext>
+                </ContentContainer>
             ) : (
                 <AddCardContainer>
                     <Bodytext variant="h1">

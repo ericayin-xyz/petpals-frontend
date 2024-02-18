@@ -22,9 +22,9 @@ const InputWrapper = styled.div`
 function AddCard() {
     const [card, setCard] = useState({
         name: '',
-        description: '',
         email: '',
         phone: '',
+        city: 'Sydney, 2000',
     })
 
     const [errorMessage, setErrorMessage] = useState(null)
@@ -42,13 +42,19 @@ function AddCard() {
         } else if (!card.email) {
             setErrorMessage("Please enter your email.");
             setSuccessMessage(null)
-        } else {
+        } else if (!card.email.match((/^[A-Za-z._\-0-9]*[@][A-Za-z]*[.][a-z]{2,4}$/))) {
+            setErrorMessage("Please enter a valid email.");
+            setSuccessMessage(null)
+        } else if (!card.description) {
+            setErrorMessage("Please enter your description.");
+            setSuccessMessage(null)
+        } else { 
             setErrorMessage(null)
             setSuccessMessage("Form Submitted")
             axios
                 // .get(`/cards/${cardId}`)
                 // .post("/petparent/sitters", card)
-                .post("https://fakestoreapi.com/products", card)
+                .post("/products", card)
                 .then((res) => res.data)
                 .then((json) => (console.log(json)))
         }
@@ -74,25 +80,27 @@ function AddCard() {
                     onSubmit={handleSubmit}
                 >
                     <InputWrapper style={{ padding: '0px 8%' }}>
-                            <label htmlFor="name">Name:</label>
-                            <TextField id="name" variant="filled" type='text' name='name' value={card.name} onChange={handleOnChange} />
+                        <label htmlFor="name">Name:</label>
+                        <TextField id="name" variant="filled" type='text' name='name' value={card.name} onChange={handleOnChange} />
 
-                            <label htmlFor="email">Email:</label>
-                            <TextField id="email" variant="filled" type='email' name='email' value={card.email} onChange={handleOnChange}
-                                InputProps={{
-                                    endAdornment: (
-                                        <InputAdornment position="end"> @ </InputAdornment>),
-                                }} />
-                            <label htmlFor="phone">Mobile Number:</label>
-                            <TextField id="phone" variant="filled" type='number' name='phone' value={card.phone} onChange={handleOnChange} />
+                        <label htmlFor="email">Email:</label>
+                        <TextField id="email" variant="filled" type='email' name='email' value={card.email} onChange={handleOnChange}
+                            InputProps={{
+                                endAdornment: (
+                                    <InputAdornment position="end"> @ </InputAdornment>),
+                            }} />
+                        <label htmlFor="phone">Mobile Number:</label>
+                        <TextField id="phone" variant="filled" type='number' name='phone' value={card.phone} onChange={handleOnChange} />
+
                         <label htmlFor="experience">Experience:</label>
-                        <TextField id="experience" variant="filled" type='number' name='experience' value={card.experience} onChange={handleOnChange} />
+                        <TextField id="experience" variant="filled" type='text' name='experience' value={card.experience} onChange={handleOnChange} />
 
                         <label htmlFor="city">City:</label>
                         <TextField id="city" variant="filled" type='text' name='city' value={card.city} onChange={handleOnChange} />
 
                         <label htmlFor="description">Description:</label>
-                        <TextField id="description" variant="filled" type='text' name='description' value={card.description} onChange={handleOnChange} multiline rows={3} />
+                        <TextField id="description" variant="filled" type='text' name='description' value={card.description} 
+                        onChange={handleOnChange} multiline rows={3} />
 
                         <div className="file-input">
                             <AccountCircle sx={{ mr: 2 }} />
@@ -103,7 +111,7 @@ function AddCard() {
                                 id="photo"
                                 type="file"
                                 name="photo"
-                                accept=".png,.jpg,.jpeg"
+                                accept=".png, .jpg, .jpeg"
                                 className="file-input-control"
                             />
                         </div>
@@ -111,7 +119,8 @@ function AddCard() {
                             style={{
                                 width: '100%',
                                 marginTop: '10px',
-                            }} id='submitBtn' onClick={handleSubmit}>SEND</LinkedButton>
+                            }} id='submitBtn' onClick={handleSubmit}>
+                            SEND</LinkedButton>
 
                         <h4 style={{ margin: '10px 0px', color: 'red', textAlign: 'center'}}>{errorMessage}{successMessage}
                         </h4>

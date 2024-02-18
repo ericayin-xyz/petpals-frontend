@@ -1,4 +1,3 @@
-
 function globalReducer(state, action) {
     switch(action.type) {
         case 'setToken': {

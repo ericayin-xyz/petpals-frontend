@@ -7,10 +7,10 @@ export default function reviewReducer(state, action) {
             }
         }
 
-        case "setRating": {
+        case "setValue": {
             return {
                 ...state,
-                rating: action.data
+                value: action.payload
             }
         }
 
@@ -19,10 +19,12 @@ export default function reviewReducer(state, action) {
                 ...state,
                 reviews: [
                     ...state.reviews,
-                    { id: state.reviews.length + 1, description: state.review, rating: state.rating },
+                    { id: state.reviews.length + 1, description: state.review, 
+                        rating: state.value
+                    },
                 ],
                 review: "",
-                rating: "",
+                value: null
             }
         }
 
@@ -41,9 +43,9 @@ export default function reviewReducer(state, action) {
                 ...state,
                 showEditBox: true,
                 editReviewId: action.data,
-                editReviewDesc: state.reviews.find(
-                    (review) => review.id === action.data
-                ).description,
+                editReviewDesc: state.reviews.find((review) => review.id === action.data).description,
+                editRatingDesc: state.reviews.find((value) => value.id === action.data).rating,
+                showButton: false,
             }
         }
 
@@ -54,18 +56,26 @@ export default function reviewReducer(state, action) {
             }
         }
 
+        case "setEditRating": {
+            return {
+                ...state,
+                editRatingDesc: action.payload
+            }
+        }
+
         case "handleEdit": {
             const newReviews = [...state.reviews]
             const reviewIndexToEdit = state.reviews.findIndex(
                 (review) => review.id === state.editReviewId
             )
             newReviews[reviewIndexToEdit].description = state.editReviewDesc
+            newReviews[reviewIndexToEdit].rating = state.editRatingDesc
 
             return {
                 ...state,
                 reviews: newReviews,
-                editReviewDesc: "",
                 showEditBox: false,
+                showButton: true,
             }
         }
 

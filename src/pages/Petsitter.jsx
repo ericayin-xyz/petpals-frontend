@@ -1,6 +1,6 @@
 import AddCard from '../components/sitter/AddCard';
 import Intro from '../components/sitter/Intro'
-import Login from '../components/utils/login'
+import Login from '../components/sitter/Login'
 import React, { useEffect } from "react";
 
 const PetSitter = () => {

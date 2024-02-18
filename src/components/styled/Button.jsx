@@ -25,8 +25,8 @@ export const LinkedButton = styled(Button)({
     textTransform: 'none',
     fontSize: 13,
     letterSpacing: 1.2,
-    padding: '11px 10px',
-    borderRadius: '18px',
+    padding: '9px 10px',
+    borderRadius: '10px',
     backgroundColor: Colors.black,
     color: Colors.white,
     border: `1px solid ${Colors.black}`,
@@ -95,7 +95,6 @@ export const StyledLinkButton = ({to, children}) => {
     )
 }
 
-
 export const CardButton = styled(Button)({
     textTransform: 'none',
     fontSize: 13,
@@ -121,11 +120,11 @@ export const ReviewButton = styled(Button)({
     padding: '3px 8px',
     borderRadius: '5px',
     border:' 1px solid black',
-    color: Colors.blue,
+    color: Colors.black,
     '&:hover': {
-        backgroundColor: Colors.button_bg,
-        color: Colors.primary,
+        // backgroundColor: Colors.button_bg,
+        // color: Colors.primary,
         boxShadow: '0px 1px 3px rgba(0, 0, 6, 0.5);',
-        border:' 0px solid black',
+        // border:' 0px solid black',
     },
 });
