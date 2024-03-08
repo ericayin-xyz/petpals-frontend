@@ -1,11 +1,14 @@
-import styled from "styled-components"
+import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
 import React, { useState } from "react";
 import axios from "axios";
 import { AddCardContainer } from '../styled/StyledContainer';
-import { LinkedButton } from "../styled/Button";
+import { LinkedButton } from '../styled/Button';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import { TextField, InputAdornment } from '@mui/material';
 import { Bodytext } from '../styled/Font';
+import Box from '@mui/material/Box';
+import LinearProgress from '@mui/material/LinearProgress';
 
 const InputWrapper = styled.div`
     display: grid;
@@ -33,8 +36,8 @@ function AddCard() {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log('Submited')
-        console.log(card)
-        
+        // console.log(card)
+
         //Validation
         if (!card.name) {
             setErrorMessage("Please enter your name.");
@@ -45,10 +48,13 @@ function AddCard() {
         } else if (!card.email.match((/^[A-Za-z._\-0-9]*[@][A-Za-z]*[.][a-z]{2,4}$/))) {
             setErrorMessage("Please enter a valid email.");
             setSuccessMessage(null)
+        } else if (!(card.phone.match('[0-9]{10}'))) {
+            setErrorMessage("Please enter a valid phone number.");
         } else if (!card.description) {
             setErrorMessage("Please enter your description.");
             setSuccessMessage(null)
-        } else { 
+            setSuccessMessage(null)
+        } else {
             setErrorMessage(null)
             setSuccessMessage("Form Submitted")
             axios
@@ -57,6 +63,9 @@ function AddCard() {
                 .post("/products", card)
                 .then((res) => res.data)
                 .then((json) => (console.log(json)))
+            setTimeout(() => {
+                navigate("/petparent")
+            }, 2500)
         }
     }
 
@@ -70,62 +79,67 @@ function AddCard() {
         })
     }
 
+    const navigate = useNavigate()
+
     return (
         <AddCardContainer>
-                <Bodytext variant="h1">
-                    Post a Job
-                </Bodytext>
-                <form
-                    style={{ display: 'flex', marginTop: '50px', flexDirection: 'column', alignItems: 'center', width: '70%',}}
-                    onSubmit={handleSubmit}
-                >
-                    <InputWrapper style={{ padding: '0px 8%' }}>
-                        <label htmlFor="name">Name:</label>
-                        <TextField id="name" variant="filled" type='text' name='name' value={card.name} onChange={handleOnChange} />
+            <Bodytext variant="h1">
+                Post a Job
+            </Bodytext>
+            <form
+                style={{ display: 'flex', marginTop: '50px', flexDirection: 'column', alignItems: 'center', width: '70%', }}
+                onSubmit={handleSubmit}
+            >
+                <InputWrapper style={{ padding: '0px 8%' }}>
+                    <label htmlFor="name">Name:</label>
+                    <TextField id="name" variant="filled" type='text' name='name' value={card.name} onChange={handleOnChange} />
 
-                        <label htmlFor="email">Email:</label>
-                        <TextField id="email" variant="filled" type='email' name='email' value={card.email} onChange={handleOnChange}
-                            InputProps={{
-                                endAdornment: (
-                                    <InputAdornment position="end"> @ </InputAdornment>),
-                            }} />
-                        <label htmlFor="phone">Mobile Number:</label>
-                        <TextField id="phone" variant="filled" type='number' name='phone' value={card.phone} onChange={handleOnChange} />
+                    <label htmlFor="email">Email:</label>
+                    <TextField id="email" variant="filled" type='email' name='email' value={card.email} onChange={handleOnChange}
+                        InputProps={{
+                            endAdornment: (
+                                <InputAdornment position="end"> @ </InputAdornment>),
+                        }} />
+                    <label htmlFor="phone">Mobile Number:</label>
+                    <TextField id="phone" variant="filled" type='number' name='phone' value={card.phone} onChange={handleOnChange} />
 
-                        <label htmlFor="experience">Experience:</label>
-                        <TextField id="experience" variant="filled" type='text' name='experience' value={card.experience} onChange={handleOnChange} />
+                    <label htmlFor="experience">Experience:</label>
+                    <TextField id="experience" variant="filled" type='text' name='experience' value={card.experience} onChange={handleOnChange} />
 
-                        <label htmlFor="city">City:</label>
-                        <TextField id="city" variant="filled" type='text' name='city' value={card.city} onChange={handleOnChange} />
+                    <label htmlFor="city">City:</label>
+                    <TextField id="city" variant="filled" type='text' name='city' value={card.city} onChange={handleOnChange} />
 
-                        <label htmlFor="description">Description:</label>
-                        <TextField id="description" variant="filled" type='text' name='description' value={card.description} 
+                    <label htmlFor="description">Description:</label>
+                    <TextField id="description" variant="filled" type='text' name='description' value={card.description}
                         onChange={handleOnChange} multiline rows={3} />
 
-                        <div className="file-input">
-                            <AccountCircle sx={{ mr: 2 }} />
-                            <label htmlFor="photo" className="file-input-label">
-                                Add photo
-                            </label>
-                            <input
-                                id="photo"
-                                type="file"
-                                name="photo"
-                                accept=".png, .jpg, .jpeg"
-                                className="file-input-control"
-                            />
-                        </div>
-                        <LinkedButton
-                            style={{
-                                width: '100%',
-                                marginTop: '10px',
-                            }} id='submitBtn' onClick={handleSubmit}>
-                            SEND</LinkedButton>
+                    <div className="file-input">
+                        <AccountCircle sx={{ mr: 2 }} />
+                        <label htmlFor="photo" className="file-input-label">
+                            Add photo
+                        </label>
+                        <input
+                            id="photo"
+                            type="file"
+                            name="photo"
+                            accept=".png, .jpg, .jpeg"
+                            className="file-input-control"
+                        />
+                    </div>
+                    <LinkedButton
+                        style={{
+                            width: '100%',
+                            marginTop: '10px',
+                        }} id='submitBtn' onClick={handleSubmit} >
+                        SEND</LinkedButton>
 
-                        <h4 style={{ margin: '10px 0px', color: 'red', textAlign: 'center'}}>{errorMessage}{successMessage}
-                        </h4>
-                    </InputWrapper>
-                </form>
+                    <h4 style={{ margin: '10px 0px', color: 'red', textAlign: 'center' }}>{errorMessage}{successMessage}
+                    </h4>
+                    {successMessage && <Box sx={{ width: '100%' }}>
+                        <LinearProgress color='inherit' />
+                    </Box>}
+                </InputWrapper>
+            </form>
         </AddCardContainer>
     )
 }

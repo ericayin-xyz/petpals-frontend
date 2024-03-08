@@ -8,6 +8,7 @@ import { CardReviewWrapper } from '../components/styled/Card'
 import CardList from '../components/parent/CardList';
 import ClickedCard from '../components/parent/ClickedCard';
 
+
 const Paper = styled(Stack)({
     backgroundColor: Colors.primary
 })
