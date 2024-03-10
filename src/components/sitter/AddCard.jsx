@@ -36,7 +36,7 @@ function AddCard() {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log('Submited')
-        // console.log(card)
+        console.log(card)
 
         //Validation
         if (!card.name) {
@@ -60,7 +60,7 @@ function AddCard() {
             axios
                 // .get(`/cards/${cardId}`)
                 // .post("/petparent/sitters", card)
-                .post("/products", card)
+                .post("/petparent", card)
                 .then((res) => res.data)
                 .then((json) => (console.log(json)))
             setTimeout(() => {

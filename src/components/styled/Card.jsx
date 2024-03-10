@@ -75,7 +75,7 @@ export const CardTitle = styled(Box)(({ theme }) => ({
 
 
 export const CardReviewWrapper = styled(Box)(({ theme }) => ({
-    padding: '30px 20px',
+    padding: '7% 6%',
     marginTop: '15px',
     display: 'flex',
     flexDirection: 'column',
@@ -84,11 +84,12 @@ export const CardReviewWrapper = styled(Box)(({ theme }) => ({
     transition: '0.3s',
     minHeight: '350px',
     textAlign: 'left',
+    width: '30rem',
     // backgroundColor: Colors.dk_primary,
 
     [theme.breakpoints.up('md')]: {
         position: 'relative',
-        maxWidth: '400px',
+        // width: '100%',
         alignItems: 'flex-start',
     }
 }))

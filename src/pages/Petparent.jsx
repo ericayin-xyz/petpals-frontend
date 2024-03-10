@@ -7,7 +7,7 @@ import Review from '../components/parent/Review';
 import { CardReviewWrapper } from '../components/styled/Card'
 import CardList from '../components/parent/CardList';
 import ClickedCard from '../components/parent/ClickedCard';
-
+import Sitters from './Sitters';
 
 const Paper = styled(Stack)({
     backgroundColor: Colors.primary
@@ -30,6 +30,7 @@ const PetParent = () => {
         }}>
             <StepIntro />
             <FindingSitter />
+            <Sitters />
             <Stack direction={{ xs: 'column', md: 'row' }} spacing={{ xs: 4, md: 8 }} style={{ maxWidth: '1000px' }}>
                 <CardReviewWrapper>
                     <Review />
