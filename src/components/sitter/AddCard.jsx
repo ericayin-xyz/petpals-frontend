@@ -59,6 +59,8 @@ function AddCard() {
             setSuccessMessage("Form Submitted")
             axios
                 // .get(`/cards/${cardId}`)
+                .get("/petparent", card)
+                .get("/petparent/sitters", card)
                 // .post("/petparent/sitters", card)
                 .post("/petparent", card)
                 .then((res) => res.data)
@@ -106,8 +108,8 @@ function AddCard() {
                     <label htmlFor="experience">Experience:</label>
                     <TextField id="experience" variant="filled" type='text' name='experience' value={card.experience} onChange={handleOnChange} />
 
-                    <label htmlFor="city">City:</label>
-                    <TextField id="city" variant="filled" type='text' name='city' value={card.city} onChange={handleOnChange} />
+                    <label htmlFor="address">Address:</label>
+                    <TextField id="address" variant="filled" type='text' name='address' value={card.address} onChange={handleOnChange} />
 
                     <label htmlFor="description">Description:</label>
                     <TextField id="description" variant="filled" type='text' name='description' value={card.description}
