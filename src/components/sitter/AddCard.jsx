@@ -27,7 +27,7 @@ function AddCard() {
         name: '',
         email: '',
         phone: '',
-        city: 'Sydney, 2000',
+        address: 'Sydney, 2000',
     })
 
     const [errorMessage, setErrorMessage] = useState(null)
