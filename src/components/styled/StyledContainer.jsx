@@ -1,16 +1,15 @@
 import { Box, Container, styled } from "@mui/material";
-import { Colors } from './Theme'
+import { Colors } from './Theme';
 
 export const StyledContainer = styled(Box)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
-        maxwidth: '1400px',
+        maxwidth: '1300px',
     },
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    // marginTop: '30px',
-    background: Colors.secondary,
+    
 }))
 
 export const ButtonGroupContainer = styled(Box)({
@@ -20,20 +19,22 @@ export const ButtonGroupContainer = styled(Box)({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    background: Colors.black,
+    background: Colors.blue,
 })
 
 export const AdContainer = styled(Box)(({ theme }) => ({
-    display: 'flex',
+    display: 'relative',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: Colors.yellow,
+    background: Colors.white,
+    width: '100%',
+    // marginBottom: '10px',
 }))
 
 export const ContentContainer = styled(Box)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
-        padding: '100px 35px 70px 35px',
+        padding: '110px 0px 60px 0px',
     },
     display: 'flex',
     flexDirection: 'column',
@@ -41,7 +42,7 @@ export const ContentContainer = styled(Box)(({ theme }) => ({
     alignItems: 'center',
     padding: '7% 6%',
     paddingBottom: '50px',
-    background: Colors.primary,
+    // background: Colors.primary,
 }))
 
 export const AddCardContainer = styled(Box)(({ theme }) => ({
@@ -55,30 +56,37 @@ export const AddCardContainer = styled(Box)(({ theme }) => ({
     padding: '90px 0 0 0',
 }))
 
-export const ServiceContainer = styled(Box)({
+export const ServiceContainer = styled(Box)(({ theme }) => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: '0 5%',
-    marginBottom: '100px',
-})
+    // padding: '0 5%',
+    marginBottom: '80px',
+    // [theme.breakpoints.up('md')]: {
+    //     flexDirection: 'row'
+    // },
+    // [theme.breakpoints.down('md')]: {
+        // flexDirection: 'column', 
+        // width: '100%'
+    // },
+}))
 
 export const ServiceBox = styled(Container)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
-        flexDirection: 'row',
-        padding: '20px 50px',
-        margin: '20px',
-        maxWidth: '900px',
+        flexDirection: 'column',
+        minWidth: '480px',
+        width: '20erm',
+        boxSizing: 'border-box',
     },
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
+    flexWrap: 'wrap',
     margin: '15px',
-    padding: '30px 20px',
-    // borderRadius: '30px',
-    Width: '100px',
+    padding: '10px 20px',
+    Width: '100%',
     // boxShadow: '1px 2px 10px rgba(0, 0, 0, 0.2);',
 }))
 
@@ -86,18 +94,19 @@ export const ServiceBox = styled(Container)(({ theme }) => ({
 export const IconBox = styled(Box)({
     padding: '30px',
     display: 'flex',
-    marginRight: '1rem',
+    // marginRight: '1rem',
+    color: Colors.blue,
 })
 
 
 export const OptionBox = styled(Box)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
-        marginTop: 80, 
+        marginTop: 60, 
         maxWidth: '1000px' 
     },
     flexGrow: 1, 
     marginTop: 60, 
-    marginBottom: 25
+    marginBottom: 30
 }))
 
 export const CardBox = styled(Box)(({ theme }) => ({

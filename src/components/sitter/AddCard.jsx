@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import React, { useState } from "react";
 import axios from "axios";
@@ -34,41 +33,44 @@ function AddCard() {
     const [successMessage, setSuccessMessage] = useState(null);
 
     const handleSubmit = (event) => {
-        event.preventDefault();
+        event.preventDefault()
         console.log('Submited')
         console.log(card)
+
+        setSuccessMessage(null) // Reset success message at the start
 
         //Validation
         if (!card.name) {
             setErrorMessage("Please enter your name.");
-            setSuccessMessage(null)
         } else if (!card.email) {
             setErrorMessage("Please enter your email.");
-            setSuccessMessage(null)
+            // setSuccessMessage(null)
         } else if (!card.email.match((/^[A-Za-z._\-0-9]*[@][A-Za-z]*[.][a-z]{2,4}$/))) {
             setErrorMessage("Please enter a valid email.");
-            setSuccessMessage(null)
-        } else if (!(card.phone.match('[0-9]{10}'))) {
+            // setSuccessMessage(null)
+        } else if (!(card.phone.match('^0\\d{9,10}$'))) {
             setErrorMessage("Please enter a valid phone number.");
         } else if (!card.description) {
             setErrorMessage("Please enter your description.");
-            setSuccessMessage(null)
-            setSuccessMessage(null)
+            // setSuccessMessage(null)
         } else {
             setErrorMessage(null)
-            setSuccessMessage("Form Submitted")
-            axios
+            axios.post("/petsitter", card)
                 // .get(`/cards/${cardId}`)
-                .get("/petparent", card)
-                .get("/petparent/sitters", card)
-                // .post("/petparent/sitters", card)
-                .post("/petparent", card)
-                .then((res) => res.data)
-                .then((json) => (console.log(json)))
-            setTimeout(() => {
-                navigate("/petparent")
-            }, 2500)
-        }
+                // .get("/petparent", card)
+                // .get("/petparent/sitters", card)               
+                .then((res) => {
+                    console.log(res.data);
+                    setSuccessMessage("Form Submitted !");
+                    setTimeout(() => {
+                        window.location.href = '/petparent'
+                    }, 1500)
+                })
+                .catch((error) => {
+                    console.error("There was an error submitting the form: ", error);
+                    setErrorMessage("Error submitting form.");
+                });
+    }
     }
 
     const handleOnChange = (event) => {
@@ -80,8 +82,6 @@ function AddCard() {
             }
         })
     }
-
-    const navigate = useNavigate()
 
     return (
         <AddCardContainer>

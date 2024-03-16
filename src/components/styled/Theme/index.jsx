@@ -5,7 +5,7 @@ export const Colors = {
     yellow: '#FED736',
     white: '#F3F0ED',
     black: '#26201E',
-    blue: '#D0C9C0',
+    blue: '#118ab2',
     background: '#332824',
     danger: "#e3d5ca",
     success: "#d62828",

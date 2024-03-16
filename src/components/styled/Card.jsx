@@ -3,17 +3,18 @@ import { IconButton, Button } from '@mui/material';
 import theme, { Colors } from './Theme';
 
 export const CardWrapper = styled(Box)(({ theme }) => ({
-    padding: '15px 35px 25px 35px',
+    padding: '5px 35px 5px 35px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column',
-    boxShadow: '0px 0px 10px 0.1px rgba(0, 0, 0, 0.1)',
-    borderRadius: '30px',
+    boxShadow: '0px 0px 10px 0.6px rgba(0, 0, 0, 0.2)',
+    borderRadius: '20px',
     transition: '0.3s',
     cursor: 'pointer',
     minHeight: '500px',
-    backgroundColor: Colors.secondary,
+    backgroundColor: Colors.white,
+    transparent: '80%',
     ' &:hover': {
         boxShadow: '0px 0px 10px 1px rgba(4, 5, 5, 0.4)'
     },

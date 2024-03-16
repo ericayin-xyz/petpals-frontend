@@ -22,10 +22,10 @@ export default function Card(props) {
     };
 
     const card = props.cardInfo
-    const linkStyle = { 
-        textDecoration: 'none',
-        width: '100%'
-    }
+    // const linkStyle = { 
+    //     textDecoration: 'none',
+    //     width: '100%'
+    // }
 
     function handleAddReview(e) {
         e.stopPropagation()
@@ -58,10 +58,10 @@ export default function Card(props) {
                 )}
                 <CardText style={{fontSize: '13px'}}>{card.description}</CardText>
                 <CardText><Rating name="half-rating-read" defaultValue={5} precision={0.5} readOnly /></CardText>
-                <HashLink to='#reviews' style={linkStyle}>
+                {/* <HashLink to={`/petparent/sitters/${card.name}`}> */}
+                <HashLink to='#reviews'>
                     <CardButton onClick={handleAddReview}>REVIEWS</CardButton>
                 </HashLink>
-
         </CardWrapper>
     )
 }

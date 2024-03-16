@@ -29,29 +29,28 @@ export const LinkedButton = styled(Button)({
     borderRadius: '10px',
     backgroundColor: Colors.black,
     color: Colors.white,
-    border: `1px solid ${Colors.black}`,
+    border: `0.5px solid ${Colors.black}`,
     width: '22rem',
     '&:hover': {
-        backgroundColor: lighten(0.06, Colors.black),
-        boxShadow: '1px 2px 6px rgba(0, 0, 0.7, 0.8);',
+        backgroundColor: lighten(0.07, Colors.black),
+        boxShadow: '1px 2px 6px rgba(0, 0, 0.8, 0.9);',
     },
 });
 
 export const LinkedButtonOnHomePage = styled(Button)({
     textTransform: 'none',
-    fontSize: 13,
-    letterSpacing: 1.2,
-    padding: '11px 10px',
-    borderRadius: '18px',
+    fontSize: '15px',
+    padding: '9px 10px',
+    borderRadius: '50px',
     backgroundColor: Colors.white,
     color: Colors.black,
-    border: `1px solid ${Colors.white}`,
-    width: '70vw',
-    maxWidth: '450px',
+    // border: `1px solid ${Colors.white}`,
+    width: '450px',
+    // maxWidth: '450px',
     '&:hover': {
         backgroundColor: lighten(0.09, Colors.white),
-        border: `1px solid ${Colors.black}`,
-        boxShadow: '1px 2px 8px rgba(0, 0, 1, 0.9);',
+        // border: `1px solid ${Colors.white}`,
+        boxShadow: '0px 0px 8px rgba(0, 0, 0.4, 0.3);',
     },
 });
 
@@ -81,7 +80,7 @@ export const StyledLinkButtonOnHomePage = ({to, children}) => {
     return (
         <Link
             to={to}
-            style= {{ textDecoration: 'none' }}
+            style= {{ textDecoration: 'none'}}
         ><LinkedButtonOnHomePage>{children}</LinkedButtonOnHomePage> </Link>
     )
 }
@@ -97,18 +96,20 @@ export const StyledLinkButton = ({to, children}) => {
 
 export const CardButton = styled(Button)({
     textTransform: 'none',
-    fontSize: 13,
-    letterSpacing: 1,
+    fontSize: 12,
+    letterSpacing: 0.5,
     fontWeight: 'lighter',
-    width: '100%',
+    // width: '100%',
     marginTop: '12px',
     padding: '6px 20px',
-    borderRadius: '5px',
-    backgroundColor: Colors.button_bg,
-    color: Colors.white,
+    borderRadius: '0px',
+    // backgroundColor: Colors.black,
+    color: Colors.black,
+    textDecoration: 'underline',
+    
     '&:hover': {
-        backgroundColor: lighten(0.04, Colors.button_bg),
-        boxShadow: '1px 2px 6px rgba(0, 0, 1, 0.3);',
+        // borderBottom:' 1px solid black',
+        backgroundColor: Colors.primary,
     },
 });
 
@@ -119,10 +120,10 @@ export const ReviewButton = styled(Button)({
     marginTop: '12px',
     padding: '3px 8px',
     borderRadius: '5px',
-    border:' 1px solid black',
+    border:'1px solid black',
     color: Colors.black,
     '&:hover': {
-        // backgroundColor: Colors.button_bg,
+        // backgroundColor: Colors.primary,
         // color: Colors.primary,
         boxShadow: '0px 1px 3px rgba(0, 0, 6, 0.5);',
         // border:' 0px solid black',

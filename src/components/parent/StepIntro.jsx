@@ -21,7 +21,7 @@ const Item = styled(Stack)(({ theme }) => ({
         padding: '40px 50px',
 
     },
-    padding: '30px 40px',
+    padding: '30px 50px',
     spacing: 3,
     alignItems: 'center',
     justifyContent: 'center',

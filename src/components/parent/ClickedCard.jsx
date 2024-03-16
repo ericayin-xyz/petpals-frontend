@@ -1,11 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, forwardRef } from "react";
 import Review from './Review';
 import Stack from '@mui/material/Stack';
 import { CardReviewWrapper, CardText, CardTitle, CardDescription } from '../styled/Card'
 import { ContentContainer } from '../../components/styled/StyledContainer';
 import { Colors } from '../../components/styled/Theme'
 
-export default function ClickedCard(props) {
+const ClickedCard = forwardRef((props, ref) => {
     const card = props.card
 
     useEffect(() => {
@@ -26,7 +26,7 @@ export default function ClickedCard(props) {
         return null;
     }
     return (
-        <ContentContainer id='reviews' style={{ backgroundColor: Colors.secondary }}>
+        <ContentContainer id='reviews' ref={ref} style={{ backgroundColor: Colors.white }}>
             
             <Stack direction={{ xs: 'column', md: 'row' }} spacing={{ xs: 4, md: 8 }} style={{maxWidth: '1000px'}}>
                 <CardReviewWrapper>
@@ -45,4 +45,6 @@ export default function ClickedCard(props) {
             </Stack>
         </ContentContainer>
     )
-}
+})
+
+export default ClickedCard

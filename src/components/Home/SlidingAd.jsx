@@ -1,20 +1,28 @@
 import { Slide } from "@mui/material";
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import { AdContainer } from "../styled/StyledContainer"
 import styled from 'styled-components';
+import { Colors } from "../styled/Theme";
 
 const LineB = styled.div`
     height: 1px;
-    width: 100vw;
+    width: 100%;
     background-color: black;
-    margin-top: 50px;
+    margin-top: 20px;
+    // box-shadow: 0px 3px 6px rgba(0, 0, 0.6, 0.8);
+    margin-bottom: 50px;
 `;
 
 const LineT = styled.div`
     height: 1px;
-    width: 100vw;
     background-color: black;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+    // box-shadow: 0px 20px 6px rgba(0, 0, 0, 0.6);
+`;
+
+const TextSlide = styled(Slide)`
+    position: relative;
+    z-index: 1; 
 `;
 
 const messages = [
@@ -32,11 +40,11 @@ export default function Intro() {
     const [showMessage, setshowMessage] = useState(true);
 
     useEffect(() => {
-        setTimeout(() => {
-            setshowMessage(false)
-        })
-        // eslint-disable-next-line 
-    }, 3000);
+        const timeoutId = setTimeout(() => {
+            setshowMessage(false);
+        }, 3000);
+        return () => clearTimeout(timeoutId);
+    }, [])
 
     useEffect(() => {
         const intervalid = setInterval(() => {
@@ -56,15 +64,15 @@ export default function Intro() {
 
     return (
         <AdContainer>
-                <LineT />
-                <Slide
-                    direction={showMessage ? "left" : "right"} in={showMessage} timeout={{ enter: 500, exit: 300, border: "1px solid black"}}
-                >
-                    <h1 style={{textAlign: 'center'}}>
-                        {messages[messagesIndex]}
-                    </h1>
-                </Slide>
-                <LineB />
+            <LineT />
+            <TextSlide
+                direction={showMessage ? "left" : "right"} in={showMessage} timeout={{ enter: 500, exit: 300 }}
+            >
+                <h4 style={{ textAlign: 'center', bond: 'light' }}>
+                    {messages[messagesIndex]}
+                </h4>
+            </TextSlide>
+            <LineB />
         </AdContainer>
     )
 }
