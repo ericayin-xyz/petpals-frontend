@@ -19,7 +19,7 @@ const theme = createTheme({
                 paper: {
                     height: 'auto',
                     width: '100%',
-                    background: Colors.primary,
+                    background: Colors.white,
                     borderRadius: '0px 170px 0px 0px',
                     padding: '20px 30px 30px 30px',
                 },
@@ -37,6 +37,5 @@ const theme = createTheme({
 
     }
 });
-
 
 export default theme;

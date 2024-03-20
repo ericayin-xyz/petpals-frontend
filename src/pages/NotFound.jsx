@@ -13,10 +13,11 @@ export default function NotFound() {
                     justifyContent: 'center',
                     alignItems: 'center',
                     alignContent: 'center',
-                    paddingBottom:'7rem',
                 }}>
-                        <Typography fontSize={'11rem'} >404</Typography>
-                        <Typography fontSize={'1.3rem'} fontWeight={'light'}>Ooops...  Page Not Found</Typography>
+                        <Typography fontSize={'10rem'} >404</Typography>
+                        <text fontSize={'1.5rem'} fontWeight={'300'} style={{ letterSpacing: '1px' }}>
+                            Ooops...    Page Not Found
+                        </text>
                     </Stack>
 
             </Container>

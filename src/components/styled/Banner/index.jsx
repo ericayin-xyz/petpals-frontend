@@ -1,6 +1,6 @@
 import { styled } from "@mui/material/styles";
-import { Box, Stack, Typography } from "@mui/material";
-import { Colors } from '../Theme';
+import { Box, Stack } from "@mui/material";
+
 
 export const MainPageBanner = styled(Box)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
@@ -14,13 +14,12 @@ export const MainPageBanner = styled(Box)(({ theme }) => ({
     alignItems: 'center',
     width: '100%',
     paddingTop: '50px',
-    boxShadow: '0px 2px 8px rgba(0, 0, 0, 0.3)',
+    boxShadow: '0px 2px 8px rgba(0, 0, 0, 0.2)',
 }))
 
 export const BannerContainer = styled(Box)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
         flexDirection: 'row',
-        // height: '100%',
         paddingTop: '55px',
 
     },
@@ -30,7 +29,7 @@ export const BannerContainer = styled(Box)(({ theme }) => ({
     alignItems: 'center',
     width: '100%',
     paddingTop: '80px',
-    boxShadow: '0px 2px 8px rgba(0, 0, 0, 0.3)',
+    boxShadow: '0px 2px 8px rgba(0, 0, 0, 0.2)',
 }))
 
 export const BannerContent = styled(Box)(({ theme }) => ({
@@ -73,6 +72,5 @@ export const BannerImage = styled('img')(({ src, theme }) => ({
     src: `url(${src})`,
     position: 'relative',
     zIndex: 10,
-    // width: '30rem',
     maxWidth: '65%',
 }))

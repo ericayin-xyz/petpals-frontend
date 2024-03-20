@@ -19,7 +19,7 @@ const Title = [
     'Drop-In Visits', 'Day Care', 'Overnight Care', 'Dog Walking', 'Pet Taxi'
 ]
 
-const icons = [<PinDropIcon sx={{ fontSize: 50 }} />, <LightModeIcon sx={{ fontSize: 50 }} />, <Brightness4Icon sx={{ fontSize: 50 }} />, <ParkIcon sx={{ fontSize: 50 }} />, <AirportShuttleIcon sx={{ fontSize: 50 }} />];
+const icons = [<PinDropIcon sx={{ fontSize: 45 }} />, <LightModeIcon sx={{ fontSize: 45 }} />, <Brightness4Icon sx={{ fontSize: 45 }} />, <ParkIcon sx={{ fontSize: 45 }} />, <AirportShuttleIcon sx={{ fontSize: 45 }} />];
 
 export default function Service() {
     return (

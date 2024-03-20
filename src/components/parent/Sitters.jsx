@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import CardList from './CardList';
 import ClickedCard from './ClickedCard';
 import { useLocation } from 'react-router-dom';
-import { Colors } from '../styled/Theme';
 
 
 const Sitters = () => {

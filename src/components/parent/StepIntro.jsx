@@ -27,12 +27,18 @@ const Item = styled(Stack)(({ theme }) => ({
     justifyContent: 'center',
     direction: 'column',
     color: Colors.black,
-    border: `1px solid ${Colors.black}`,
+    border: `1px solid ${Colors.blue}`,
     borderRadius: 30,
 }));
 
-const message = [
-    "Read verified reviews by pet parents like you and choose a sitter who’s a great match for you and your pets.", "Schedule a free virtual or in-person Meet & Greet to find the perfect fit (Optional).", "We make it simple to book through our website or app.", "Your pets are in great hands with a loving sitter."
+const Icons = [<Filter1SharpIcon style={{ color: Colors.blue }} />, <Filter2SharpIcon style={{ color: Colors.blue }} />, <Filter3SharpIcon style={{ color: Colors.blue }} />, <Filter4SharpIcon style={{ color: Colors.blue }} />]
+
+const StepTitles = ['Search', 'Meet', 'Book', 'Relax']
+
+const messages = [
+    'Read verified reviews by pet parents like you and choose a sitter who’s a great match for you and your pets.', 
+    'Schedule a free virtual or in-person Meet & Greet to find the perfect fit (Optional).', 
+    'We make it simple to book through our website or app.', 'Your pets are in great hands with a loving sitter.'
 ]
 
 function StepIntro() {
@@ -44,33 +50,15 @@ function StepIntro() {
                 </Bodytext>
                 <OptionBox>
                     <Grid container spacing={3}>
-                        <Grid item xs={12} md={6}>
-                            <Item>
-                                <Filter1SharpIcon fontSize='large' />
-                                <StepTitle>Search</StepTitle>
-                                <Icontext>{message[0]}</Icontext>
-                            </Item>
-                        </Grid>
-
-                        <Grid item xs={12} md={6}>
-                            <Item>
-                                <Filter2SharpIcon fontSize='large' />
-                                <StepTitle>Meet</StepTitle>
-                                <Icontext>{message[1]}</Icontext>
-                            </Item>
-                        </Grid>
-
-                        <Grid item xs={12} md={6}>
-                            <Item><Filter3SharpIcon fontSize='large' />
-                                <StepTitle>Book</StepTitle>
-                                <Icontext>{message[2]}</Icontext>
-                            </Item>
-                        </Grid>
-                        <Grid item xs={12} md={6}>
-                            <Item><Filter4SharpIcon fontSize='large' />
-                                <StepTitle>Relax</StepTitle>
-                                <Icontext>{message[3]}</Icontext></Item>
-                        </Grid>
+                        {StepTitles.map((title, index) => (
+                            <Grid item xs={12} md={6} key={index}>
+                                <Item>
+                                    {Icons[index]}
+                                    <StepTitle style={{ color: Colors.blue }}>{title}</StepTitle>
+                                    <Icontext>{messages[index]}</Icontext>
+                                </Item>
+                            </Grid>
+                        ))}
                     </Grid>
                 </OptionBox>
             </ContentContainer>

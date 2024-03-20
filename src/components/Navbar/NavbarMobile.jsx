@@ -18,7 +18,7 @@ export default function NavbarMobile({ matches }) {
                     <NavbarHeader variant="h5">Petpals</NavbarHeader>
                 </Link>
                 <IconButton size='large' onClick={() => setDrawerOpen(true)}>
-                    <MenuIcon sx={{ fontSize: "2.1rem", color: Colors.black }} />
+                    <MenuIcon sx={{ fontSize: "2.2rem", color: Colors.black }} />
                 </IconButton>
             </NavbarMobileWidth>
         </NavbarContainer>

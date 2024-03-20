@@ -1,23 +1,23 @@
 import * as React from 'react';
-import { List, Typography, IconButton}  from "@mui/material";
+import { List, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles"
 import { Box } from "@mui/material"
 import '@fontsource/montez';
-import {Colors} from "../Theme"
+import { Colors } from "../Theme"
 import { Link } from 'react-router-dom';
+import { useNavContext } from '../../Navbar/NavContext';
 
 
 export const NavbarContainer = styled(Box)(() => ({
     display: 'flex',
     height: '75px',
-    // backgroundColor: Colors.yellow,
     justifyContent: 'center',
     boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1);',
     alignItems: 'center',
     width: '100%',
     position: 'fixed',
     top: 0,
-    opacity: 0.85,
+    opacity: 0.8,
     zIndex: 99,
 }));
 
@@ -42,7 +42,7 @@ export const NavbarMobileWidth = styled(Box)(() => ({
 }));
 
 
-export const NavbarHeader = styled(Typography)(({theme}) => ({
+export const NavbarHeader = styled(Typography)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
         fontSize: '2.3em',
     },
@@ -58,29 +58,27 @@ export const NavList = styled(List)({
     justifyContent: 'right',
 })
 
-
-export const DrawerCloseButton = styled(IconButton)(() => ({
-    position: 'fixed',
-    bottom: '42vh',
-    right: 18,
-    zIndex: 1999,
-}))
-
-
-export const StyledLink = ({to, children}) => {
+export const StyledLink = ({ to, children }) => {
     return (
         <Link
             to={to}
-            style= {{ textDecoration: 'none', color: Colors.black, fontSize: '1.2rem', padding:'2rem' }}
+            style={{ textDecoration: 'none', color: Colors.black, fontSize: '1.1rem', padding: '2rem' }}
         > {children}</Link>
     )
 }
 
-export const StyledDrawerLink = ({to, children}) => {
+export const StyledDrawerLink = ({ to, children, ...props }) => {
+
+    const { setDrawerOpen } = useNavContext();
+    const handleClick = () => {
+        setDrawerOpen(false);
+    };
+
     return (
         <Link
             to={to}
-            style= {{ textDecoration: 'none', color: Colors.black, fontSize: '1.2rem' }}
+            style={{ textDecoration: 'none', color: Colors.black, background: Colors.blue, fontSize: '1.2rem' }}
+            onClick={handleClick} {...props}
         > {children}</Link>
     )
 }

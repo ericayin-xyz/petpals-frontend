@@ -7,6 +7,7 @@ export const Bodytext = styled(Typography)(({ theme }) => ({
     },
     fontSize: '3rem',
     color: Colors.blue,
+    textAlign: 'center',
 }))
 
 export const ServiceText = styled(Typography)(({ theme }) => ({
@@ -16,20 +17,16 @@ export const ServiceText = styled(Typography)(({ theme }) => ({
         maxWidth: '100%',
     },
     fontSize: '18px',
-    textAlign: 'center',
+    textAlign: 'left',
     lineHeight: '1.7rem',
     bond: 'light',
     maxWidth: '72%',
-    textAlign: 'left'
 }))
 
-export const Footertext = styled(Typography)(({ theme }) => ({
-    [theme.breakpoints.up('md')]: {
-        fontSize: '0.8rem',
-    },
-    fontSize: '0.9rem',
+export const Footertext = styled('span')(({ theme }) => ({
+    fontSize: '0.8rem',
     textAlign: 'center',
-    fontWeight: 'lighter',
+    fontWeight: '300',
 }))
 
 export const IconTitle = styled(Typography)(({ theme }) => ({
@@ -45,23 +42,21 @@ export const IconTitle = styled(Typography)(({ theme }) => ({
 
 export const StepTitle = styled(Typography)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
-        fontSize: '1.6rem',
+        fontSize: '1.3rem',
     },
     marginTop: '.5rem',
     fontSize: '1.2rem',
-    color: Colors.black
 }))
 
-export const Icontext = styled(Typography)(({ theme }) => ({
+export const Icontext = styled('span')(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
-        fontSize: '0.9rem',
-        // marginLeft: '1.5rem',
+        fontSize: '14px',
     },
-    marginTop: '1.2rem',
-    fontSize: '1rem',
-    fontWeight: 'lighter',
+    marginTop: '1.3rem',
+    fontSize: '15px',
+    fontWeight: 'light',
     textAlign: 'center',
-    color: Colors.background
+    lineHeight: 1.6
 }))
 
 

@@ -26,34 +26,29 @@ export const LinkedButton = styled(Button)({
     fontSize: 13,
     letterSpacing: 1.2,
     padding: '9px 10px',
-    borderRadius: '10px',
-    backgroundColor: Colors.black,
+    borderRadius: '20px',
+    backgroundColor: Colors.blue,
     color: Colors.white,
-    border: `0.5px solid ${Colors.black}`,
     width: '22rem',
     '&:hover': {
-        backgroundColor: lighten(0.07, Colors.black),
-        boxShadow: '1px 2px 6px rgba(0, 0, 0.8, 0.9);',
+        backgroundColor: lighten(0.07, Colors.blue),
+        boxShadow: '0px 0px 8px rgba(0, 0, 0.4, 0.3);',
     },
 });
 
 export const LinkedButtonOnHomePage = styled(Button)({
     textTransform: 'none',
-    fontSize: '15px',
-    padding: '9px 10px',
-    borderRadius: '50px',
+    fontSize: 13,
+    padding: '8px 0',
+    borderRadius: '20px',
     backgroundColor: Colors.white,
     color: Colors.black,
-    // border: `1px solid ${Colors.white}`,
-    width: '450px',
-    // maxWidth: '450px',
+    width: '400px',
     '&:hover': {
         backgroundColor: lighten(0.09, Colors.white),
-        // border: `1px solid ${Colors.white}`,
         boxShadow: '0px 0px 8px rgba(0, 0, 0.4, 0.3);',
     },
 });
-
 
 export default function CustomizedButtons(props) {
     return (
@@ -65,7 +60,6 @@ export default function CustomizedButtons(props) {
     );
 };
 
-
 export const SelectionButton = styled(Button)(({ props }) => ({
     padding: '80px 0px 40px 0px',
     display: 'flex',
@@ -74,7 +68,6 @@ export const SelectionButton = styled(Button)(({ props }) => ({
     alignItems: 'center',
     background: 'lightblue',
 }))
-
 
 export const StyledLinkButtonOnHomePage = ({to, children}) => {
     return (
@@ -99,14 +92,11 @@ export const CardButton = styled(Button)({
     fontSize: 12,
     letterSpacing: 0.5,
     fontWeight: 'lighter',
-    // width: '100%',
     marginTop: '12px',
     padding: '6px 20px',
     borderRadius: '0px',
-    // backgroundColor: Colors.black,
     color: Colors.black,
     textDecoration: 'underline',
-    
     '&:hover': {
         // borderBottom:' 1px solid black',
         backgroundColor: Colors.primary,

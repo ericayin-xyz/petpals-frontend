@@ -133,7 +133,7 @@ function AddCard() {
                             width: '100%',
                             marginTop: '10px',
                         }} id='submitBtn' onClick={handleSubmit} >
-                        SEND</LinkedButton>
+                        Send</LinkedButton>
 
                     <h4 style={{ margin: '10px 0px', color: 'red', textAlign: 'center' }}>{errorMessage}{successMessage}
                     </h4>

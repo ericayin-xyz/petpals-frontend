@@ -16,12 +16,11 @@ export default function Footer() {
                     position: 'sticky',
                     bottom: 0,
                     zIndex: 99,
-                    // bgcolor: Colors.black,
                     mt: 'auto',
                     color: Colors.black,
                 }}
             >
-                <Footertext>@ 2023 PetPals</Footertext>
+                <Footertext>@ 2024 PetPals</Footertext>
             </Box>
         </Box>
     )

@@ -2,7 +2,7 @@ import { Slide } from "@mui/material";
 import React, { useEffect, useState } from "react"
 import { AdContainer } from "../styled/StyledContainer"
 import styled from 'styled-components';
-import { Colors } from "../styled/Theme";
+
 
 const LineB = styled.div`
     height: 1px;
@@ -32,7 +32,6 @@ const messages = [
     "Contact directly",
     "Free virtual or in-person meetings before booking"
 ]
-
 
 export default function Intro() {
 

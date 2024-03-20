@@ -34,20 +34,19 @@ export const AdContainer = styled(Box)(({ theme }) => ({
 
 export const ContentContainer = styled(Box)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
-        padding: '110px 0px 60px 0px',
+        padding: '110px 20px 60px 20px',
+        minHeight: '700px',
     },
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     padding: '7% 6%',
-    paddingBottom: '50px',
-    // background: Colors.primary,
 }))
 
 export const AddCardContainer = styled(Box)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
-        padding: '70px 0px 0px 0px',
+        padding: '110px 0px 0px 0px',
     },
     display: 'flex',
     flexDirection: 'column',
@@ -101,12 +100,12 @@ export const IconBox = styled(Box)({
 
 export const OptionBox = styled(Box)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
-        marginTop: 60, 
+        marginTop: 90, 
         maxWidth: '1000px' 
     },
     flexGrow: 1, 
     marginTop: 60, 
-    marginBottom: 30
+    marginBottom: 60
 }))
 
 export const CardBox = styled(Box)(({ theme }) => ({

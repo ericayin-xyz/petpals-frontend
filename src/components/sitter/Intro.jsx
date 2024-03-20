@@ -14,22 +14,26 @@ import Filter3SharpIcon from '@mui/icons-material/Filter3Sharp';
 
 const Item = styled(Stack)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
-        height: '300px',
-        padding: '20px 20px',
+        height: '270px',
+        padding: '0px 25px',
     },
-    padding: '40px 50px',
-    spacing: 3,
+    padding: '50px 50px',
+    spacing: 4,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     color: Colors.black,
-    border: `1px solid ${Colors.black}`,
+    border: `1px solid ${Colors.blue}`,
     borderRadius: 30,
 }));
 
-const message = [
-    "To get started, introduce about yourself and what services you provided.", "Post a job, review profiles, then message candidates who fit your needs.", "Conduct interviews, check references, and hire the one that works for you."
+const StepTitles = ['Post Job', 'Connect', 'Hire']
+
+const messages = [
+    'To get started, introduce about yourself and what services you provided.', 'Post a job, review profiles, then message candidates who fit your needs.', 'Conduct interviews, check references, and hire the one that works for you.'
 ]
+
+const Icons = [<Filter1SharpIcon style={{ color: Colors.blue }} />, <Filter2SharpIcon  style={{ color: Colors.blue }}/>, <Filter3SharpIcon style={{ color: Colors.blue }} />]
 
 function Intro() {
     return (
@@ -40,28 +44,15 @@ function Intro() {
                 </Bodytext>
                 <OptionBox>
                     <Grid container spacing={3}>
-                        <Grid item xs={12} md={4}>
-                            <Item>
-                                <Filter1SharpIcon fontSize='large' />
-                                <StepTitle>Post Job</StepTitle>
-                                <Icontext>{message[0]}</Icontext>
-                            </Item>
-                        </Grid>
-
-                        <Grid item xs={12} md={4}>
-                            <Item>
-                                <Filter2SharpIcon fontSize='large' />
-                                <StepTitle>Connect</StepTitle>
-                                <Icontext>{message[1]}</Icontext>
-                            </Item>
-                        </Grid>
-
-                        <Grid item xs={12} md={4}>
-                            <Item><Filter3SharpIcon fontSize='large' />
-                                <StepTitle>Hire</StepTitle>
-                                <Icontext>{message[2]}</Icontext>
-                            </Item>
-                        </Grid>
+                        {StepTitles.map((title, index) => (
+                            <Grid item xs={12} md={4} key={index}>
+                                <Item>
+                                    {Icons[index]}
+                                    <StepTitle style={{ color: Colors.blue }}>{title}</StepTitle>
+                                    <Icontext>{messages[index]}</Icontext>
+                                </Item>
+                            </Grid>
+                        ))}
                     </Grid>
                 </OptionBox>
             </ContentContainer>

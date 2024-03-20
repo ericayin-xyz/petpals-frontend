@@ -3,7 +3,7 @@ import { ContentContainer } from '../styled/StyledContainer';
 import Grid from '@mui/material/Unstable_Grid2';
 import Card from './Card';
 import useApi from "../utils/useApi"
-import { Colors } from '../../components/styled/Theme'
+
 
 export default function CardList(props) {
     const [cardsWithoutReviewAndImage] = useApi('/petparent')
@@ -13,8 +13,8 @@ export default function CardList(props) {
     })
 
     return (
-        <BannerContainer>
-            <ContentContainer maxWidth={'1000px'} sx={{ flexGrow: 1, minHeight: '80vh' }}>
+        <BannerContainer style={{boxShadow: 'none', paddingTop: '20px'}}>
+            <ContentContainer maxWidth={'1040px'} sx={{ flexGrow: 1, minHeight: '80vh' }}>
                 <Grid container spacing={{ xs: 3, md: 5 }} columns={{ xs: 4, sm: 8, md: 16 }}>
                     {
                         cards.map((card, index) => {

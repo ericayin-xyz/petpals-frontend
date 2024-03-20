@@ -1,4 +1,3 @@
-import { margin } from "polished";
 import { MainPageBanner, BannerContent, BannerDescription, BannerImage } from "../styled/Banner"
 import { Colors } from "../styled/Theme";
 import Intro from "../Home/SlidingAd";
@@ -9,7 +8,6 @@ export default function Banner() {
         fontFamily: "Indie Flower",
         color: Colors.blue,
         alignSelf: 'flex-start',
-        // paddingTop: '10px',
     };
 
     const descriptionStyle = {
@@ -20,7 +18,6 @@ export default function Banner() {
 
     const closingQuoteStyle = {
         ...quoteStyle,
-        // position: 'absolute',
         alignSelf: 'flex-end',
     };
 
@@ -36,7 +33,6 @@ export default function Banner() {
                     <span style={closingQuoteStyle}>”</span>   
                     <Intro />        
                 </BannerDescription>
-                
             </BannerContent>
         </MainPageBanner>
     )
