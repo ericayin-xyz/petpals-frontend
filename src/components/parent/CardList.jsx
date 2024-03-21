@@ -13,7 +13,7 @@ export default function CardList(props) {
     })
 
     return (
-        <BannerContainer style={{boxShadow: 'none', paddingTop: '20px'}}>
+        <BannerContainer style={{boxShadow: 'none'}}>
             <ContentContainer maxWidth={'1040px'} sx={{ flexGrow: 1, minHeight: '80vh' }}>
                 <Grid container spacing={{ xs: 3, md: 5 }} columns={{ xs: 4, sm: 8, md: 16 }}>
                     {

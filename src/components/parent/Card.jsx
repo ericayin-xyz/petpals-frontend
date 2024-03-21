@@ -1,4 +1,4 @@
-import { CardWrapper, CardText, CardTitle } from '../styled/Card'
+import { CardWrapper, CardText, CardDescription, CardTitle } from '../styled/Card'
 import React, { useState } from "react";
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 import Stack from '@mui/material/Stack';
@@ -7,6 +7,7 @@ import Divider from '@mui/material/Divider';
 import { CardButton } from '../styled/Button';
 import Rating from '@mui/material/Rating';
 import { HashLink } from 'react-router-hash-link';
+import { Colors } from '../styled/Theme/index';
 
 export default function Card(props) {
     const [showDetails, setShowDetails] = useState(false);
@@ -22,46 +23,61 @@ export default function Card(props) {
     };
 
     const card = props.cardInfo
-    // const linkStyle = { 
-    //     textDecoration: 'none',
-    //     width: '100%'
-    // }
 
     function handleAddReview(e) {
         e.stopPropagation()
         handleCardClick(props.setCard(card))
     }
-    
+
     return (
         <CardWrapper onClick={() => handleCardClick(card.id)}>
-
-            <img style={{ height: 180, marginBottom: '20px' }} 
-            src={card.image} 
-            alt={'sitter-card'} />
-
-                <CardTitle>{card.name}</CardTitle>
-                <CardText>{card.experience}</CardText>
-                <CardText>{card.city}</CardText>
-                {showDetails && (
-                    <Stack direction="column" spacing={0.9} sx={{marginBottom: '15px'}}>
-                        <Divider />
-                        <Stack direction="row" spacing={1} sx={{ width: '200px' }}>
-                            <PhoneAndroidIcon fontSize={'small'} />
-                            <CardText>{card.phone}</CardText>
-                        </Stack>
-                        <Stack direction="row" spacing={1} sx={{ width: '200px' }}>
-                            <AlternateEmailIcon fontSize={'small'} />
-                            <CardText>{card.email}</CardText>
-                        </Stack>
-                        <Divider />
+            <img
+                // style={{  marginBottom: '20px' }}
+                style={{ height: 110, position: 'absolute', top: '20px', marginBottom: '20px', zIndex: 1 }}
+                src={card.image}
+                alt={'sitter-card'}
+            />
+            <CardTitle>{card.name}</CardTitle>
+            <CardText>Experience:  {card.experience}</CardText>
+            <CardText>{card.address}</CardText>
+            {showDetails && (
+                <Stack spacing={0.5} paddingBottom={2.5}>
+                    <Divider />
+                    <Stack direction="row" spacing={1.5} paddingLeft={0.5}>
+                        <PhoneAndroidIcon style={{
+                            marginTop: '2px',
+                            fontSize: '13px', 
+                            color: Colors.black,
+                        }} />
+                        <CardText>{card.phone}</CardText>
                     </Stack>
-                )}
-                <CardText style={{fontSize: '13px'}}>{card.description}</CardText>
-                <CardText><Rating name="half-rating-read" defaultValue={5} precision={0.5} readOnly /></CardText>
-                {/* <HashLink to={`/petparent/sitters/${card.name}`}> */}
-                <HashLink to='#reviews'>
-                    <CardButton onClick={handleAddReview}>REVIEWS</CardButton>
-                </HashLink>
+                    <Stack direction="row" spacing={1.5} paddingLeft={0.5} paddingBottom={1}>
+                        <AlternateEmailIcon style={{
+                            marginTop: '3px',
+                            fontSize: '13px', 
+                            color: Colors.black,
+                        }} />
+                        <CardText>{card.email}</CardText>
+                    </Stack>
+                    <Divider />
+                </Stack>
+            )}
+            {showDetails ? (
+                <CardText>{card.description}</CardText>
+            ) : (
+                <CardDescription style={{
+                    display: '-webkit-box',
+                    WebkitLineClamp: '2',
+                    WebkitBoxOrient: 'vertical',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                }}
+                >{card.description}</CardDescription>
+            )}
+            <CardText style={{ paddingTop: '15px' }}><Rating name="half-rating-read" defaultValue={5} precision={0.5} readOnly /></CardText>
+            <HashLink to='#reviews' >
+                <CardButton onClick={handleAddReview} >Reviews</CardButton>
+            </HashLink>
         </CardWrapper>
     )
 }

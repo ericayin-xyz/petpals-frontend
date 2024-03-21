@@ -3,7 +3,7 @@ import { IconButton, Button } from '@mui/material';
 import theme, { Colors } from './Theme';
 
 export const CardWrapper = styled(Box)(({ theme }) => ({
-    padding: '5px 35px 5px 35px',
+    padding: '130px 30px 30px 30px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -12,16 +12,15 @@ export const CardWrapper = styled(Box)(({ theme }) => ({
     borderRadius: '20px',
     transition: '0.3s',
     cursor: 'pointer',
-    minHeight: '500px',
-    backgroundColor: Colors.white,
+    minHeight: '390px',
     transparent: '80%',
+    position: 'relative',
     ' &:hover': {
         boxShadow: '0px 0px 10px 1px rgba(4, 5, 5, 0.4)'
     },
-
     [theme.breakpoints.up('md')]: {
         position: 'relative',
-        maxWidth: '400px',
+        maxWidth: '450px',
     }
 }))
 
@@ -45,23 +44,23 @@ export const AddToCard = styled(Button)(() => ({
 }))
 
 export const CardText = styled(Box)({
-    padding: 4,
     display: 'flex',
-    flexDirection: 'column',
     textAlign: 'center',
+    fontWeight: '800',
+    fontSize: '11px',
+    lineHeight: 1.5,
 })
 
 export const CardDescription = styled(Box)(({ theme }) => ({
-    padding: 4,
     display: 'flex',
-    flexDirection: 'column',
     textAlign: 'center',
-    fontSize: '14px',
-    marginTop: '15px',
+    fontWeight: '800',
+    fontSize: '11px',
     lineHeight: 1.5,
-    [theme.breakpoints.up('md')]: {
-        textAlign: 'left',
-    }
+    marginTop: '20px',
+    // [theme.breakpoints.up('md')]: {
+    //     textAlign: 'left',
+    // }
 }))
 
 export const CardTitle = styled(Box)(({ theme }) => ({
@@ -70,8 +69,9 @@ export const CardTitle = styled(Box)(({ theme }) => ({
     flexDirection: 'column',
     textAlign: 'center',
     fontWeight: 'bolder',
-    fontSize: '23px',
+    fontSize: '20px',
     marginBottom: '0.5rem',
+    marginTop: '0.8rem',
 }))
 
 
