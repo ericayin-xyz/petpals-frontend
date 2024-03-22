@@ -24,14 +24,17 @@ const BootstrapButton = styled(Button)({
 export const LinkedButton = styled(Button)({
     textTransform: 'none',
     fontSize: 13,
-    letterSpacing: 1.2,
+    letterSpacing: 1.1,
+    fontWeight: '600', 
+    fontFamily: 'Montserrat, sans-serif',
     padding: '9px 10px',
     borderRadius: '20px',
     backgroundColor: Colors.blue,
     color: Colors.white,
-    width: '22rem',
+    width: '100%',
     '&:hover': {
         backgroundColor: lighten(0.07, Colors.blue),
+        fontWeight: 'bonder', 
         boxShadow: '0px 0px 8px rgba(0, 0, 0.4, 0.3);',
     },
 });
@@ -39,11 +42,15 @@ export const LinkedButton = styled(Button)({
 export const LinkedButtonOnHomePage = styled(Button)({
     textTransform: 'none',
     fontSize: 13,
+    fontWeight: '600', 
+    fontFamily: 'Montserrat, sans-serif',
     padding: '8px 0',
     borderRadius: '20px',
     backgroundColor: Colors.white,
     color: Colors.black,
     width: '400px',
+    transform: 'scaleX(0.95)',
+    letterSpacing: '0.05em',
     '&:hover': {
         backgroundColor: lighten(0.09, Colors.white),
         boxShadow: '0px 0px 8px rgba(0, 0, 0.4, 0.3);',
@@ -115,35 +122,33 @@ export const CardButton = styled(Button)({
         backgroundColor: Colors.white,
         width: '100%',
     },
-    // textTransform: 'none',
-    // fontSize: 12,
-    // letterSpacing: 0.5,
-    // marginTop: '12px',
-    // padding: '5px 15px',
-    // color: Colors.blue,
-    // textDecoration: 'underline',
-    // borderBottom: '1px solid transparent', 
-    // transition: 'border-bottom 0.5s ease, color 0.5s ease, background-color 0.5s ease',
-    // '&:hover': {
-    //     // borderBottom: `1px solid ${Colors.blue}`,
-    //     color: Colors.black,
-    //     backgroundColor: Colors.white,
-
-    // },
 });
 
-export const ReviewButton = styled(Button)({
+export const ReviewEditButton = styled(Button)({
     textTransform: 'none',
-    fontSize: 13,
-    fontWeight: 'lighter',
+    fontSize: 12,
+    fontWeight: '600', 
+    fontFamily: 'Montserrat, sans-serif',
     marginTop: '12px',
-    padding: '3px 8px',
-    borderRadius: '5px',
-    border: '1px solid black',
+    padding: '4px 12px',
+    borderRadius: '20px',
     color: Colors.black,
+    border: `1px solid ${Colors.black}`,
+    // backgroundColor: Colors.blue,
+    transform: 'scaleX(0.95)',
+    letterSpacing: '0.05em',
     '&:hover': {
-        // backgroundColor: Colors.primary,
+        backgroundColor: lighten(0.09, Colors.white),
         boxShadow: '0px 1px 3px rgba(0, 0, 6, 0.5);',
-        // border:' 0px solid black',
+        border:' 0px solid black',
     },
 });
+
+
+    
+    // width: '400px',
+//     '&:hover': {
+//         backgroundColor: lighten(0.09, Colors.white),
+//         boxShadow: '0px 0px 8px rgba(0, 0, 0.4, 0.3);',
+//     },
+// });

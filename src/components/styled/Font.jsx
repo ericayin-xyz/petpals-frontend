@@ -6,6 +6,8 @@ export const Bodytext = styled(Typography)(({ theme }) => ({
         fontSize: '4rem',
     },
     fontSize: '3rem',
+    fontFamily: 'Montserrat',
+    fontWeight: 'bold',
     color: Colors.blue,
     textAlign: 'center',
 }))
@@ -29,23 +31,26 @@ export const Footertext = styled('span')(({ theme }) => ({
     fontWeight: '300',
 }))
 
-export const IconTitle = styled(Typography)(({ theme }) => ({
-    [theme.breakpoints.up('md')]: {
-        fontSize: '1.6rem',
-        marginLeft: '1.5rem',
-    },
-    marginLeft: '1rem',
-    fontSize: '1.2rem',
-    fontWeight: 'lighter',
-    color: Colors.blue
-}))
+// export const IconTitle = styled(Typography)(({ theme }) => ({
+//     [theme.breakpoints.up('md')]: {
+//         fontSize: '1.6rem',
+//         marginLeft: '1.5rem',
+//     },
+//     marginLeft: '1rem',
+//     fontSize: '1.2rem',
+//     fontFamily: 'Montserrat',
+//     // fontWeight: 'lighter',
+//     color: Colors.blue
+// }))
 
 export const StepTitle = styled(Typography)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
-        fontSize: '1.3rem',
+        fontSize: '1.2rem',
     },
-    marginTop: '.5rem',
-    fontSize: '1.2rem',
+    fontFamily: 'Montserrat',
+    fontWeight: '800',
+    marginTop: '.4rem',
+    fontSize: '1.5rem',
 }))
 
 export const Icontext = styled('span')(({ theme }) => ({
@@ -59,4 +64,11 @@ export const Icontext = styled('span')(({ theme }) => ({
     lineHeight: 1.6
 }))
 
-
+export const ReviewDescription = styled('span')(({ theme }) => ({
+    display: 'flex',
+    textAlign: 'left',
+    marginLeft: '-1',
+    fontWeight: '800',
+    fontSize: '13px',
+    lineHeight: 1.5,
+}))

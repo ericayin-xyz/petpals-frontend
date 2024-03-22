@@ -1,9 +1,11 @@
 import { useEffect, forwardRef } from "react";
 import Review from './Review';
 import Stack from '@mui/material/Stack';
-import { CardReviewWrapper, CardText, CardTitle, CardDescription } from '../styled/Card'
-import { ContentContainer } from '../../components/styled/StyledContainer';
+import { CardReviewWrapper, CardTitle, ReviewDescription, ReviewText } from '../styled/Card'
+import { ReviewContainer } from '../../components/styled/StyledContainer';
 import { Colors } from '../../components/styled/Theme'
+import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
+import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 
 const ClickedCard = forwardRef((props, ref) => {
     const card = props.card
@@ -26,24 +28,44 @@ const ClickedCard = forwardRef((props, ref) => {
         return null;
     }
     return (
-        <ContentContainer id='reviews' ref={ref} style={{ backgroundColor: Colors.white }}>
-            
-            <Stack direction={{ xs: 'column', md: 'row' }} spacing={{ xs: 4, md: 8 }} style={{maxWidth: '1000px'}}>
-                <CardReviewWrapper>
-                    <img style={{ height: 150, marginBottom: '30px' }}
-                        src={card.image}
-                        alt={'sitter'} />
-
-                    <CardTitle>{card.name}</CardTitle>
-                    <CardText>E: {card.email}</CardText>
-                    <CardText>M: {card.phone}</CardText>
-                    <CardText>Experience: {card.experience}</CardText>
-                    <CardText>City: {card.city}</CardText>
-                    <CardDescription>{card.description}</CardDescription>
-                </CardReviewWrapper>
-                <Review />
-            </Stack>
-        </ContentContainer>
+        <ReviewContainer id='reviews' ref={ref} paddingTop={{ xs: '1.5rem', md: '5rem' }}>
+            <CardReviewWrapper>
+                {/* <Stack> */}
+                <img style={{ marginTop: '30px', height: '7rem' }}
+                    src={card.image}
+                    alt={'sitter'} />
+                {/* </Stack> */}
+                <Stack padding={2} paddingLeft={5}>
+                    {/* <CardReviewDetail> */}
+                    <CardTitle style={{ paddingBottom: '15px', textAlign: 'left' }}>{card.name}</CardTitle>
+                    <ReviewText>
+                        <PhoneAndroidIcon style={{
+                            marginTop: '6px',
+                            marginRight: '0.7rem',
+                            fontSize: '18px',
+                            color: Colors.blue,
+                        }} />
+                        {card.email}
+                    </ReviewText>
+                    <ReviewText>
+                        <AlternateEmailIcon style={{
+                            marginTop: '5.5px',
+                            marginRight: '0.7rem',
+                            fontSize: '18px',
+                            color: Colors.blue,
+                        }} />
+                        {card.phone}
+                    </ReviewText>
+                    {card.experience && <ReviewText style={{ marginLeft: '2px', marginTop: '5px' }}>Experience: {card.experience}</ReviewText>}
+                    {card.city && <ReviewText style={{ textAlign: 'left' }}>City: {card.city}</ReviewText>}
+                    {/* </CardReviewDetail> */}
+                </Stack>
+                <Stack padding={{ xs: '1rem', md: '3.2rem' }}>
+                    <ReviewDescription>{card.description}</ReviewDescription>
+                </Stack>
+            </CardReviewWrapper>
+            <Review />
+        </ReviewContainer>
     )
 })
 

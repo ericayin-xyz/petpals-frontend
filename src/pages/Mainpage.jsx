@@ -3,7 +3,6 @@ import { NavProvider } from '../components/Navbar/NavContext';
 import Banner from '../components/Home/Banner';
 import ButtonGroup from '../components/Home/ButtonGroup'
 import Service from '../components/Home/Service';
-// import Intro from '../components/Home/SlidingAd';
 
 const Mainpage = () => {
     useEffect(() => {

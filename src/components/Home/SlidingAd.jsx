@@ -67,9 +67,9 @@ export default function Intro() {
             <TextSlide
                 direction={showMessage ? "left" : "right"} in={showMessage} timeout={{ enter: 500, exit: 300 }}
             >
-                <h4 style={{ textAlign: 'center', bond: 'light' }}>
+                <p style={{ textAlign: 'center', bond: 'light' }}>
                     {messages[messagesIndex]}
-                </h4>
+                </p>
             </TextSlide>
             <LineB />
         </AdContainer>

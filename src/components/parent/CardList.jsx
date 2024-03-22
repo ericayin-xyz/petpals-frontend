@@ -1,5 +1,5 @@
 import { BannerContainer } from '../styled/Banner';
-import { ContentContainer } from '../styled/StyledContainer';
+import { SittersContainer } from '../styled/StyledContainer';
 import Grid from '@mui/material/Unstable_Grid2';
 import Card from './Card';
 import useApi from "../utils/useApi"
@@ -14,8 +14,11 @@ export default function CardList(props) {
 
     return (
         <BannerContainer style={{boxShadow: 'none'}}>
-            <ContentContainer maxWidth={'1040px'} sx={{ flexGrow: 1, minHeight: '80vh' }}>
-                <Grid container spacing={{ xs: 3, md: 5 }} columns={{ xs: 4, sm: 8, md: 16 }}>
+            <SittersContainer maxWidth={'1040px'}  sx={{ flexGrow: 1, minHeight: '80vh' }}>
+                <Grid container 
+                    spacing={{ xs: 3, md: 5 }}  
+                    columns={{ xs: 4, sm: 8, md: 16 }}
+                >
                     {
                         cards.map((card, index) => {
                             return (
@@ -29,7 +32,7 @@ export default function CardList(props) {
                         })
                     }
                 </Grid>
-            </ContentContainer>
+            </SittersContainer>
         </BannerContainer >
     )
 }

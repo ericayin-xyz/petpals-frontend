@@ -2,11 +2,14 @@ import { useReducer } from "react"
 import reviewReducer from "../utils/reducers"
 import StarIcon from '@mui/icons-material/Star';
 import Stack from '@mui/material/Stack';
-import { ReviewButton } from '../styled/Button'
+import { ReviewEditButton } from '../styled/Button'
 import Rating from '@mui/material/Rating';
 import Box from '@mui/material/Box';
 import { Bodytext } from '../styled/Font';
 import { LinkedButton } from '../styled/Button';
+import { ReviewContainer, PostReview } from '../styled/StyledContainer';
+import { ReviewDescription, Icontext } from '../styled/Font';
+
 
 const initialReviews = [
     {
@@ -53,7 +56,7 @@ function Review() {
         })
     }
 
-    const addReview =(e) => {
+    const addReview = (e) => {
         e.preventDefault()
         dispatch({
             type: "addReview",
@@ -81,7 +84,7 @@ function Review() {
         })
     }
 
-    const handleEditRating =(e, newValue) => {
+    const handleEditRating = (e, newValue) => {
         dispatch({
             type: 'setEditRating',
             payload: newValue
@@ -96,64 +99,67 @@ function Review() {
     }
 
     return (
-        <Stack id="reviews" spacing={1} style={{ marginLeft: 30 }}>
-            <Bodytext variant="h1" style={{ marginBottom: 30 }}>Reviews</Bodytext>
-            {reviews.map((review) => {
-                return (
-                    <Stack key={review.id} spacing={0.5} style={{ marginBottom: 15 }} >
-                        <div>{review.description}</div>
-                        <Rating name="read-only" value={review.rating} precision={0.5} emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />} readOnly />
-                        {showButton && (
-                            <div>
-                            <ReviewButton onClick={() => editReview(review.id)} style={{ marginRight: '10px' }}>Edit</ReviewButton>
-                            <ReviewButton onClick={() => deleteReview(review.id)}>Delete</ReviewButton>
-                            </div>
-                        )}
-                    </Stack>
-                )
-            })}
-            {showEditBox && (
-                            <Stack>
-                                <textarea style={{ padding: 7, marginTop: '15px'}}
-                                    value={editReviewDesc}
-                                    onChange={handleEditReview}
-                                />
-                                <Rating 
-                                    name="editable-rating" precision={0.5} 
-                                    emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />} 
-                                    value={editRatingDesc}
-                                    onChange={handleEditRating} 
-                                />
-                                <div>
-                                    <ReviewButton onClick={handleEdit}>Save Edit</ReviewButton>
+        <ReviewContainer id="reviews">
+            <PostReview>
+                <Bodytext style={{ marginBottom: 40, marginLeft: -6 }}>Reviews</Bodytext>
+                {reviews.map((review) => {
+                    return (
+                        <Stack key={review.id} spacing={0.5} style={{ marginBottom: 25 }} >
+                            <ReviewDescription>{review.description}</ReviewDescription>
+                            <Rating name="read-only" value={review.rating} precision={0.5} emptyIcon={<StarIcon fontSize="inherit" />} readOnly />
+                            {showButton && (
+                                <div style={{ marginRight: '10px', marginTop: '3px' }}>
+                                    <ReviewEditButton onClick={() => editReview(review.id)} style={{ marginRight: '10px' }}>Edit</ReviewEditButton>
+                                    <ReviewEditButton onClick={() => deleteReview(review.id)}>Delete</ReviewEditButton>
                                 </div>
-                            </Stack>
-            )}
-            <form>
-                <Stack spacing={1} style={{ marginTop: 30 }}>
-                    <div>Write a Review :</div>
-                    <textarea style={{ padding: 7 }} value={review} onChange={handleOnChange} />
-                    <Box
-                        sx={{
-                            width: 200,
-                            display: 'flex',
-                            alignItems: 'center',
-                        }}
-                    >
-                        <Rating
-                            name="rating"
-                            value={value}
-                            precision={0.5}
-                            onChange={handleRatingChange}
-                            emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
+                            )}
+                        </Stack>
+                    )
+                })}
+                {showEditBox && (
+                    <Stack>
+                        <textarea style={{ padding: 9, marginTop: '15px' }}
+                            value={editReviewDesc}
+                            onChange={handleEditReview}
                         />
-                    </Box>
-                    <div>
-                        <LinkedButton style={{ marginTop: 10 }} onClick={addReview}>POST REVIEW</LinkedButton>
-                    </div>
-                </Stack>
-            </form>
-        </Stack>
+                        <Rating
+                            name="editable-rating" precision={0.5}
+                            emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
+                            value={editRatingDesc}
+                            onChange={handleEditRating}
+                        />
+                        <div>
+                            <ReviewEditButton onClick={handleEdit}>Save Edit</ReviewEditButton>
+                        </div>
+                    </Stack>
+                )}
+                <form>
+                    <Stack style={{ maxWidth: '700px' }}>
+                        <Icontext style={{ fontWeight: '800', textAlign: 'left' }}>Write a Review :</Icontext>
+                        <textarea style={{ padding: 7, marginTop: 6, marginBottom: 11 }} value={review} onChange={handleOnChange} />
+                        <Box
+                            sx={{
+                                // width: 200,
+                                // display: 'flex',
+                                // alignItems: 'center',
+                            }}
+                        >
+                            <Rating
+                                name="rating"
+                                value={value}
+                                precision={0.5}
+                                onChange={handleRatingChange}
+                                emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
+                            />
+                        </Box>
+                        <div>
+                            <LinkedButton style={{ marginTop: 20 }} onClick={addReview}>POST REVIEW</LinkedButton>
+                        </div>
+                    </Stack>
+                </form>
+            </PostReview>
+        </ReviewContainer>
+        // {/* </Stack> */}
     )
 }
 

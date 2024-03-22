@@ -19,9 +19,9 @@ export const MainPageBanner = styled(Box)(({ theme }) => ({
 
 export const BannerContainer = styled(Box)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
+        padding: '0 1rem 0 1rem',
         flexDirection: 'row',
         paddingTop: '55px',
-
     },
     display: 'flex',
     flexDirection: 'column',

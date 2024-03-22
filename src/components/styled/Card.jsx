@@ -3,7 +3,7 @@ import { IconButton, Button } from '@mui/material';
 import theme, { Colors } from './Theme';
 
 export const CardWrapper = styled(Box)(({ theme }) => ({
-    padding: '130px 30px 30px 30px',
+    padding: '130px 42px 30px 42px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -47,7 +47,7 @@ export const CardText = styled(Box)({
     display: 'flex',
     textAlign: 'center',
     fontWeight: '800',
-    fontSize: '11px',
+    fontSize: '12px',
     lineHeight: 1.5,
 })
 
@@ -55,7 +55,7 @@ export const CardDescription = styled(Box)(({ theme }) => ({
     display: 'flex',
     textAlign: 'center',
     fontWeight: '800',
-    fontSize: '11px',
+    fontSize: '12px',
     lineHeight: 1.5,
     marginTop: '20px',
     // [theme.breakpoints.up('md')]: {
@@ -74,23 +74,62 @@ export const CardTitle = styled(Box)(({ theme }) => ({
     marginTop: '0.8rem',
 }))
 
-
 export const CardReviewWrapper = styled(Box)(({ theme }) => ({
-    padding: '7% 6%',
-    marginTop: '15px',
+    padding: '3% 7%',
+    marginTop: '6rem',
+    flexDirection: 'column',
+    display: 'flex',
+    alignItems: 'left',
+    borderRadius: '30px',
+    height: '100%',
+    width: '80%',
+    boxShadow: '0px 0px 10px 0.6px rgba(0, 0, 0, 0.2)',
+    [theme.breakpoints.up('md')]: {
+        flexDirection: 'row',
+        padding: '3% 7%',
+        maxWidth: '900px',
+        marginTop: '4.5rem',
+    }
+}))
+
+export const CardReviewDetail = styled(Box)(({ theme }) => ({
+    // position: 'relative',
+    // alignItems: 'flex-start',
+    paddingTop: 30, 
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    borderRadius: '30px',
-    transition: '0.3s',
-    minHeight: '350px',
-    textAlign: 'left',
-    width: '30rem',
-    // backgroundColor: Colors.dk_primary,
+    minHeight: '400px',
+    // textAlign: 'center',
+    marginBottom: '30px', 
+    // width: '100%',
+    // backgroundColor: Colors.blue,
+    // boxShadow: '0px 0px 10px 1px rgba(4, 5, 5, 0.4)',
 
     [theme.breakpoints.up('md')]: {
-        position: 'relative',
-        // width: '100%',
-        alignItems: 'flex-start',
+        paddingTop: '1.5rem',
+        marginLeft: '2.5rem',
+        height: 150, 
+        // position: 'relative',
     }
 }))
+
+export const ReviewText = styled(Box)({
+    display: 'flex',
+    fontWeight: '800',
+    fontSize: '15px',
+    lineHeight: 2,
+    textAlign: 'left',
+})
+
+export const ReviewDescription = styled(Box)({
+    [theme.breakpoints.up('md')]: {
+        padding: '0',
+    },
+    marginTop: '2rem',
+    display: 'flex',
+    fontSize: '13px',
+    lineHeight: 1.8,
+    textAlign: 'left',
+    padding: '5%'
+})

@@ -9,7 +9,6 @@ export const StyledContainer = styled(Box)(({ theme }) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    
 }))
 
 export const ButtonGroupContainer = styled(Box)({
@@ -29,12 +28,11 @@ export const AdContainer = styled(Box)(({ theme }) => ({
     alignItems: 'center',
     background: Colors.white,
     width: '100%',
-    // marginBottom: '10px',
 }))
 
 export const ContentContainer = styled(Box)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
-        padding: '70px 20px 70px 20px',
+        padding: '7rem 20px 5rem 20px',
         minHeight: '700px',
     },
     display: 'flex',
@@ -43,6 +41,45 @@ export const ContentContainer = styled(Box)(({ theme }) => ({
     alignItems: 'center',
     padding: '7% 6%',
 }))
+
+export const SittersContainer = styled(Box)(({ theme }) => ({
+    [theme.breakpoints.up('md')]: {
+        padding: '5rem 1.5rem 5rem 1.5rem',
+        minHeight: '700px',
+    },
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: '5% 6%',
+}))
+
+export const ReviewContainer = styled(Box)(({ theme }) => ({
+    [theme.breakpoints.up('md')]: {
+        // padding: '7rem 20px 5rem 20px',
+        minHeight: '700px',
+    },
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+}))
+
+export const PostReview = styled(Box)(({ theme }) => ({
+    [theme.breakpoints.up('md')]: {
+        width: '100%',
+        maxWidth: '800px' ,
+        marginTop: '7rem'
+    },
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    width: '100%',
+    // alignItems: 'center',
+    padding: '5rem 4rem',
+}))
+
 
 export const AddCardContainer = styled(Box)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
@@ -60,11 +97,7 @@ export const ServiceContainer = styled(Box)(({ theme }) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    // padding: '0 5%',
     marginBottom: '80px',
-    // [theme.breakpoints.up('md')]: {
-    //     flexDirection: 'row'
-    // },
     // [theme.breakpoints.down('md')]: {
         // flexDirection: 'column', 
         // width: '100%'
@@ -86,17 +119,13 @@ export const ServiceBox = styled(Container)(({ theme }) => ({
     margin: '15px',
     padding: '10px 20px',
     Width: '100%',
-    // boxShadow: '1px 2px 10px rgba(0, 0, 0, 0.2);',
 }))
-
 
 export const IconBox = styled(Box)({
     padding: '30px',
     display: 'flex',
-    // marginRight: '1rem',
     color: Colors.blue,
 })
-
 
 export const OptionBox = styled(Box)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
