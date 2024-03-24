@@ -1,15 +1,20 @@
 import { BannerContainer } from '../styled/Banner';
 import { SittersContainer } from '../styled/StyledContainer';
-import Grid from '@mui/material/Unstable_Grid2';
+import Grid from '@mui/material/Grid';
 import Card from './Card';
 import useApi from "../utils/useApi"
 
 
 export default function CardList(props) {
-    const [cardsWithoutReviewAndImage] = useApi('/petparent')
-    const cards = cardsWithoutReviewAndImage.map((card, index) => {
-        card.image = "https://avataaars.io/?avatarStyle=Circle&topType=LongHairCurvy&accessoriesType=Prescription02&hairColor=Blonde&facialHairType=Blank&clotheType=BlazerSweater&eyeType=Happy&eyebrowType=DefaultNatural&mouthType=Smile&skinColor=Light"
-        return card
+    const [ifCardsWithoutReviewAndImage] = useApi('/petparent')
+
+    const defaultImageUrl = "https://avataaars.io/?avatarStyle=Circle&topType=LongHairCurvy&accessoriesType=Prescription02&hairColor=Blonde&facialHairType=Blank&clotheType=BlazerSweater&eyeType=Happy&eyebrowType=DefaultNatural&mouthType=Smile&skinColor=Light"
+
+    const cards = ifCardsWithoutReviewAndImage.map((card, index) => {
+        if (!card.image) {
+            return { ...card, image: defaultImageUrl };
+        }
+        return card;
     })
 
     return (
@@ -28,6 +33,7 @@ export default function CardList(props) {
                                         setCard={props.setCard}
                                     />
                                 </Grid>
+                                
                             )
                         })
                     }

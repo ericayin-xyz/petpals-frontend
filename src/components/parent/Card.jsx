@@ -32,7 +32,6 @@ export default function Card(props) {
     return (
         <CardWrapper onClick={() => handleCardClick(card.id)}>
             <img
-                // style={{  marginBottom: '20px' }}
                 style={{ height: 110, position: 'absolute', top: '20px', marginBottom: '20px', zIndex: 1 }}
                 src={card.image}
                 alt={'sitter-card'}

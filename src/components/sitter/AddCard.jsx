@@ -9,6 +9,7 @@ import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
 import { Colors } from '../styled/Theme/index';
 
+
 const InputWrapper = styled.div`
     display: grid;
     width: 100%;
@@ -27,7 +28,9 @@ function AddCard() {
         email: '',
         phone: '',
         address: '',
-        photo: '',
+        experience: '',
+        description: '',
+        image: null,
     })
 
     const [errorMessage, setErrorMessage] = useState(null)
@@ -42,10 +45,11 @@ function AddCard() {
         "https://avataaars.io/?avatarStyle=Circle&topType=Hijab&accessoriesType=Blank&hatColor=Black&clotheType=ShirtScoopNeck&clotheColor=Black&eyeType=Happy&eyebrowType=UpDown&mouthType=Smile&skinColor=Brown",
     ];
 
-    const [selectedImageUrl, setSelectedImageUrl] = useState(null);
+    const [selectedImage, setSelectedImage] = useState(null);
 
-    const handleImageSelect = (imageUrl) => {
-        setSelectedImageUrl((prevImageUrl) => prevImageUrl === imageUrl ? null : imageUrl);
+    const handleImageSelect = (image) => {
+        setSelectedImage((prevImage) => prevImage === image ? null : image);
+        setCard({ ...card, image: image });
     };
 
     const handleSubmit = (event) => {
@@ -76,10 +80,7 @@ function AddCard() {
             // setSuccessMessage(null)
         } else {
             setErrorMessage(null)
-            axios.post("/petsitter", card)
-                // .get(`/cards/${cardId}`)
-                // .get("/petparent", card)
-                // .get("/petparent/sitters", card)               
+            axios.post("/petsitter", card)             
                 .then((res) => {
                     console.log(res.data);
                     setSuccessMessage("Form Submitted !");
@@ -139,23 +140,23 @@ function AddCard() {
                     <div id="image"
                         style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', height: '80px', paddingBottom: '10px' }}
                     >
-                        {images.map((imageUrl, index) => (
+                        {images.map((image, index) => (
                             <div key={index} style={{
                                 display: 'inline-block',
                                 margin: '5px',
                             }}>
                                 <img
                                     key={index}
-                                    src={imageUrl}
+                                    src={image}
                                     alt={`Selectable icon ${index + 1}`}
                                     style={{
                                         width: '60px',
                                         cursor: 'pointer',
-                                        opacity: selectedImageUrl ? (selectedImageUrl === imageUrl ? 1 : 0.6) : 1,
-                                        transform: selectedImageUrl ? (selectedImageUrl === imageUrl ? 'scale(1.05)' : 'scale(1)') : 'scale(1.05)',
+                                        opacity: selectedImage ? (selectedImage === image ? 1 : 0.6) : 1,
+                                        transform: selectedImage ? (selectedImage === image ? 'scale(1.05)' : 'scale(1)') : 'scale(1.05)',
                                         transition: 'opacity 0.3s ease-out, transform 0.3s ease-out',
                                     }}
-                                    onClick={() => handleImageSelect(imageUrl)}
+                                    onClick={() => handleImageSelect(image)}
                                     onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
                                     onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
                                 />
@@ -170,9 +171,9 @@ function AddCard() {
                         Send</LinkedButton>
                     <div id='msg' style={{ marginBottom: '1rem' }}>
                         <h4 style={{ margin: '20px 0px', color: 'red', textAlign: 'center' }}>{successMessage}{errorMessage}</h4>
-                        successMessage && <Box sx={{ width: '100%' }}>
+                        {successMessage && <Box sx={{ width: '100%' }}>
                             <LinearProgress color='inherit' sx={{ color: Colors.blue, marginTop: '2rem' }} />
-                        </Box>
+                        </Box>}
                     </div>
                 </InputWrapper>
             </form>
