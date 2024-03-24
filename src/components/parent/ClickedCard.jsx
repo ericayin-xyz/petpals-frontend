@@ -7,7 +7,9 @@ import { Colors } from '../../components/styled/Theme'
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 
+
 const ClickedCard = forwardRef((props, ref) => {
+
     const card = props.card
 
     useEffect(() => {
@@ -17,7 +19,6 @@ const ClickedCard = forwardRef((props, ref) => {
                 targetElement.scrollIntoView({ behavior: 'smooth' });
             }
         };
-
         window.addEventListener('hashchange', handleHashChange);
         return () => {
             window.removeEventListener('hashchange', handleHashChange);
@@ -27,14 +28,13 @@ const ClickedCard = forwardRef((props, ref) => {
     if (!card) {
         return null;
     }
+
     return (
         <ReviewContainer id='reviews' ref={ref} paddingTop={{ xs: '1.5rem', md: '5rem' }}>
             <CardReviewWrapper>
-                {/* <Stack> */}
                 <img style={{ marginTop: '30px', height: '7rem' }}
                     src={card.image}
                     alt={'sitter'} />
-                {/* </Stack> */}
                 <Stack padding={2} paddingLeft={5}>
                     {/* <CardReviewDetail> */}
                     <CardTitle style={{ paddingBottom: '15px', textAlign: 'left' }}>{card.name}</CardTitle>
@@ -60,12 +60,16 @@ const ClickedCard = forwardRef((props, ref) => {
                     {card.city && <ReviewText style={{ textAlign: 'left' }}>City: {card.city}</ReviewText>}
                     {/* </CardReviewDetail> */}
                 </Stack>
-                <Stack padding={{ xs: '1rem', md: '3.2rem' }}>
+                <Stack sx={{
+                    pt: { xs: '1rem', md: '3.2rem' },
+                    pb: { xs: '1rem', md: '3.2rem' },
+                    pl: { xs: '1rem', md: '3rem' },
+                }}>
                     <ReviewDescription>{card.description}</ReviewDescription>
                 </Stack>
             </CardReviewWrapper>
             <Review />
-        </ReviewContainer>
+        </ReviewContainer >
     )
 })
 

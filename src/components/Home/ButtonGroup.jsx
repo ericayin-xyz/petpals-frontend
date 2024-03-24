@@ -8,7 +8,7 @@ import { Colors } from "../styled/Theme";
 export default function ButtonGroup() {
     return (
         <ButtonGroupContainer>
-            <Bodytext variant='h1' sx={{color: Colors.white}}>
+            <Bodytext variant='h1' sx={{color: Colors.white, padding: '1rem'}}>
                 What Would You Like To Do?
             </Bodytext>
             <Stack

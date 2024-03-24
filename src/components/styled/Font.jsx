@@ -18,7 +18,7 @@ export const ServiceText = styled(Typography)(({ theme }) => ({
         paddingLeft: '2rem',
         maxWidth: '100%',
     },
-    fontSize: '18px',
+    fontSize: '16px',
     textAlign: 'left',
     lineHeight: '1.7rem',
     bond: 'light',

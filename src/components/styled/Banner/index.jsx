@@ -5,15 +5,14 @@ import { Box, Stack } from "@mui/material";
 export const MainPageBanner = styled(Box)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
         flexDirection: 'row',
-        // height: '100%',
-        padding: '80px 0 2px 0',
+        padding: '20px 0 0 0',
     },
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    paddingTop: '50px',
+    paddingTop: '100px',
     boxShadow: '0px 2px 8px rgba(0, 0, 0, 0.2)',
 }))
 

@@ -41,9 +41,9 @@ export default function Card(props) {
             <CardText>Experience:  {card.experience}</CardText>
             <CardText>{card.address}</CardText>
             {showDetails && (
-                <Stack spacing={0.5} paddingBottom={2.5}>
+                <Stack spacing={0.5} sx={{py: 1.8, px: 0}}>
                     <Divider />
-                    <Stack direction="row" spacing={1.5} paddingLeft={0.5}>
+                    <Stack direction="row" spacing={1.5} paddingLeft={0.5} paddingTop={0.8}>
                         <PhoneAndroidIcon style={{
                             marginTop: '2px',
                             fontSize: '13px', 

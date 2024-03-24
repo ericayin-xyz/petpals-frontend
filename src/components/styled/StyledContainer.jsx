@@ -12,7 +12,7 @@ export const StyledContainer = styled(Box)(({ theme }) => ({
 }))
 
 export const ButtonGroupContainer = styled(Box)({
-    padding: '80px 0px 90px 0px',
+    padding: '60px 0px 90px 0px',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -44,7 +44,7 @@ export const ContentContainer = styled(Box)(({ theme }) => ({
 
 export const SittersContainer = styled(Box)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
-        padding: '5rem 1.5rem 5rem 1.5rem',
+        padding: '5rem 2.5rem 5rem 2.5rem',
         minHeight: '700px',
     },
     display: 'flex',
@@ -56,7 +56,6 @@ export const SittersContainer = styled(Box)(({ theme }) => ({
 
 export const ReviewContainer = styled(Box)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
-        // padding: '7rem 20px 5rem 20px',
         minHeight: '700px',
     },
     display: 'flex',
@@ -70,7 +69,7 @@ export const PostReview = styled(Box)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
         width: '100%',
         maxWidth: '800px' ,
-        marginTop: '7rem'
+        marginTop: '2rem'
     },
     display: 'flex',
     flexDirection: 'column',

@@ -3,11 +3,11 @@ import React, { useState } from "react";
 import axios from "axios";
 import { AddCardContainer } from '../styled/StyledContainer';
 import { LinkedButton } from '../styled/Button';
-import AccountCircle from '@mui/icons-material/AccountCircle';
 import { TextField, InputAdornment } from '@mui/material';
 import { Bodytext } from '../styled/Font';
 import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
+import { Colors } from '../styled/Theme/index';
 
 const InputWrapper = styled.div`
     display: grid;
@@ -26,11 +26,27 @@ function AddCard() {
         name: '',
         email: '',
         phone: '',
-        address: 'Sydney, 2000',
+        address: '',
+        photo: '',
     })
 
     const [errorMessage, setErrorMessage] = useState(null)
     const [successMessage, setSuccessMessage] = useState(null);
+
+    const images = [
+        "https://avataaars.io/?avatarStyle=Circle&topType=LongHairStraight&accessoriesType=Blank&hairColor=PastelPink&facialHairType=Blank&clotheType=CollarSweater&clotheColor=Gray01&eyeType=Happy&eyebrowType=Default&mouthType=Grimace&skinColor=Light",
+        "https://avataaars.io/?avatarStyle=Circle&topType=LongHairBigHair&accessoriesType=Sunglasses&hairColor=Blonde&facialHairType=BeardMajestic&facialHairColor=Blonde&clotheType=ShirtScoopNeck&clotheColor=Blue03&eyeType=WinkWacky&eyebrowType=Default&mouthType=Tongue&skinColor=Tanned",
+        "https://avataaars.io/?avatarStyle=Circle&topType=LongHairStraightStrand&accessoriesType=Blank&hairColor=Black&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Side&eyebrowType=RaisedExcitedNatural&mouthType=Twinkle&skinColor=Light",
+        "https://avataaars.io/?avatarStyle=Circle&topType=LongHairDreads&accessoriesType=Prescription01&hairColor=PastelPink&facialHairType=BeardMedium&facialHairColor=Auburn&clotheType=BlazerSweater&eyeType=Hearts&eyebrowType=UpDown&mouthType=Eating&skinColor=Pale",
+        "https://avataaars.io/?avatarStyle=Circle&topType=LongHairFro&accessoriesType=Kurt&hairColor=SilverGray&facialHairType=BeardLight&facialHairColor=BrownDark&clotheType=GraphicShirt&clotheColor=PastelRed&graphicType=Bear&eyeType=Wink&eyebrowType=UnibrowNatural&mouthType=Vomit&skinColor=DarkBrown",
+        "https://avataaars.io/?avatarStyle=Circle&topType=Hijab&accessoriesType=Blank&hatColor=Black&clotheType=ShirtScoopNeck&clotheColor=Black&eyeType=Happy&eyebrowType=UpDown&mouthType=Smile&skinColor=Brown",
+    ];
+
+    const [selectedImageUrl, setSelectedImageUrl] = useState(null);
+
+    const handleImageSelect = (imageUrl) => {
+        setSelectedImageUrl((prevImageUrl) => prevImageUrl === imageUrl ? null : imageUrl);
+    };
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -50,6 +66,11 @@ function AddCard() {
             // setSuccessMessage(null)
         } else if (!(card.phone.match('^0\\d{9,10}$'))) {
             setErrorMessage("Please enter a valid phone number.");
+        } else if (typeof card.experience !== 'string' || !/\D/.test(card.experience)) {
+            setErrorMessage("Please describe your experience (like '2 years').");
+        } else if (!card.address) {
+            setErrorMessage("Please enter your address.");
+            // setSuccessMessage(null)
         } else if (!card.description) {
             setErrorMessage("Please enter your description.");
             // setSuccessMessage(null)
@@ -70,7 +91,7 @@ function AddCard() {
                     console.error("There was an error submitting the form: ", error);
                     setErrorMessage("Error submitting form.");
                 });
-    }
+        }
     }
 
     const handleOnChange = (event) => {
@@ -106,27 +127,40 @@ function AddCard() {
                     <TextField id="phone" variant="filled" type='number' name='phone' value={card.phone} onChange={handleOnChange} />
 
                     <label htmlFor="experience">Experience:</label>
-                    <TextField id="experience" variant="filled" type='text' name='experience' value={card.experience} onChange={handleOnChange} />
+                    <TextField id="experience" variant="filled" type='text' name='experience' value={card.experience} placeholder="1 year" onChange={handleOnChange} />
 
                     <label htmlFor="address">Address:</label>
-                    <TextField id="address" variant="filled" type='text' name='address' value={card.address} onChange={handleOnChange} />
+                    <TextField id="address" variant="filled" type='text' name='address' value={card.address} placeholder="The Rocks 2000" onChange={handleOnChange} />
 
                     <label htmlFor="description">Description:</label>
                     <TextField id="description" variant="filled" type='text' name='description' value={card.description}
                         onChange={handleOnChange} multiline rows={3} />
 
-                    <div className="file-input">
-                        <AccountCircle sx={{ mr: 2 }} />
-                        <label htmlFor="photo" className="file-input-label">
-                            Add photo
-                        </label>
-                        <input
-                            id="photo"
-                            type="file"
-                            name="photo"
-                            accept=".png, .jpg, .jpeg"
-                            className="file-input-control"
-                        />
+                    <div id="image"
+                        style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', height: '80px', paddingBottom: '10px' }}
+                    >
+                        {images.map((imageUrl, index) => (
+                            <div key={index} style={{
+                                display: 'inline-block',
+                                margin: '5px',
+                            }}>
+                                <img
+                                    key={index}
+                                    src={imageUrl}
+                                    alt={`Selectable icon ${index + 1}`}
+                                    style={{
+                                        width: '60px',
+                                        cursor: 'pointer',
+                                        opacity: selectedImageUrl ? (selectedImageUrl === imageUrl ? 1 : 0.6) : 1,
+                                        transform: selectedImageUrl ? (selectedImageUrl === imageUrl ? 'scale(1.05)' : 'scale(1)') : 'scale(1.05)',
+                                        transition: 'opacity 0.3s ease-out, transform 0.3s ease-out',
+                                    }}
+                                    onClick={() => handleImageSelect(imageUrl)}
+                                    onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
+                                    onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                                />
+                            </div>
+                        ))}
                     </div>
                     <LinkedButton
                         style={{
@@ -134,12 +168,12 @@ function AddCard() {
                             marginTop: '10px',
                         }} id='submitBtn' onClick={handleSubmit} >
                         Send</LinkedButton>
-
-                    <h4 style={{ margin: '10px 0px', color: 'red', textAlign: 'center' }}>{errorMessage}{successMessage}
-                    </h4>
-                    {successMessage && <Box sx={{ width: '100%' }}>
-                        <LinearProgress color='inherit' />
-                    </Box>}
+                    <div id='msg' style={{ marginBottom: '1rem' }}>
+                        <h4 style={{ margin: '20px 0px', color: 'red', textAlign: 'center' }}>{successMessage}{errorMessage}</h4>
+                        successMessage && <Box sx={{ width: '100%' }}>
+                            <LinearProgress color='inherit' sx={{ color: Colors.blue, marginTop: '2rem' }} />
+                        </Box>
+                    </div>
                 </InputWrapper>
             </form>
         </AddCardContainer>
