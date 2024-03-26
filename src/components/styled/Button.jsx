@@ -100,6 +100,7 @@ export const CardButton = styled(Button)({
     letterSpacing: 0.5,
     marginTop: '12px',
     padding: '3px 15px 1px 15px',
+    fontFamily: 'Montserrat, sans-serif',
     color: Colors.blue,
     position: 'relative',
     overflow: 'hidden', 
@@ -143,12 +144,3 @@ export const ReviewEditButton = styled(Button)({
         border:' 0px solid black',
     },
 });
-
-
-    
-    // width: '400px',
-//     '&:hover': {
-//         backgroundColor: lighten(0.09, Colors.white),
-//         boxShadow: '0px 0px 8px rgba(0, 0, 0.4, 0.3);',
-//     },
-// });
