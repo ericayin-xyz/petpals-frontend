@@ -13,15 +13,17 @@ import { ReviewDescription, Icontext } from '../styled/Font';
 
 const initialReviews = [
     {
-        id: 1,
-        description: "bad to use, do not recommend",
+        description: "Amazing service! David took exceptional care of our dog, providing daily updates and going above and beyond with walks and play. We returned to a very happy pet. Highly recommend!",
         rating: 5
     },
     {
-        id: 2,
-        description: "good to use, definitely recommend",
+        description: "was reliable, but missed following our cat's specific feeding instructions. While everything else was fine, attention to detail on diet needs improvement.",
         rating: 4.5
     },
+    {
+        description: "Had mixed feelings about Bob and Charlie. They're friendly but the communication could have been better. Would consider using them again with some improvements",
+        rating: 4
+    }
 ]
 
 function Review() {
