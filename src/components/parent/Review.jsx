@@ -137,13 +137,7 @@ function Review() {
                     <Stack style={{ maxWidth: '700px' }}>
                         <Icontext style={{ fontWeight: '800', textAlign: 'left' }}>Write a Review :</Icontext>
                         <textarea style={{ padding: 7, marginTop: 6, marginBottom: 11 }} value={review} onChange={handleOnChange} />
-                        <Box
-                            sx={{
-                                // width: 200,
-                                // display: 'flex',
-                                // alignItems: 'center',
-                            }}
-                        >
+                        <Box>
                             <Rating
                                 name="rating"
                                 value={value}

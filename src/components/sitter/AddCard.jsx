@@ -38,11 +38,15 @@ function AddCard() {
 
     const images = [
         "https://avataaars.io/?avatarStyle=Circle&topType=LongHairStraight&accessoriesType=Blank&hairColor=PastelPink&facialHairType=Blank&clotheType=CollarSweater&clotheColor=Gray01&eyeType=Happy&eyebrowType=Default&mouthType=Grimace&skinColor=Light",
-        "https://avataaars.io/?avatarStyle=Circle&topType=LongHairBigHair&accessoriesType=Sunglasses&hairColor=Blonde&facialHairType=BeardMajestic&facialHairColor=Blonde&clotheType=ShirtScoopNeck&clotheColor=Blue03&eyeType=WinkWacky&eyebrowType=Default&mouthType=Tongue&skinColor=Tanned",
         "https://avataaars.io/?avatarStyle=Circle&topType=LongHairStraightStrand&accessoriesType=Blank&hairColor=Black&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Side&eyebrowType=RaisedExcitedNatural&mouthType=Twinkle&skinColor=Light",
-        "https://avataaars.io/?avatarStyle=Circle&topType=LongHairDreads&accessoriesType=Prescription01&hairColor=PastelPink&facialHairType=BeardMedium&facialHairColor=Auburn&clotheType=BlazerSweater&eyeType=Hearts&eyebrowType=UpDown&mouthType=Eating&skinColor=Pale",
+        "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortWaved&accessoriesType=Round&hairColor=Brown&facialHairType=BeardMajestic&facialHairColor=Black&clotheType=GraphicShirt&clotheColor=Heather&graphicType=Pizza&eyeType=Happy&eyebrowType=DefaultNatural&mouthType=ScreamOpen&skinColor=Pale",
         "https://avataaars.io/?avatarStyle=Circle&topType=LongHairFro&accessoriesType=Kurt&hairColor=SilverGray&facialHairType=BeardLight&facialHairColor=BrownDark&clotheType=GraphicShirt&clotheColor=PastelRed&graphicType=Bear&eyeType=Wink&eyebrowType=UnibrowNatural&mouthType=Vomit&skinColor=DarkBrown",
         "https://avataaars.io/?avatarStyle=Circle&topType=Hijab&accessoriesType=Blank&hatColor=Black&clotheType=ShirtScoopNeck&clotheColor=Black&eyeType=Happy&eyebrowType=UpDown&mouthType=Smile&skinColor=Brown",
+        "https://avataaars.io/?avatarStyle=Circle&topType=LongHairBun&accessoriesType=Blank&hairColor=Blonde&facialHairType=Blank&clotheType=Overall&clotheColor=Heather&eyeType=Squint&eyebrowType=DefaultNatural&mouthType=Smile&skinColor=Pale",
+        "https://avataaars.io/?avatarStyle=Circle&topType=LongHairShavedSides&accessoriesType=Kurt&facialHairType=Blank&clotheType=Hoodie&clotheColor=Red&eyeType=Side&eyebrowType=UpDown&mouthType=Tongue&skinColor=Light",
+        "https://avataaars.io/?avatarStyle=Circle&topType=LongHairBigHair&accessoriesType=Sunglasses&hairColor=Blonde&facialHairType=BeardMajestic&facialHairColor=Blonde&clotheType=ShirtScoopNeck&clotheColor=Blue03&eyeType=WinkWacky&eyebrowType=Default&mouthType=Tongue&skinColor=Tanned",
+        "https://avataaars.io/?avatarStyle=Circle&topType=Turban&accessoriesType=Prescription02&hatColor=Blue03&facialHairType=Blank&clotheType=BlazerSweater&eyeType=Side&eyebrowType=Angry&mouthType=Serious&skinColor=Light",
+        "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortRound&accessoriesType=Prescription01&hairColor=PastelPink&facialHairType=Blank&clotheType=ShirtVNeck&clotheColor=Red&eyeType=WinkWacky&eyebrowType=UpDown&mouthType=Smile&skinColor=Brown",
     ];
 
     const [selectedImage, setSelectedImage] = useState(null);
@@ -124,7 +128,7 @@ function AddCard() {
                             endAdornment: (
                                 <InputAdornment position="end"> @ </InputAdornment>),
                         }} />
-                    <label htmlFor="phone">Mobile Number:</label>
+                    <label htmlFor="phone">Phone Number:</label>
                     <TextField id="phone" variant="filled" type='number' name='phone' value={card.phone} onChange={handleOnChange} />
 
                     <label htmlFor="experience">Experience:</label>
@@ -140,17 +144,21 @@ function AddCard() {
                     <div id="image"
                         style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', height: '80px', paddingBottom: '10px' }}
                     >
+                        <label htmlFor="description" style={{marginRight: '10px'}}>
+                            Avatar:
+                            </label>
                         {images.map((image, index) => (
                             <div key={index} style={{
                                 display: 'inline-block',
-                                margin: '5px',
+                                padding: '3px',
+                                marginTop: '5px',
                             }}>
                                 <img
                                     key={index}
                                     src={image}
                                     alt={`Selectable icon ${index + 1}`}
                                     style={{
-                                        width: '60px',
+                                        width: '40px',
                                         cursor: 'pointer',
                                         opacity: selectedImage ? (selectedImage === image ? 1 : 0.6) : 1,
                                         transform: selectedImage ? (selectedImage === image ? 'scale(1.05)' : 'scale(1)') : 'scale(1.05)',

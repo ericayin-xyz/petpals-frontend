@@ -40,12 +40,12 @@ export default function Card(props) {
             <CardText>Experience:  {card.experience}</CardText>
             <CardText>{card.address}</CardText>
             {showDetails && (
-                <Stack spacing={0.5} sx={{py: 1.8, px: 0}}>
+                <Stack spacing={0.5} sx={{ py: 1.8, px: 0 }}>
                     <Divider />
                     <Stack direction="row" spacing={1.5} paddingLeft={0.5} paddingTop={0.8}>
                         <PhoneAndroidIcon style={{
                             marginTop: '2px',
-                            fontSize: '13px', 
+                            fontSize: '13px',
                             color: Colors.black,
                         }} />
                         <CardText>{card.phone}</CardText>
@@ -53,7 +53,7 @@ export default function Card(props) {
                     <Stack direction="row" spacing={1.5} paddingLeft={0.5} paddingBottom={1}>
                         <AlternateEmailIcon style={{
                             marginTop: '3px',
-                            fontSize: '13px', 
+                            fontSize: '13px',
                             color: Colors.black,
                         }} />
                         <CardText>{card.email}</CardText>
@@ -73,7 +73,9 @@ export default function Card(props) {
                 }}
                 >{card.description}</CardDescription>
             )}
-            <CardText style={{ paddingTop: '15px' }}><Rating name="half-rating-read" defaultValue={5} precision={0.5} readOnly /></CardText>
+            <CardText style={{ paddingTop: '15px' }}>
+                <Rating name="half-rating-read" defaultValue={5} precision={0.5} readOnly />
+            </CardText>
             <HashLink to='#reviews' >
                 <CardButton onClick={handleAddReview} >Reviews</CardButton>
             </HashLink>
