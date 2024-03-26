@@ -19,15 +19,15 @@ export default function CardList(props) {
 
     return (
         <BannerContainer style={{boxShadow: 'none'}}>
-            <SittersContainer maxWidth={'1040px'}  sx={{ flexGrow: 1, minHeight: '80vh' }}>
+            <SittersContainer maxWidth={'1300px'}  sx={{ flexGrow: 1, minHeight: '80vh' }}>
                 <Grid container 
-                    spacing={{ xs: 3, sm: 4, md: 5 }}  
+                    spacing={{ xs: 3, sm: 4, md: 6 }}  
                     columns={{ xs: 4, sm: 8, md: 16 }}
                 >
                     {
                         cards.map((card, index) => {
                             return (
-                                <Grid item key={`${card.someUniqueProperty}-${index}`} xs={4} sm={4} md={4} >
+                                <Grid item key={`${card.someUniqueProperty}-${index}`} xs={4} sm={4} md={4} sx={{ mb: 3 }} >
                                     <Card
                                         cardInfo={card}
                                         setCard={props.setCard}

@@ -30,7 +30,7 @@ const ClickedCard = forwardRef((props, ref) => {
     }
 
     return (
-        <ReviewContainer id='cardDetails' ref={ref} paddingTop={{ xs: '1.5rem', md: '5rem' }}>
+        <ReviewContainer id='reviews' ref={ref} paddingTop={{ xs: '1.5rem', md: '5rem' }}>
             <CardReviewWrapper>
                 <img style={{ marginTop: '30px', height: '7rem' }}
                     src={card.image}

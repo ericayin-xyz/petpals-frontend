@@ -13,6 +13,7 @@ export const CardWrapper = styled(Box)(({ theme }) => ({
     transition: '0.3s',
     cursor: 'pointer',
     minHeight: '390px',
+    minWidth: '190px',
     transparent: '80%',
     position: 'relative',
     ' &:hover': {
