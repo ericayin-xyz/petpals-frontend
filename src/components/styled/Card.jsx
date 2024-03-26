@@ -8,7 +8,7 @@ export const CardWrapper = styled(Box)(({ theme }) => ({
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column',
-    boxShadow: '0px 0px 10px 0.6px rgba(0, 0, 0, 0.2)',
+        boxShadow: '0px 0px 10px 0.6px rgba(0, 0, 0, 0.2)',
     borderRadius: '20px',
     transition: '0.3s',
     cursor: 'pointer',

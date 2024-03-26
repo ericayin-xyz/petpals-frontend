@@ -9,6 +9,7 @@ import Rating from '@mui/material/Rating';
 import { HashLink } from 'react-router-hash-link';
 import { Colors } from '../styled/Theme/index';
 
+
 export default function Card(props) {
     const [showDetails, setShowDetails] = useState(false);
     const [clickedCard, setClickedCard] = useState(null);
@@ -47,7 +48,7 @@ export default function Card(props) {
                             marginTop: '2px',
                             fontSize: '13px',
                             color: Colors.black,
-                        }} />
+                                                    }} />
                         <CardText>{card.phone}</CardText>
                     </Stack>
                     <Stack direction="row" spacing={1.5} paddingLeft={0.5} paddingBottom={1}>
@@ -79,6 +80,6 @@ export default function Card(props) {
             <HashLink to='#reviews' >
                 <CardButton onClick={handleAddReview} >Reviews</CardButton>
             </HashLink>
-        </CardWrapper>
+                    </CardWrapper>
     )
 }

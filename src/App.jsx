@@ -39,7 +39,6 @@ function App() {
   );
 }
 
-
 function Nav() {
   return (
     <div className="page-wrapper">

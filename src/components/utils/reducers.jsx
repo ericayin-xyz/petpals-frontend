@@ -19,7 +19,9 @@ export default function reviewReducer(state, action) {
                 ...state,
                 reviews: [
                     ...state.reviews,
-                    { id: state.reviews.length + 1, description: state.review, 
+                    { 
+                        id: state.reviews.length + 1, 
+                        description: state.review, 
                         rating: state.value
                     },
                 ],
