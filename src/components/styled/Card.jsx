@@ -49,6 +49,7 @@ export const CardText = styled(Box)({
     fontWeight: '800',
     fontSize: '12px',
     lineHeight: 1.5,
+    fontFamily: 'Montserrat',
 })
 
 export const CardDescription = styled(Box)(({ theme }) => ({
@@ -58,9 +59,7 @@ export const CardDescription = styled(Box)(({ theme }) => ({
     fontSize: '12px',
     lineHeight: 1.5,
     marginTop: '20px',
-    // [theme.breakpoints.up('md')]: {
-    //     textAlign: 'left',
-    // }
+    fontFamily: 'Montserrat',
 }))
 
 export const CardTitle = styled(Box)(({ theme }) => ({
@@ -72,6 +71,7 @@ export const CardTitle = styled(Box)(({ theme }) => ({
     fontSize: '20px',
     marginBottom: '0.5rem',
     marginTop: '0.8rem',
+    fontFamily: 'Montserrat',
 }))
 
 export const CardReviewWrapper = styled(Box)(({ theme }) => ({
@@ -98,11 +98,11 @@ export const CardReviewDetail = styled(Box)(({ theme }) => ({
     alignItems: 'center',
     minHeight: '400px',
     marginBottom: '30px', 
+    fontFamily: 'Montserrat',
     [theme.breakpoints.up('md')]: {
         paddingTop: '1.5rem',
         marginLeft: '2.5rem',
         height: 150, 
-        // position: 'relative',
     }
 }))
 
@@ -112,6 +112,7 @@ export const ReviewText = styled(Box)({
     fontSize: '15px',
     lineHeight: 2,
     textAlign: 'left',
+    fontFamily: 'Montserrat',
 })
 
 export const ReviewDescription = styled(Box)({
