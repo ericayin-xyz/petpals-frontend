@@ -1,22 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import CardList from './CardList';
 import ClickedCard from './ClickedCard';
-import { useLocation } from 'react-router-dom';
 
 
 const Sitters = () => {
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [])
-
-    const location = useLocation();
-    const sectionRef = useRef(null);
-
-    useEffect(() => {
-        if (location.search === 'reviews') {
-            sectionRef.current.scrollIntoView({ behavior: 'smooth' });
-        }
-    }, [location.search]);
 
     const [clickedCard, setClickedCard] = useState(null)
 
@@ -25,9 +12,9 @@ const Sitters = () => {
     }
 
     return (
-        <div id="Sitters">
+        <div id="sitters">
             <CardList setCard={setCard} />
-            <ClickedCard card={clickedCard} ref={sectionRef} />
+            <ClickedCard card={clickedCard} />
         </div>
     )
 }

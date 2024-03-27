@@ -1,5 +1,7 @@
 import styled from 'styled-components';
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import axios from "axios";
 import { AddCardContainer } from '../styled/StyledContainer';
 import { LinkedButton } from '../styled/Button';
@@ -12,13 +14,17 @@ import { Colors } from '../styled/Theme/index';
 
 const InputWrapper = styled.div`
     display: grid;
-    width: 100%;
+    grid-template-columns: 1fr;
+    width: 80vw;
     max-width: 800px;
     gap: 10px;
     margin-bottom: 20px;
-    
+    padding: '0px 8%';
+    margin-left: auto;
+    margin-right: auto;
+
     @media screen and (max-width: 800px) {
-        width: 90vw;
+        width: 70vw;
     }
 `
 
@@ -56,19 +62,20 @@ function AddCard() {
         setCard({ ...card, image: image });
     };
 
+    const navigate = useNavigate();
+    
     const handleSubmit = (event) => {
         event.preventDefault()
         console.log('Submited')
-        console.log(card)
+        // console.log(card)
 
-        setSuccessMessage(null) // Reset success message at the start
+        setSuccessMessage(null)
 
         //Validation
         if (!card.name) {
             setErrorMessage("Please enter your name.");
         } else if (!card.email) {
             setErrorMessage("Please enter your email.");
-            // setSuccessMessage(null)
         } else if (!card.email.match((/^[A-Za-z._\-0-9]*[@][A-Za-z]*[.][a-z]{2,4}$/))) {
             setErrorMessage("Please enter a valid email.");
             // setSuccessMessage(null)
@@ -78,18 +85,17 @@ function AddCard() {
             setErrorMessage("Please describe your experience (like '2 years').");
         } else if (!card.address) {
             setErrorMessage("Please enter your address.");
-            // setSuccessMessage(null)
         } else if (!card.description) {
             setErrorMessage("Please enter your description.");
-            // setSuccessMessage(null)
         } else {
             setErrorMessage(null)
-            axios.post("/petsitter", card)             
+            axios.post("/petsitter", card)
                 .then((res) => {
                     console.log(res.data);
                     setSuccessMessage("Form Submitted !");
+                
                     setTimeout(() => {
-                        window.location.href = '/petparent'
+                        navigate('/petparent', { state: { scrollTo: 'sitters' } });
                     }, 1500)
                 })
                 .catch((error) => {
@@ -115,10 +121,10 @@ function AddCard() {
                 Post a Job
             </Bodytext>
             <form
-                style={{ display: 'flex', marginTop: '50px', flexDirection: 'column', alignItems: 'center', width: '70%', }}
+                style={{ marginTop: '50px'}}
                 onSubmit={handleSubmit}
             >
-                <InputWrapper style={{ padding: '0px 8%' }}>
+                <InputWrapper>
                     <label htmlFor="name">Name:</label>
                     <TextField id="name" variant="filled" type='text' name='name' value={card.name} onChange={handleOnChange} />
 
@@ -142,11 +148,11 @@ function AddCard() {
                         onChange={handleOnChange} multiline rows={3} />
 
                     <div id="image"
-                        style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', height: '80px', paddingBottom: '10px' }}
+                        style={{ display: 'flex', gap: '10px', height: '80px', paddingBottom: '10px' }}
                     >
-                        <label htmlFor="description" style={{marginRight: '10px'}}>
+                        <label htmlFor="description" style={{ marginRight: '10px' }}>
                             Avatar:
-                            </label>
+                        </label>
                         {images.map((image, index) => (
                             <div key={index} style={{
                                 display: 'inline-block',
@@ -172,6 +178,7 @@ function AddCard() {
                         ))}
                     </div>
                     <LinkedButton
+                        type='submit'
                         style={{
                             width: '100%',
                             marginTop: '10px',
