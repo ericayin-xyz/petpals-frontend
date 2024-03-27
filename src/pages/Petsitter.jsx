@@ -8,7 +8,7 @@ const PetSitter = () => {
     }, []);
     
     return (
-        <div id='petsitter'>
+        <div id='petsitter'style={{ maxWidth: '100vw', overflow: 'none' }}>
             <Intro />
             <AddCard />
         </div>

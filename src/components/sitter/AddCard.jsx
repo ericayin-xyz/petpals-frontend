@@ -1,32 +1,27 @@
 import styled from 'styled-components';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import axios from "axios";
-import { AddCardContainer } from '../styled/StyledContainer';
 import { LinkedButton } from '../styled/Button';
 import { TextField, InputAdornment } from '@mui/material';
 import { Bodytext } from '../styled/Font';
 import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
 import { Colors } from '../styled/Theme/index';
+import Grid from '@mui/material/Grid';
 
 
-const InputWrapper = styled.div`
-    display: grid;
-    grid-template-columns: 1fr;
-    width: 80vw;
-    max-width: 800px;
-    gap: 10px;
-    margin-bottom: 20px;
-    padding: '0px 8%';
-    margin-left: auto;
-    margin-right: auto;
-
-    @media screen and (max-width: 800px) {
-        width: 70vw;
-    }
-`
+export const FieldContainer = styled.span`
+    width: 100%;
+    // display: flex;
+    // flex-direction: column; // Stack vertically on small screens
+    // align-items: flex-start;
+    // width: 100%;
+    // margin-bottom: 10px;
+    // @media screen and (max-width: 480px) {
+    //     flex-direction: column; // Adjust if you initially have a different layout for larger screens
+    // }
+`;
 
 function AddCard() {
     const [card, setCard] = useState({
@@ -63,7 +58,7 @@ function AddCard() {
     };
 
     const navigate = useNavigate();
-    
+
     const handleSubmit = (event) => {
         event.preventDefault()
         console.log('Submited')
@@ -93,7 +88,7 @@ function AddCard() {
                 .then((res) => {
                     console.log(res.data);
                     setSuccessMessage("Form Submitted !");
-                
+
                     setTimeout(() => {
                         navigate('/petparent', { state: { scrollTo: 'sitters' } });
                     }, 1500)
@@ -116,55 +111,78 @@ function AddCard() {
     }
 
     return (
-        <AddCardContainer>
-            <Bodytext variant="h1">
-                Post a Job
-            </Bodytext>
-            <form
-                style={{ marginTop: '50px'}}
-                onSubmit={handleSubmit}
-            >
-                <InputWrapper>
-                    <label htmlFor="name">Name:</label>
-                    <TextField id="name" variant="filled" type='text' name='name' value={card.name} onChange={handleOnChange} />
+        <Grid container justifyContent="center" spacing={2} sx={{ marginTop: '6rem' }} >
+            <Grid item xs={12}>
+                <Bodytext variant="h1">
+                    Post a Job
+                </Bodytext>
+            </Grid>
 
-                    <label htmlFor="email">Email:</label>
-                    <TextField id="email" variant="filled" type='email' name='email' value={card.email} onChange={handleOnChange}
-                        InputProps={{
-                            endAdornment: (
-                                <InputAdornment position="end"> @ </InputAdornment>),
-                        }} />
-                    <label htmlFor="phone">Phone Number:</label>
-                    <TextField id="phone" variant="filled" type='number' name='phone' value={card.phone} onChange={handleOnChange} />
+            <Grid item xs={12} sx={{ marginTop: '20px' }}component="form" onSubmit={handleSubmit} >
+                <Grid container spacing={1} sx={{ maxWidth: 800, margin: 'auto', padding: '0 8%', gap: 2 }}>
+                    <Grid item xs={12}>
+                        <label htmlFor="name">Name:</label>
+                        <TextField sx={{ maxWidth: '700px', display: 'flex', marginTop: '8px' }}
+                            id="name" variant="filled" type='text' name='name' value={card.name} onChange={handleOnChange} />
+                    </Grid>
 
-                    <label htmlFor="experience">Experience:</label>
-                    <TextField id="experience" variant="filled" type='text' name='experience' value={card.experience} placeholder="1 year" onChange={handleOnChange} />
+                    <Grid item xs={12}>
+                        <label htmlFor="email">Email:</label>
+                        <TextField sx={{ maxWidth: '80vw', display: 'flex', marginTop: '8px' }}
+                            id="email" variant="filled" type='email' name='email' value={card.email} onChange={handleOnChange}
+                            InputProps={{
+                                endAdornment: (
+                                    <InputAdornment position="end"> @ </InputAdornment>),
+                            }} />
+                    </Grid>
+                    <Grid item xs={12}>
+                        <label htmlFor="phone">Phone Number:</label>
+                        <TextField sx={{ maxWidth: '80vw', display: 'flex', marginTop: '8px' }} 
+                        id="phone" variant="filled" type='number' name='phone' value={card.phone} onChange={handleOnChange} />
+                    </Grid>
+                    <Grid item xs={12}>
+                        <label htmlFor="experience">Experience:</label>
+                        <TextField sx={{ maxWidth: '80vw', display: 'flex', marginTop: '8px' }}
+                            id="experience" variant="filled" type='text' name='experience' value={card.experience} placeholder="1 year" onChange={handleOnChange} />
+                    </Grid>
+                    <Grid item xs={12}>
+                        <label htmlFor="address">Address:</label>
+                        <TextField sx={{ maxWidth: '80vw', display: 'flex', marginTop: '8px' }} 
+                            variant="filled" type='text' name='address' value={card.address} placeholder="The Rocks 2000" onChange={handleOnChange} />
+                    </Grid>
+                    <Grid item xs={12}>
+                        <label htmlFor="description">Description:</label>
+                        <TextField sx={{ maxWidth: '80vw', display: 'flex', marginTop: '8px' }}
+                            id="description" variant="filled" type='text' name='description' value={card.description}
+                            onChange={handleOnChange} multiline rows={3} />
+                    </Grid>
 
-                    <label htmlFor="address">Address:</label>
-                    <TextField id="address" variant="filled" type='text' name='address' value={card.address} placeholder="The Rocks 2000" onChange={handleOnChange} />
-
-                    <label htmlFor="description">Description:</label>
-                    <TextField id="description" variant="filled" type='text' name='description' value={card.description}
-                        onChange={handleOnChange} multiline rows={3} />
-
-                    <div id="image"
-                        style={{ display: 'flex', gap: '10px', height: '80px', paddingBottom: '10px' }}
+                    <div
+                        id="AvatarContainer"
+                        style={{
+                            display: 'flex',
+                            flexWrap: 'wrap',
+                            gap: '10px',
+                            justifyContent: 'center',
+                            margin: '10px auto',
+                        }}
                     >
                         <label htmlFor="description" style={{ marginRight: '10px' }}>
                             Avatar:
                         </label>
                         {images.map((image, index) => (
                             <div key={index} style={{
-                                display: 'inline-block',
-                                padding: '3px',
-                                marginTop: '5px',
+                                // display: 'inline-block',
+                                // padding: '3px',
+                                // marginTop: '5px',
+                                width: '40px', height: '40px'
                             }}>
                                 <img
                                     key={index}
                                     src={image}
                                     alt={`Selectable icon ${index + 1}`}
                                     style={{
-                                        width: '40px',
+                                        width: '100%', height: 'auto', display: 'block',
                                         cursor: 'pointer',
                                         opacity: selectedImage ? (selectedImage === image ? 1 : 0.6) : 1,
                                         transform: selectedImage ? (selectedImage === image ? 'scale(1.05)' : 'scale(1)') : 'scale(1.05)',
@@ -190,9 +208,9 @@ function AddCard() {
                             <LinearProgress color='inherit' sx={{ color: Colors.blue, marginTop: '2rem' }} />
                         </Box>}
                     </div>
-                </InputWrapper>
-            </form>
-        </AddCardContainer>
+                </Grid>
+            </Grid>
+        </Grid >
     )
 }
 
