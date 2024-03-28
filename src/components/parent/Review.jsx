@@ -19,7 +19,7 @@ const initialReviews = [
     },
     {
         id: 2,
-        description: "was reliable, but missed following our cat's specific feeding instructions. While everything else was fine, attention to detail on diet needs improvement.",
+        description: "Pat was reliable, but missed following our cat's specific feeding instructions. While everything else was fine, attention to detail on diet needs improvement.",
         rating: 4.5
     },
     {

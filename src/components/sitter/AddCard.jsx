@@ -122,13 +122,13 @@ function AddCard() {
                 <Grid container spacing={1} sx={{ maxWidth: 800, margin: 'auto', padding: '0 8%', gap: 2 }}>
                     <Grid item xs={12}>
                         <label htmlFor="name">Name:</label>
-                        <TextField sx={{ maxWidth: '700px', display: 'flex', marginTop: '8px' }}
+                        <TextField sx={{ maxWidth: '700px', display: 'flex', marginTop: '3px' }}
                             id="name" variant="filled" type='text' name='name' value={card.name} onChange={handleOnChange} />
                     </Grid>
 
                     <Grid item xs={12}>
                         <label htmlFor="email">Email:</label>
-                        <TextField sx={{ maxWidth: '80vw', display: 'flex', marginTop: '8px' }}
+                        <TextField sx={{ maxWidth: '80vw', display: 'flex', marginTop: '3px' }}
                             id="email" variant="filled" type='email' name='email' value={card.email} onChange={handleOnChange}
                             InputProps={{
                                 endAdornment: (
@@ -137,22 +137,22 @@ function AddCard() {
                     </Grid>
                     <Grid item xs={12}>
                         <label htmlFor="phone">Phone Number:</label>
-                        <TextField sx={{ maxWidth: '80vw', display: 'flex', marginTop: '8px' }} 
+                        <TextField sx={{ maxWidth: '80vw', display: 'flex', marginTop: '5px' }} 
                         id="phone" variant="filled" type='number' name='phone' value={card.phone} onChange={handleOnChange} />
                     </Grid>
                     <Grid item xs={12}>
                         <label htmlFor="experience">Experience:</label>
-                        <TextField sx={{ maxWidth: '80vw', display: 'flex', marginTop: '8px' }}
+                        <TextField sx={{ maxWidth: '80vw', display: 'flex', marginTop: '5px' }}
                             id="experience" variant="filled" type='text' name='experience' value={card.experience} placeholder="1 year" onChange={handleOnChange} />
                     </Grid>
                     <Grid item xs={12}>
                         <label htmlFor="address">Address:</label>
-                        <TextField sx={{ maxWidth: '80vw', display: 'flex', marginTop: '8px' }} 
+                        <TextField sx={{ maxWidth: '80vw', display: 'flex', marginTop: '5px' }} 
                             variant="filled" type='text' name='address' value={card.address} placeholder="The Rocks 2000" onChange={handleOnChange} />
                     </Grid>
                     <Grid item xs={12}>
                         <label htmlFor="description">Description:</label>
-                        <TextField sx={{ maxWidth: '80vw', display: 'flex', marginTop: '8px' }}
+                        <TextField sx={{ maxWidth: '80vw', display: 'flex', marginTop: '5px' }}
                             id="description" variant="filled" type='text' name='description' value={card.description}
                             onChange={handleOnChange} multiline rows={3} />
                     </Grid>

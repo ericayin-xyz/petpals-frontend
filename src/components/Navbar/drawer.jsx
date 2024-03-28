@@ -22,16 +22,17 @@ export default function AppDrawer() {
         <div>
             {drawerOpen && (
                 <div style={{
-                    position: 'absolute',
+                    position: 'fixed',
                     right: '10px',
-                    bottom: '360px',
+                    bottom: '350px',
                     zIndex: 1999,
                 }}>
                     <IconButton onClick={() => setDrawerOpen(false)}>
                         <CloseIcon
                             sx={{
-                                fontSize: '4.5rem',
-                                color: Colors.black,
+                                fontSize: '4.3rem',
+                                fontWeight: 'lighter',
+                                color: Colors.blue,
                                 backgroundColor: Colors.white,
                                 borderRadius: '50%',
                                 padding: '1rem',
