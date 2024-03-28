@@ -1,7 +1,7 @@
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
-import theme, { Colors } from './Theme';
+import { Colors } from './Theme';
 import { lighten } from 'polished';
 import { Link } from 'react-router-dom';
 

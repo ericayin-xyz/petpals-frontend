@@ -1,5 +1,5 @@
 import { RouterProvider, Route, Outlet, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
-import { useReducer, useRef } from "react"
+import { useReducer } from "react"
 import PetParent from './pages/Petparent';
 import PetSitter from './pages/Petsitter';
 import Mainpage from './pages/Mainpage';
