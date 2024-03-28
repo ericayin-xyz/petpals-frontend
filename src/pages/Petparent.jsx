@@ -20,8 +20,8 @@ const PetParent = () => {
                 element.scrollIntoView({ behavior: 'smooth' });
             }
         }
-    }, [scrollTo]);
-
+    }, [scrollTo]); 
+    
     return (
         <Stack id="Petparent" sx={{
             minHeight: '100vh'

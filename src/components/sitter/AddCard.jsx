@@ -163,8 +163,8 @@ function AddCard() {
                             display: 'flex',
                             flexWrap: 'wrap',
                             gap: '10px',
-                            justifyContent: 'center',
-                            margin: '10px auto',
+                            justifyContent: 'flex-start',
+                            margin: '8px auto',
                         }}
                     >
                         <label htmlFor="description" style={{ marginRight: '10px' }}>
@@ -172,17 +172,14 @@ function AddCard() {
                         </label>
                         {images.map((image, index) => (
                             <div key={index} style={{
-                                // display: 'inline-block',
-                                // padding: '3px',
-                                // marginTop: '5px',
-                                width: '40px', height: '40px'
+                                width: '50px', height: '50px', display: 'flex', justify: 'right',
                             }}>
                                 <img
                                     key={index}
                                     src={image}
                                     alt={`Selectable icon ${index + 1}`}
                                     style={{
-                                        width: '100%', height: 'auto', display: 'block',
+                                        width: '100%', height: 'auto',
                                         cursor: 'pointer',
                                         opacity: selectedImage ? (selectedImage === image ? 1 : 0.6) : 1,
                                         transform: selectedImage ? (selectedImage === image ? 'scale(1.05)' : 'scale(1)') : 'scale(1.05)',
@@ -202,12 +199,14 @@ function AddCard() {
                             marginTop: '10px',
                         }} id='submitBtn' onClick={handleSubmit} >
                         Send</LinkedButton>
-                    <div id='msg' style={{ marginBottom: '1rem' }}>
-                        <h4 style={{ margin: '20px 0px', color: 'red', textAlign: 'center' }}>{successMessage}{errorMessage}</h4>
-                        {successMessage && <Box sx={{ width: '100%' }}>
-                            <LinearProgress color='inherit' sx={{ color: Colors.blue, marginTop: '2rem' }} />
-                        </Box>}
-                    </div>
+                        <Grid item xs={12} sx={{marginTop: '-1rem'}}>
+                            <h4 style={{ margin: '20px 0px', color: 'red', textAlign: 'center' }}>{successMessage}{errorMessage}</h4>
+                            {successMessage && <Box sx={{ width: '100%' }}>
+                                <LinearProgress color='inherit' sx={{ color: Colors.blue, marginTop: '0.7rem', marginBottom: '2rem' }} />
+                            </Box>}
+                        </Grid>
+
+
                 </Grid>
             </Grid>
         </Grid >
