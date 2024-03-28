@@ -1,7 +1,7 @@
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
-import { Colors } from './Theme';
+import theme, { Colors } from './Theme';
 import { lighten } from 'polished';
 import { Link } from 'react-router-dom';
 
@@ -21,14 +21,13 @@ const BootstrapButton = styled(Button)({
     },
 });
 
-export const LinkedButton = styled(Button)({
+export const LinkedButton = styled(Button)(({ theme }) => ({
     textTransform: 'none',
-    fontSize: 13,
-    letterSpacing: 1.1,
-    fontWeight: '600', 
+    fontSize: 15,
+    letterSpacing: 0.5,
     fontFamily: 'Montserrat, sans-serif',
     padding: '9px 10px',
-    borderRadius: '20px',
+    borderRadius: '50px',
     backgroundColor: Colors.blue,
     color: Colors.white,
     width: '100%',
@@ -37,12 +36,11 @@ export const LinkedButton = styled(Button)({
         fontWeight: 'bonder', 
         boxShadow: '0px 0px 8px rgba(0, 0, 0.4, 0.3);',
     },
-});
+}))
 
-export const LinkedButtonOnHomePage = styled(Button)({
+export const LinkedButtonOnHomePage = styled(Button)(({ theme }) => ({
     textTransform: 'none',
-    fontSize: 13,
-    fontWeight: '600', 
+    fontSize: 15,
     fontFamily: 'Montserrat, sans-serif',
     padding: '8px 0',
     borderRadius: '20px',
@@ -55,7 +53,7 @@ export const LinkedButtonOnHomePage = styled(Button)({
         backgroundColor: lighten(0.09, Colors.white),
         boxShadow: '0px 0px 8px rgba(0, 0, 0.4, 0.3);',
     },
-});
+}))
 
 export default function CustomizedButtons(props) {
     return (
@@ -124,17 +122,15 @@ export const CardButton = styled(Button)({
     },
 });
 
-export const ReviewEditButton = styled(Button)({
+export const ReviewEditButton = styled(Button)(({ theme }) => ({
     textTransform: 'none',
     fontSize: 12,
-    fontWeight: '600', 
     fontFamily: 'Montserrat, sans-serif',
     marginTop: '12px',
     padding: '4px 12px',
     borderRadius: '20px',
     color: Colors.black,
-    border: `1px solid ${Colors.black}`,
-    // backgroundColor: Colors.blue,
+    border: `1px solid ${Colors.blue}`,
     transform: 'scaleX(0.95)',
     letterSpacing: '0.05em',
     '&:hover': {
@@ -142,4 +138,4 @@ export const ReviewEditButton = styled(Button)({
         boxShadow: '0px 1px 3px rgba(0, 0, 6, 0.5);',
         border:' 0px solid black',
     },
-});
+}))

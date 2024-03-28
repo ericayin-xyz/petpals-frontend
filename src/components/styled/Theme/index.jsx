@@ -34,7 +34,12 @@ const theme = createTheme({
                 }
             }
         },
-
+        typography: {
+            fontFamily: 'Montserrat, sans-serif',
+            fontWeightLight: 200,
+            fontWeightRegular: 300, 
+            fontWeightMedium: 500, 
+        },
     }
 });
 

@@ -1,6 +1,5 @@
 import { RouterProvider, Route, Outlet, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
 import { useReducer, useRef } from "react"
-import ScrollContext from './components/utils/scrollContext';
 import PetParent from './pages/Petparent';
 import PetSitter from './pages/Petsitter';
 import Mainpage from './pages/Mainpage';
@@ -18,7 +17,6 @@ import Footer from './components/Home/Footer';
 
 function App() {
   const [store, dispatch] = useReducer(globalReducer)
-  const sittersRef = useRef(null);
 
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -31,13 +29,11 @@ function App() {
 
   return (
     <div className='App'>
-      <ScrollContext.Provider value={{ sittersRef }}>
         <ThemeProvider theme={theme}>
           <GlobalContext.Provider value={{ store, dispatch }}>
             <RouterProvider router={router} />
           </GlobalContext.Provider>
         </ThemeProvider >
-      </ScrollContext.Provider>
     </div>
   );
 }

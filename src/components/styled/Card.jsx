@@ -1,5 +1,5 @@
 import { Box, styled, } from '@mui/system'
-import { IconButton, Button } from '@mui/material';
+import { IconButton, Button, Typography } from '@mui/material';
 import theme, { Colors } from './Theme';
 
 export const CardWrapper = styled(Box)(({ theme }) => ({
@@ -43,32 +43,29 @@ export const AddToCard = styled(Button)(() => ({
 
 }))
 
-export const CardText = styled(Box)({
+export const CardText = styled(Typography)(({ theme }) => ({
     display: 'flex',
     textAlign: 'center',
-    fontWeight: '800',
     fontSize: '12px',
     lineHeight: 1.5,
     fontFamily: 'Montserrat',
-})
+}))
 
-export const CardDescription = styled(Box)(({ theme }) => ({
+export const CardDescription = styled(Typography)(({ theme }) => ({
     display: 'flex',
     textAlign: 'center',
-    fontWeight: '800',
     fontSize: '12px',
     lineHeight: 1.5,
     marginTop: '20px',
     fontFamily: 'Montserrat',
 }))
 
-export const CardTitle = styled(Box)(({ theme }) => ({
+export const CardTitle = styled(Typography)(({ theme }) => ({
     padding: 4,
     display: 'flex',
     flexDirection: 'column',
     textAlign: 'center',
-    fontWeight: 'bolder',
-    fontSize: '20px',
+    fontSize: '18px',
     marginBottom: '0.5rem',
     marginTop: '0.8rem',
     fontFamily: 'Montserrat',
@@ -106,14 +103,13 @@ export const CardReviewDetail = styled(Box)(({ theme }) => ({
     }
 }))
 
-export const ReviewText = styled(Box)({
+export const ReviewText = styled(Box)(({ theme }) => ({
     display: 'flex',
-    fontWeight: '800',
     fontSize: '15px',
     lineHeight: 2,
     textAlign: 'left',
     fontFamily: 'Montserrat',
-})
+}))
 
 export const ReviewDescription = styled(Box)({
     [theme.breakpoints.up('md')]: {
