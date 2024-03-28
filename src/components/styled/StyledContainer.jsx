@@ -75,7 +75,6 @@ export const PostReview = styled(Box)(({ theme }) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     width: '100%',
-    // alignItems: 'center',
     padding: '5rem 4rem',
 }))
 
@@ -97,10 +96,6 @@ export const ServiceContainer = styled(Box)(({ theme }) => ({
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: '80px',
-    // [theme.breakpoints.down('md')]: {
-        // flexDirection: 'column', 
-        // width: '100%'
-    // },
 }))
 
 export const ServiceBox = styled(Container)(({ theme }) => ({

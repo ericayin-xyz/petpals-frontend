@@ -24,7 +24,7 @@ const icons = [<PinDropIcon sx={{ fontSize: 45 }} />, <LightModeIcon sx={{ fontS
 export default function Service() {
     return (
         <StyledContainer>            
-            <Bodytext variant='h1' style={{ marginTop: 140, marginBottom: 20 }}>
+            <Bodytext style={{ marginTop: 120, marginBottom: 20 }}>
                 Customize Your Service
             </Bodytext>
             <ServiceContainer style={{ maxWidth: '700px'}}>

@@ -56,6 +56,7 @@ export const BannerDescription = styled(Stack)(({ theme }) => ({
     },
     lineHeight: 1.5,
     letterSpacing: 1,
+    fontFamily: 'Montserrat, sans-serif',
     marginBottom: '2rem',
     marginTop: '2rem',
     width: '80%',

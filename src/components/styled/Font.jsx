@@ -6,10 +6,12 @@ export const Bodytext = styled(Typography)(({ theme }) => ({
         fontSize: '4rem',
     },
     fontSize: '3rem',
+    lineHeight: 1.5,
     fontFamily: 'Montserrat',
     fontWeight: 'bold',
     color: Colors.blue,
     textAlign: 'center',
+    padding: '0 5% 0 5%',
 }))
 
 export const ServiceText = styled(Typography)(({ theme }) => ({

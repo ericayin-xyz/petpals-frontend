@@ -45,7 +45,7 @@ function StepIntro() {
     return (
         <BannerContainer>
             <ContentContainer>
-                <Bodytext variant='h1'>
+                <Bodytext>
                     Meet Local Sitters
                 </Bodytext>
                 <OptionBox>
