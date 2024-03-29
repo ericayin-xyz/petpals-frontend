@@ -15,19 +15,17 @@ export default function reviewReducer(state, action) {
         }
 
         case "addReview": {
+            const newReview = {
+                id: Date.now(),
+                description: state.review,
+                rating: state.value,
+            };
             return {
                 ...state,
-                reviews: [
-                    ...state.reviews,
-                    { 
-                        id: state.reviews.length + 1, 
-                        description: state.review, 
-                        rating: state.value
-                    },
-                ],
+                reviews: [...state.reviews, newReview],
                 review: "",
-                value: null
-            }
+                value: 5,
+            };
         }
 
         case "deleteReview": {
