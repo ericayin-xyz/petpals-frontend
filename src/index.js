@@ -4,8 +4,9 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import axios from 'axios';
 
-axios.defaults.baseURL = "https://petpals-backend-s0g8.onrender.com" 
+// axios.defaults.baseURL = "https://petpals-backend-s0g8.onrender.com" 
 // axios.defaults.baseURL = "http://localhost:10000" 
+axios.defaults.baseURL = process.env.APP_API_URL || "http://localhost:10000";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
